@@ -1,0 +1,110 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{UncertaintyPrinciple}
+\pmcreated{2013-03-22 18:38:25}
+\pmmodified{2013-03-22 18:38:25}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{uncertainty principle}
+\pmrecord{10}{41381}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Example}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42A38}
+\pmrelated{UncertaintyTheorem}
+\pmrelated{SubstitutionNotation}
+\pmrelated{GraphOfEquationXyConstant}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[T2A]{fontenc}
+\usepackage[russian, english]{babel}
+
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\newcommand{\sijoitus}[2]%
+{\operatornamewithlimits{\Big/}_{\!\!\!#1}^{\,#2}}
+\begin{document}
+\PMlinkescapeword{Interpretation} \PMlinkescapeword{force} \PMlinkescapeword{action}
+
+We will find the Fourier transform 
+\begin{align}
+F(\omega) := \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(t)e^{-i\omega t}\,dt
+\end{align}
+of the Gaussian bell-shaped function
+\begin{align}
+f(t) \;=\; Ce^{-at^2}
+\end{align}
+where $C$ and $a$ are positive constants.\\
+
+We get first
+$$F(\omega) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty Ce^{-at^2}e^{-i\omega t}\,dt 
+\;=\; \frac{C}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-at^2-i\omega t}\,dt.$$
+Completing the square in
+$$-at^2-i\omega t \,=\, -a\left(t^2+\frac{i\omega t}{a}\right) 
+\,=\, -a\left(t+\frac{i\omega}{2a}\right)^2-\frac{\omega^2}{4a}$$
+and substituting\, $\sqrt{a}\left(t+\frac{i\omega}{2a}\right) \,:=\,z$,\, we may write
+\begin{align}
+F(\omega) \,=\, 
+\frac{C}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-a\left(t+\frac{i\omega}{2a}\right)^2}e^{-\frac{\omega^2}{4a}}\,dt
+\,=\, \frac{C}{\sqrt{2\pi a}}e^{-\frac{\omega^2}{4a}}\int_l e^{-z^2}\,dz,
+\end{align}
+where $l$ is a line of the complex plane parallel to the real axis and passing through the point 
+\,$z = \frac{i\omega}{2\sqrt{a}}$.\, Now we can show that the integral
+$$I_y \,:=\, \int_l e^{-z^2}\,dz = \int_{-\infty}^\infty e^{-(x+iy)^2}\,dx$$
+does not depend on $y$ at all.\, In fact, we have
+$$\frac{\partial I_y}{\partial y} \,=\, \int_{-\infty}^\infty\frac{\partial}{\partial y} e^{-(x+iy)^2}dx
+\,=\, -2i\int_{-\infty}^\infty e^{-(x+iy)^2}(x+iy)\,dx 
+\,=\, i\!\sijoitus{x\,=-\infty}{\quad \infty}\!e^{-(x+iy)^2} \,=\, i\!\sijoitus{x\,=-\infty}{\quad \infty}\!e^{-x^2+y^2}e^{-2ixy} \,=\,0.$$
+Hence we may evaluate $I_y$ as
+$$I_y \,=\, I_0 = \int_{-\infty}^\infty e^{-x^2}\,dx \;=\; \sqrt{\pi}$$
+(see the area under Gaussian curve).\, Putting this value to (3) yields the result
+\begin{align}
+F(\omega) \;=\; \frac{C}{\sqrt{2a}}e^{-\frac{\omega^2}{4a}}.
+\end{align}
+Thus, we have gotten another Gaussian bell-shaped function (4) corresponding to the given Gaussian bell-shaped function (2).\\
+
+\textbf{Interpretation.}\, One can take for the {\em breadth} of the bell the portion of the abscissa axis, outside which the ordinate drops under the maximum value divided by $e$, for example.\, Then, for the bell (2) one writes
+$$Ce^{-at^2} = Ce^{-1},$$
+whence\, $t = \frac{1}{\sqrt{a}}$\, giving, by \PMlinkname{evenness}{EvenFunction} of the function, the breadth\, $\Delta t = \frac{2}{\sqrt{a}}$.\, Similarly, the breadth of the bell (4) is\, $\Delta\omega = 4\sqrt{a}$.\, We see that the product
+\begin{align}
+\Delta t\cdot\Delta\omega = 8
+\end{align}
+has a constant value.\, One can show that any other shape of the graphs of $f$ and $F$ produces a relation \PMlinkescapetext{similar} to (5).\, The breadths are thus \PMlinkname{inversely proportional}{Proportion}.\\
+
+If $t$ is the time and $f$ is the \PMlinkescapetext{action of a force} on a system of oscillators with their natural frequencies, then in the formula
+$$f(t) \;=\; \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty F(\omega)e^{i\omega t}\,d\omega$$
+of the inverse Fourier transform, $F(\omega)$ means the amplitude of the oscillator with angular frequency $\omega$.\, We can infer from (5) that the more localised ($\Delta t$ small) the external force is in time, the more spread ($\Delta\omega$ great) is its spectrum of frequencies, i.e. the greater is the amount of the oscillators the force has excited with roughly the same amplitude.\, If one, conversely, wants to better the selectivity, i.e. to compress the spectrum narrower, then one has to spread out the external action in time.\, The impossibility to simultaneously localise the action in time and enhance the selectivity of the action is one of the manifestations of the quantum-mechanical {\em uncertainty principle}, which has a fundamental role in modern physics.
+
+\begin{thebibliography}{9}
+\bibitem{MMP} \CYRYA. \CYRB. \CYRZ\cyre\cyrl\cyrsftsn\cyrd\cyro\cyrv\cyri\cyrch \;\&\, \CYRA. \CYRD. \CYRM\cyrery\cyrsh\cyrk\cyri\cyrs: 
+{\em \CYREREV\cyrl\cyre\cyrm\cyre\cyrn\cyrt\cyrery\, \cyrp\cyrr\cyri\cyrk\cyrl\cyra\cyrd\cyrn\cyro\cyrishrt\, \cyrm\cyra\cyrt\cyre\cyrm\cyra\cyrt\cyri\cyrk\cyri}. \,\CYRI\cyrz\cyrd\cyra\cyrt\cyre\cyrl\cyrsftsn\cyrs\cyrt\cyrv\cyro \,
+``\CYRN\cyra\cyru\cyrk\cyra''.\, \CYRM\cyro\cyrs\cyrk\cyrv\cyra \,(1976).
+\bibitem{MMP2} 
+Ya. B. Zel'dovich and A. D. Myshkis: ``{\em Elements of applied mathematics}''.
+Nauka (Science) Publishers, Moscow (1976). 
+\end{thebibliography}
+\PMlinkescapeword{Interpretation} \PMlinkescapeword{force} \PMlinkescapeword{action}
+
+
+%%%%%
+%%%%%
+\end{document}

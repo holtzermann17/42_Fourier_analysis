@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ChristoffelDarbouxFormula}
+\pmcreated{2013-03-22 16:20:32}
+\pmmodified{2013-03-22 16:20:32}
+\pmowner{rspuzio}{6075}
+\pmmodifier{rspuzio}{6075}
+\pmtitle{Christoffel-Darboux formula}
+\pmrecord{9}{38474}
+\pmprivacy{1}
+\pmauthor{rspuzio}{6075}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42C05}
+\pmclassification{msc}{33D45}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+Let $\{\phi_i\}_{i=0}^n$ be orthonormal polynomials (the degree of $\phi_k$ is $k$) and let $k_n$ be the coefficient of $x^n$ in $\phi_n$.  Then
+ \[\sum_{k=0}^n \phi_k (x) \phi_k (y) = {k_n \over k_{n+1}}
+ \left({\phi_n (y) \phi_{n+1} (x) - \phi_n (x) \phi_{n+1} (y) \over
+  x - y}\right)\]
+
+The reason this formula is interesting is that the left-hand side is
+the integral kernel for the projection operator to the subspace spanned
+by the polynomials $\{\phi_i\}_{i=0}^n$.
+%%%%%
+%%%%%
+\end{document}

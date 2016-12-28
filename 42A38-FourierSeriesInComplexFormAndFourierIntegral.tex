@@ -1,0 +1,120 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{FourierSeriesInComplexFormAndFourierIntegral}
+\pmcreated{2013-03-22 18:02:54}
+\pmmodified{2013-03-22 18:02:54}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{Fourier series in complex form and Fourier integral}
+\pmrecord{10}{40573}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Derivation}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42A38}
+\pmclassification{msc}{42A16}
+\pmclassification{msc}{44A55}
+%\pmkeywords{Fourier series}
+\pmrelated{FourierTransform}
+\pmrelated{KalleVaisala}
+\pmdefines{Fourier integral}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+ \usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\theoremstyle{definition}
+\newtheorem*{thmplain}{Theorem}
+
+\begin{document}
+\PMlinkescapeword{expansion} \PMlinkescapeword{harmonics}
+
+\subsection{Fourier series in complex form}
+
+The Fourier series expansion of a Riemann integrable real function $f$ on the interval \,$[-p,\,p]$\, is
+\begin{align}
+f(t) = \frac{a_0}{2}+\sum_{n=1}^\infty\left(a_n\cos{\frac{n\pi t}{p}}+b_n\sin{\frac{n\pi t}{p}}\right),
+\end{align}
+where the coefficients are
+\begin{align}
+a_n = \frac{1}{p}\int_{-p}^{\,p}f(x)\cos{\frac{n\pi t}{p}}\,dt, \quad
+b_n = \frac{1}{p}\int_{-p}^{\,p}f(x)\sin{\frac{n\pi t}{p}}\,dt.
+\end{align}
+If one expresses the cosines and sines via \PMlinkname{Euler formulas}{ComplexSineAndCosine} with \PMlinkname{exponential function}{ComplexExponentialFunction}, the series (1) attains the form
+\begin{align}
+f(t) = \sum_{n=-\infty}^\infty c_ne^{\frac{in\pi t}{p}}.
+\end{align}
+The coefficients $c_n$ could be obtained of $a_n$ and $b_n$, but they are comfortably derived directly by multiplying the equation (3) by $e^{-\frac{im\pi t}{p}}$ and integrating it from $-p$ to $p$.\, One obtains
+\begin{align}
+c_n = \frac{1}{2p}\int_{-p}^{\,p}f(t)e^{\frac{-in\pi t}{p}}\,dt \qquad (n = 0,\,\pm1,\,\pm2,\,\ldots).
+\end{align}
+
+We may say that in (3), $f(t)$ has been dissolved to sum of {\em harmonics} (elementary waves) $c_ne^{\frac{in\pi t}{p}}$ with amplitudes $c_n$ corresponding the frequencies $n$.
+
+\subsection{Derivation of Fourier integral}
+
+For seeing how the expansion (3) changes when\, $p \to \infty$,\, we put first the expressions (4) of $c_n$ to the series (3):
+$$f(t) = \sum_{n=-\infty}^\infty e^{\frac{in\pi t}{p}}\frac{1}{2p}\int_{-p}^{\,p}f(t)e^{\frac{-in\pi t}{p}}\,dt$$
+By denoting\, $\omega_n := \frac{n\pi}{p}$\, and\, $\Delta_n\omega := \omega_{n+1}\!-\!\omega_n = \frac{\pi}{p}$,\, the last equation takes the form
+$$f(t) = \frac{1}{2\pi}\sum_{n=-\infty}^\infty e^{i\omega_nt}\Delta_n\omega \int_{-p}^{\,p}f(t)e^{-i\omega_nt}\,dt.$$
+It can be shown that when\, $p \to \infty$\, and thus\, $\Delta_n\omega \to 0$,\, the limiting form of this equation is
+\begin{align}
+f(t) \,=\, \frac{1}{2\pi}\int_{-\infty}^{\,\infty} e^{i\omega t}d\omega\int_{-\infty}^{\,\infty} f(t)e^{-i\omega t}dt.
+\end{align}
+Here, $f(t)$ has been represented as a {\em Fourier integral}.\, It can be proved that for validity of the expansion (4) it suffices that the function $f$ is piecewise continuous on every finite interval having at most a finite amount of extremum points and that the integral
+$$\int_{-\infty}^{\,\infty}|f(t)|\,dt$$
+converges.
+
+For better to compare to the Fourier series (3) and the coefficients (4), we can write (5) as
+\begin{align}
+f(t) \,=\, \int_{-\infty}^{\,\infty}c(\omega)e^{i\omega t}d\omega,
+\end{align}
+where
+\begin{align}
+c(\omega) \,=\, \frac{1}{2\pi}\int_{-\infty}^{\,\infty}f(t)e^{-i\omega t}dt.
+\end{align}
+
+\subsection{Fourier transform}
+
+If we denote $2\pi c(\omega)$ as
+\begin{align}
+F(\omega) \,=\, \int_{-\infty}^{\,\infty} e^{-i\omega t}f(t)\,dt,
+\end{align}
+then by (5),
+\begin{align}
+f(t) \,=\, \frac{1}{2\pi}\int_{-\infty}^{\,\infty}e^{i\omega t}F(\omega)\,d\omega.
+\end{align}
+$F(\omega)$ is called the {\em Fourier transform} of $f(t)$.\, It is an integral transform and (9) \PMlinkescapetext{represents} its inverse transform.
+
+N.B. that often one sees both the formula (8) and the formula (9) equipped with the same constant factor $\displaystyle\frac{1}{\sqrt{2\pi}}$ in front of the integral sign.
+
+\begin{thebibliography}{9}
+\bibitem{K.V.}{\sc K. V\"ais\"al\"a:} {\em Laplace-muunnos}.\, Handout Nr. 163.\quad Teknillisen korkeakoulun ylioppilaskunta, Otaniemi, Finland (1968).
+\end{thebibliography}
+
+
+
+
+
+
+%%%%%
+%%%%%
+\end{document}

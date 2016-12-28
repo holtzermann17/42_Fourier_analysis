@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{RiemannLebesgueLemma}
+\pmcreated{2013-03-22 13:08:04}
+\pmmodified{2013-03-22 13:08:04}
+\pmowner{rmilson}{146}
+\pmmodifier{rmilson}{146}
+\pmtitle{Riemann-Lebesgue lemma}
+\pmrecord{5}{33571}
+\pmprivacy{1}
+\pmauthor{rmilson}{146}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42A16}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\natnums}{\mathbb{N}}
+\newcommand{\cnums}{\mathbb{C}}
+\newcommand{\znums}{\mathbb{Z}}
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+\newcommand{\lb}{\left[}
+\newcommand{\rb}{\right]}
+\newcommand{\supth}{^{\text{th}}}
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}[proposition]{Definition}
+
+\newtheorem{theorem}[proposition]{Theorem}
+\begin{document}
+\noindent
+{\bf \PMlinkescapetext{Proposition}.}
+Let $f:[a,b]\rightarrow\cnums$ be a measurable function.  If $f$ is
+$L^1$ integrable, that is to say if the Lebesgue integral of $|f|$ is
+finite, then
+$$\int^b_a f(x) e^{inx}\,dx \rightarrow 0,\quad{as}\quad n\rightarrow
+\pm\infty.$$
+
+
+The above result, commonly known as the Riemann-Lebesgue lemma, is of
+basic importance in harmonic analysis.  It is equivalent to the
+assertion that the Fourier coefficients $\hat{f}_n$ of a periodic, integrable
+function $f(x)$, tend to $0$ as $n\rightarrow \pm\infty$.
+
+The proof can be organized into 3 steps.
+
+\noindent
+\emph{Step 1.}  An elementary calculation shows that 
+$$\int_I e^{inx}\,dx \rightarrow 0,\quad{as}\quad n\rightarrow
+\pm\infty$$
+for every interval $I\subset[a,b]$. The proposition is therefore true
+for all step functions with \PMlinkname{support}{SupportOfFunction} in $[a,b]$.
+
+\noindent
+\emph{Step 2.}  
+By the monotone convergence theorem, the proposition is true for all
+positive functions, integrable on $[a,b]$.
+
+\noindent
+\emph{Step 3.}  Let $f$ be an arbitrary measurable function,
+integrable on $[a,b]$.  The proposition is true for such a general
+$f$, because one can always write 
+$$f=g-h,$$
+where $g$ and $h$ are positive functions, integrable on
+$[a,b]$.
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,102 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{MinimalityPropertyOfFourierCoefficients}
+\pmcreated{2013-03-22 18:22:00}
+\pmmodified{2013-03-22 18:22:00}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{minimality property of Fourier coefficients}
+\pmrecord{13}{41006}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42A16}
+\pmclassification{msc}{42A10}
+\pmrelated{CommonFourierSeries}
+\pmrelated{UniquenessOfFourierExpansion}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+ \usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\theoremstyle{definition}
+\newtheorem*{thmplain}{Theorem}
+
+\begin{document}
+\PMlinkescapeword{polynomial}
+
+Let $f$ be a Riemann integrable periodic real function with period $2\pi$ and $n$ a positive integer.\, Among all ``trigonometric polynomials''
+$$\varphi(x) \,:=\, \frac{\alpha_0}{2}\!+\!\sum_{j=1}^n(\alpha_j\cos{jx}+\beta_j\sin{jx}),$$
+the polynomial with the coefficients $\alpha_j$ and $\beta_j$ being the Fourier coefficients
+$$\alpha_j = a_j := \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\cos{jx}\,dx$$
+and
+$$\beta_j = b_j := \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\sin{jx}\,dx$$
+for the Fourier series of $f$ produces the minimal value of the mean square deviation
+$$\frac{1}{2\pi}\int_{-\pi}^\pi[f(x)\!-\!\varphi(x)]^2\,dx.\\$$
+
+
+{\em Proof.}\, For any fixed number $n$, it's a question of giving the least value to the definite integral
+\begin{align}
+m \;:=\; \frac{1}{2\pi}\int_{-\pi}^\pi\left[f(x)-\frac{\alpha_0}{2}\!-\!\sum_{j=1}^n(\alpha_j\cos{jx}+\beta_j\sin{jx})\right]^2dx 
+\quad (\geqq 0).
+\end{align}
+
+Expanding $m$ and integrating termwise yields
+\begin{align*}
+m \;=\;\, & \frac{1}{2\pi}\int_{-\pi}^\pi(f(x))^2\,dx-\frac{\alpha_0}{2\pi}\int_{-\pi}^\pi f(x)\,dx\\
+& -\frac{1}{\pi}\sum_{j=1}^n\alpha_j\int_{-\pi}^\pi f(x)\cos{jx}\,dx 
+  -\frac{1}{\pi}\sum_{j=1}^n\beta_j \int_{-\pi}^\pi f(x)\sin{jx}\,dx
+  +\frac{1}{2\pi}\frac{\alpha_0^2}{4}\int_{-\pi}^\pi dx\\
+& +\frac{1}{2\pi}\sum_{j=1}^n\alpha_j^2\int_{-\pi}^\pi\cos^2{jx}\,dx 
+  +\frac{1}{2\pi}\sum_{j=1}^n\beta_j^2 \int_{-\pi}^\pi\sin^2{jx}\,dx\\
+& +\frac{\alpha_0}{2\pi}\sum_{j=1}^n\alpha_j\int_{-\pi}^\pi\cos{jx}\,dx 
+  +\frac{\alpha_0}{2\pi}\sum_{j=1}^n\beta_j\,\int_{-\pi}^\pi\sin{jx}\,dx
++\frac{1}{\pi}\sum_{j=1}^n\sum_{k=1}^n\alpha_j\beta_k\!\int_{-\pi}^\pi\cos{jx}\,\sin{kx}\,dx\\
+& +\frac{1}{\pi}\sum_{j=1}^n\sum_{k\neq j}\alpha_j\alpha_k\int_{-\pi}^\pi\cos{jx}\,\cos{kx}\,dx 
+  +\frac{1}{\pi}\sum_{j=1}^n\sum_{k\neq j}\beta_j\beta_k\int_{-\pi}^\pi\sin{jx}\,\sin{kx}\,dx.
+\end{align*}
+Here, we have the Fourier coefficients
+$$\frac{1}{\pi}\int_{-\pi}^\pi f(x)\,dx \;=\; a_0, \quad 
+\frac{1}{\pi}\int_{-\pi}^\pi f(x)\cos{jx}\,dx \;=\; a_j, \quad \frac{1}{\pi}\int_{-\pi}^\pi f(x)\sin{jx}\,dx \;=\; b_j.$$
+Furthermore,
+$$\int_{-\pi}^\pi\cos^2{jx}\,dx = \int_{-\pi}^\pi\sin^2{jx}\,dx \;=\; \pi, \quad 
+\int_{-\pi}^\pi\cos{jx}\,\sin{kx}\,dx \;=\; 0$$
+and
+$$\int_{-\pi}^\pi\cos{jx}\,\cos{kx}\,dx = \int_{-\pi}^\pi\sin{jx}\,\sin{kx}\,dx \;=\; 0 \quad \mbox{for\;\;} k \neq j.$$
+Using all these we can write
+$$m \;=\; \frac{1}{2\pi}\int_{-\pi}^\pi(f(x))^2\,dx-\frac{\alpha_0a_0}{2}-\sum_{i=1}^n(\alpha_ia_i+\beta_ib_i)+
+\frac{a_0^2}{4}+\frac{1}{2}\sum_{i=1}^n(\alpha_i^2+\beta_i^2).$$
+Adding and subtracting still the sum \,$\frac{a_0^2}{4}+\frac{1}{2}\sum_{i=1}^n(a_i^2+b_i^2)$\, yields finally the form
+$$m \;=\; \frac{1}{2\pi}\int_{-\pi}^\pi(f(x))^2\,dx-\frac{a_0^2}{4}
+-\frac{1}{2}\sum_{i=1}^n(a_i^2+b_i^2)+\frac{1}{4}(\alpha_0-a_0)^2
++\frac{1}{2}\sum_{i=1}^n[(\alpha_i-a_i)^2+(\beta_i-b_i)^2].$$
+The three first addends of this sum do not depend on the choice of the quantities $\alpha_i$ and $\beta_i$.\, The other addends are non-negative, and their sum is minimal, equal 0, when 
+$$\alpha_i = a_i, \quad \beta_i = b_i \quad \forall i.$$
+Accordingly, the mean square deviation $m$, i.e. (1), is minimal when one uses the Fourier coefficients. Q.E.D.
+
+\begin{thebibliography}{9}
+\bibitem{NP}{\sc N. Piskunov:} {\em Diferentsiaal- ja integraalarvutus k\~{o}rgematele tehnilistele \~{o}ppeasutustele}.\, Kirjastus Valgus, Tallinn  (1966).
+\end{thebibliography}
+
+%%%%%
+%%%%%
+\end{document}

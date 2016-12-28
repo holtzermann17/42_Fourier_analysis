@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ProofOfInghamInequality}
+\pmcreated{2013-03-22 15:55:18}
+\pmmodified{2013-03-22 15:55:18}
+\pmowner{ncrom}{8997}
+\pmmodifier{ncrom}{8997}
+\pmtitle{proof of Ingham Inequality}
+\pmrecord{8}{37928}
+\pmprivacy{1}
+\pmauthor{ncrom}{8997}
+\pmtype{Proof}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42B05}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+Let 
+\[
+f(x) = \sqrt{\frac{1}{2\pi}} \sum_{j = -n}^{n}  c_{j}e^{it_{j} x}.
+\]
+If $k(x)$ is a integrable function in $(-\infty, \, \infty)$, let
+\[
+K(u) = \int_{-\infty}^{\infty} k(x) e^{i x u} dx.
+\]
+It is easy to prove the equalities.
+\begin{eqnarray*}
+\int_{-\infty}^{\infty} k(x) |f(x)|^{2} dx & = & \sum_{j,h = -n}^{n} c_{j}\overline{c_{h}} K(t_{j} - t_{h}).\\
+\int_{-\infty}^{\infty} k(x) f(x) e^{-i x t_{h}} dx & = & \sum_{j = -n}^{n}  c_{j} K (t_{j} - t_{h}).
+\end{eqnarray*}
+
+For the rest of the proof we make the following choices:
+\[
+k(x) = \left\{
+\begin{array}{cl}
+\cos(x/2), & |x| \leq \pi \\
+0, & |x| > \pi
+\end{array}
+\right.
+\]
+Then, after computation, we have
+\[
+K(u) = \frac{4\cos(\pi u)}{1 - 4u^{2}}.
+\]
+
+Let $T = \pi$ and $\gamma = 1 + \delta$ ($\delta = \varepsilon/\pi > 0$).  Since $|t_{j+1} - t_{j}| \geq \gamma$, we have that $|t_{j} - t_{h}| \geq |j - h|\gamma$. If we suppose that $h$ is fixed, we have
+\begin{eqnarray*}
+\sum_{j \neq h} |K(t_{j} - t_{h})| & = & \sum_{j \neq h}\left| \frac{4\cos\pi(t_{j} - t_{h})}{1 - 4(t_{j} - t_{h})^{2}} \right| \leq \sum_{j \neq h} \frac{4}{4(j - h)^{2}\gamma^{2} - 1} \leq \\
+& \leq & \frac{4}{\gamma^{2}}\sum_{j \neq h}\frac{1}{4(j - h)^{2} - 1} < \frac{8}{\gamma^{2}} \sum_{r = 1}^{\infty} \frac{1}{4r^{2} - 1} = \\
+& = & \frac{8}{2\gamma^{2}} \sum_{r = 1}^{\infty} \left( \frac{1}{2r - 1} - \frac{1}{2r + 1} \right) = \frac{4}{ \gamma^{2}} = \frac{K(0)}{\gamma^{2}}.
+\end{eqnarray*}
+
+But, since $2|c_{j} \overline{c_{h}}| \leq |c_{j}|^{2} + |c_{h}|^{2}$ and $K(t_{j} - t_{h}) = K(t_{h} - t_{j})$, we find
+\begin{eqnarray*}
+\int_{-\infty}^{\infty} k(x) |f(x)|^{2} dx & = & \sum_{j,h = -n}^{n} c_{j}\overline{c_{h}} K(t_{j} - t_{h}) = \\
+& = & \sum_{j} |c_{j}|^{2} K(0) + \sum_{j,h; \;j \neq h} \mathcal{O}(j,h) \frac{|c_{j}|^{2} + |c_{h}|^{2}}{2} |K(t_{j} - t_{h})|\\
+& = & \sum_{j} |c_{j}|^{2} \left( K(0) + \sum_{h \neq j} \mathcal{O}(j,h) |K(t_{j} - t_{h})|\right), \; 
+\end{eqnarray*}
+where $|\mathcal{O}(j,h)| \leq 1$. Using the definition of $k$ and the previous inequality, we have
+\begin{equation*}
+\int_{-\pi}^{\pi} |f(x)|^{2} dx \geq \sum_{j} |c_{j}|^{2} K(0)(1 - \frac{1}{\gamma^{2}}),
+\end{equation*}
+and we have obtained the conclusion.
+%%%%%
+%%%%%
+\end{document}

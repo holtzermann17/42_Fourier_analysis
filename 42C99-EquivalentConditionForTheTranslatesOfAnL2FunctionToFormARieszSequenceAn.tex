@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{EquivalentConditionForTheTranslatesOfAnL2FunctionToFormARieszSequenceAn}
+\pmcreated{2013-03-22 15:20:07}
+\pmmodified{2013-03-22 15:20:07}
+\pmowner{Gorkem}{3644}
+\pmmodifier{Gorkem}{3644}
+\pmtitle{equivalent condition for the translates of an $L_2$ function to form a Riesz sequence, an}
+\pmrecord{15}{37152}
+\pmprivacy{1}
+\pmauthor{Gorkem}{3644}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42C99}
+%\pmkeywords{Riesz basis}
+%\pmkeywords{wavelet theory}
+%\pmkeywords{fourier analysis}
+%\pmkeywords{sampling theory}
+\pmrelated{RieszSequence}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+\renewcommand{\labelenumi}{(\roman{enumi})}
+\newtheorem{theorem}{Theorem}
+\begin{document}
+\begin{theorem}
+Let $\phi \in L_2(\mathbb{R})$, $\phi_k(x) = \phi(x-k)$ and
+$\hat{\phi}$ be the Fourier transform of $\phi$. Let $A$ and $B$
+be positive constants. Then the following are equivalent:
+\begin{enumerate}
+\item $\forall c(k) \in l_2,\ \   A\left\|c\right\|^2_{l_2} \leq
+\left\|\sum_{k\in \mathbb{Z}}c(k)\phi_k\right\|^2\leq
+B\left\|c\right\|^2_{l_2}$ \item $
+A\leq\sum_{k\in\mathbb{Z}}\left|\hat{\phi}(\omega + 2\pi
+k)\right|^2\leq B$
+\end{enumerate}
+\end{theorem}
+
+The first of the above conditions is the definition for
+$\{\phi_k\}_{k\in\mathbb{Z}}$ to form a Riesz sequence. 
+%%%%%
+%%%%%
+\end{document}

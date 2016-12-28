@@ -1,0 +1,139 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{DiscreteSineTransform}
+\pmcreated{2013-03-22 17:23:45}
+\pmmodified{2013-03-22 17:23:45}
+\pmowner{stitch}{17269}
+\pmmodifier{stitch}{17269}
+\pmtitle{discrete sine transform}
+\pmrecord{7}{39764}
+\pmprivacy{1}
+\pmauthor{stitch}{17269}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42-00}
+\pmclassification{msc}{65T50}
+\pmsynonym{DST}{DiscreteSineTransform}
+\pmsynonym{discrete trigonometric transforms}{DiscreteSineTransform}
+\pmrelated{DiscreteCosineTransform}
+\pmrelated{DiscreteFourierTransform2}
+\pmrelated{DiscreteFourierTransform}
+\pmdefines{DST-I}
+\pmdefines{DST-II}
+\pmdefines{DST-III}
+\pmdefines{DST-IV}
+\pmdefines{DST-V}
+\pmdefines{DST-VI}
+\pmdefines{DST-VII}
+\pmdefines{DST-VII}
+\pmdefines{DST-VIII}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+The \PMlinkescapetext{\emph{discrete sine transforms (DST)}} are a family of \PMlinkescapetext{similar} transforms closely related to the discrete cosine transform and the discrete Fourier transform. The \PMlinkescapetext{complete} set of variants of the DST was first introduced by Wang and Hunt \cite{DWT}.
+
+\section{Definition}
+
+The orthonormal variants of the DST, where $x_n$ is the original vector of $N$ real numbers, $C_k$ is the transformed vector of $N$ real numbers and $\delta$ is the Kronecker delta, are defined by the following equations:
+
+\subsection{DST-I}
+\begin{eqnarray*}
+S^{I}_k&=&p \sum _{n=0}^{N-1} x_n \sin \frac{\pi (n+1) (k+1)}{N+1} \quad \quad k=0, 1, 2, \dots, N-1\\
+p&=&\sqrt{\frac{2}{N+1}}
+\end{eqnarray*}
+The DST-I is its own inverse.
+
+\subsection{DST-II}
+\begin{eqnarray*}
+S^{II}_k&=&p_k \sum _{n=0}^{N-1} x_n \sin \frac{\pi \left(n+\frac{1}{2}\right) (k+1)}{N} \quad \quad k=0, 1, 2, \dots, N-1\\
+p_k&=&\sqrt{\frac{2-\delta _{k,0}}{N}}
+\end{eqnarray*}
+The inverse of DST-II is DST-III.
+
+\subsection{DST-III}
+\begin{eqnarray*}
+S^{III}_k&=&p \sum _{n=0}^{N-1} x_n q_n \sin \frac{\pi (n+1) \left(k+\frac{1}{2}\right)}{N} \quad \quad k=0, 1, 2, \dots, N-1\\
+p&=&\sqrt{\frac{2}{N}}\\
+q_n&=&\sqrt{\frac{1}{1+\delta _{n,0}}}
+\end{eqnarray*}
+The inverse of DST-III is DST-II.
+
+\subsection{DST-IV}
+\begin{eqnarray*}
+S^{IV}_k&=&p \sum _{n=0}^{N-1} x_n \sin \frac{\pi \left(n+\frac{1}{2}\right) \left(k+\frac{1}{2}\right)}{N} \quad \quad k=0, 1, 2, \dots, N-1\\
+p&=&\sqrt{\frac{2}{N}}
+\end{eqnarray*}
+The DST-IV is its own inverse.
+
+\subsection{DST-V}
+\begin{eqnarray*}
+S^V_k&=&p \sum _{n=0}^{N-1} x_n \sin \frac{\pi (n+1) (k+1)}{N+\frac{1}{2}} \quad \quad k=0, 1, 2, \dots, N-1\\
+p&=&\sqrt{\frac{2}{N+\frac{1}{2}}}
+\end{eqnarray*}
+The DST-V is its own inverse.
+
+\subsection{DST-VI}
+\begin{eqnarray*}
+S^{VI}_k&=&p \sum _{n=0}^{N-1} x_n \sin \frac{\pi \left(n+\frac{1}{2}\right) (k+1)}{N+\frac{1}{2}} \quad \quad k=0, 1, 2, \dots, N-1\\
+p&=&\sqrt{\frac{2}{N+\frac{1}{2}}}
+\end{eqnarray*}
+The inverse of DST-VI is DST-VII.
+
+\subsection{DST-VII}
+\begin{eqnarray*}
+S^{VII}_k&=&p \sum _{n=0}^{N-1} x_n \sin \frac{\pi (n+1) \left(k+\frac{1}{2}\right)}{N+\frac{1}{2}} \quad \quad k=0, 1, 2, \dots, N-1\\
+p&=&\sqrt{\frac{2}{N+\frac{1}{2}}}
+\end{eqnarray*}
+The inverse of DST-VII is DST-VI.
+
+\subsection{DST-VIII}
+\begin{eqnarray*}
+S^{VIII}_k&=&p_k \sum _{n=0}^{N-1} x_n q_n \sin \frac{\pi \left(n+\frac{1}{2}\right) \left(k+\frac{1}{2}\right)}{N-\frac{1}{2}} \quad \quad k=0, 1, 2, \dots, N-1\\
+p_k&=&\sqrt{\frac{2-\delta _{k,N-1}}{N-\frac{1}{2}}}\\
+q_n&=&\sqrt{\frac{1}{1+\delta _{n,N-1}}}
+\end{eqnarray*}
+The DST-VIII is its own inverse.
+
+\section{Two-dimensional DST}
+
+The DST in two dimensions is simply the one-dimensional transform computed in each row and each column. For example, the DST-II of a $N_1\times N_2$ matrix is given by
+
+\begin{eqnarray*}
+S^{II}_{k_1,k_2}&=&p_{k_1}p_{k_2}\sum _{n_1=0}^{N_1-1}\sum _{n_2=0}^{N_2-1} x_{n_1,n_2} \sin \frac{\pi \left(n_1+\frac{1}{2}\right) (k_1+1)}{N_1} \sin \frac{\pi \left(n_2+\frac{1}{2}\right) (k_2+1)}{N_2}
+\end{eqnarray*}
+
+\begin{thebibliography}{3}
+
+\bibitem{Shao07} Xuancheng Shao, Steven G. Johnson. Type-II/III DCT/DST algorithms with reduced number of arithmetic operations. 2007.
+
+\bibitem{Pau06} Markus P\"auschel, Jos\'e M. F. Mouray. The algebraic approach to the discrete cosine and
+sine transforms and their fast algorithms. 2006.
+
+\bibitem{DWT} Z. Wang and B. Hunt, The Discrete W Transform, Applied Mathematics and Computation,
+16. 1985.
+
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

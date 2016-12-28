@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{AlmostPeriodicFunctionclassicalDefinition}
+\pmcreated{2013-03-22 14:53:14}
+\pmmodified{2013-03-22 14:53:14}
+\pmowner{drini}{3}
+\pmmodifier{drini}{3}
+\pmtitle{almost periodic function (classical definition)}
+\pmrecord{13}{36567}
+\pmprivacy{1}
+\pmauthor{drini}{3}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42A75}
+\pmsynonym{almost periodic function}{AlmostPeriodicFunctionclassicalDefinition}
+\pmrelated{ExampleOfNonSeperableHilbertSpace}
+\pmdefines{almost periodic}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+A continuous function $f \colon \mathbb{R} \to \mathbb{R}$ is said to be \emph{almost periodic} if, for every $\epsilon > 0$, there exists an a number $L_\epsilon > 0$ such that for every interval $I$ of length $L_\epsilon$ there exists a number $\omega_I \in I$ such that 
+ $$| f(x + \omega_I) - f(x) | < \epsilon$$
+whenever $x \in \mathbb{R}$. 
+
+Intuition: we want the function to have an "approximate period".
+However, it is easy to write too weak condition. First, we want
+uniform estimate in $x$. If we allow $ \omega$ to be small than
+the condition degenerates to uniform continuity. If we require
+a single $ \omega$, than the condition still is too weak (it
+allows pretty wide changes). For periodic function every multiple
+of a period is still a period. So, if the length of an interval
+is longer than the period, then the interval contains a period.
+The definition of almost periodic functions mimics the above
+property of periodic functions: every sufficiently long interval
+should contain an approximate period.
+
+It is possible to generalize this notion.  The range of the function can be taken to be a normed vector space --- in the first definition, we merely need to replace the absolute value with the norm:
+ $$\| f(x + \omega) - f(x) \| < \epsilon$$
+In the second definition, interpret uniform convergence as uniform convergence with respect to the norm.  A common case of this is the case where the range is the complex numbers.  It is worth noting that if the vector space is finite dimensional, a function is almost periodic if and only if each of its components with respect to a basis is almost periodic.
+
+Also the domain may be taken to be a group $G$.  A function is called almost periodic iff set of its translates is pre-compact (compact after completion).
+Equivalently, a continuous function $f$ on a topological group $G$ is
+almost periodic iff there is a compact group $K$, a continuous
+function $g$ on $K$ and a (continuous) homomorphism $h$ form $G$ 
+to $K$ such that $f$ is the composition of $g$ and $h$. 
+ The classical case described above arises when the group is the additive group of the real number field.  Almost periodic functions with respect to groups play a role in the representation theory of non-compact Lie algebras.  (In the compact case, they are trivial --- all continuous functions are almost periodic.)
+
+The notion of an almost periodic function should not be confused with the notion of quasiperiodic function.
+%%%%%
+%%%%%
+\end{document}

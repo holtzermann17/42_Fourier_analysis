@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{InghamInequality}
+\pmcreated{2013-03-22 15:54:58}
+\pmmodified{2013-03-22 15:54:58}
+\pmowner{ncrom}{8997}
+\pmmodifier{ncrom}{8997}
+\pmtitle{Ingham Inequality}
+\pmrecord{8}{37920}
+\pmprivacy{1}
+\pmauthor{ncrom}{8997}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42B05}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+Let $(t_{j})_{j \in \mathbb{Z}}$ a increasing sequence of positive real numbers such that
+\[
+t_{j + 1} - t_{j} \geq \gamma > 1, \quad j \in \mathbb{Z}.
+\]
+Then for all $n \in \mathbb{N}$ and for all complex sequences $(c_{j})_{j = -n}^{n}$, we have
+\[
+m \sum_{j = -n}^{n} |c_{j}|^{2} \leq \int_{-\pi}^{\pi} \left| \sum_{j = -n}^{n} \sqrt{\frac{1}{2\pi}} c_{j}e^{i t_{j} x} \right|^{2} dx,
+\]
+where
+\[
+m = \frac{2}{\pi}\left( 1 - \frac{1}{\gamma^{2}} \right).
+\]
+
+
+%%%%%
+%%%%%
+\end{document}

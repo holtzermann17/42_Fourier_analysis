@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{LaplaceTransformOfAGaussianFunction}
+\pmcreated{2013-03-22 16:03:21}
+\pmmodified{2013-03-22 16:03:21}
+\pmowner{perucho}{2192}
+\pmmodifier{perucho}{2192}
+\pmtitle{Laplace transform of a Gaussian function}
+\pmrecord{5}{38108}
+\pmprivacy{1}
+\pmauthor{perucho}{2192}
+\pmtype{Application}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42-01}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+We evaluate the Laplace transform
+{\footnote{cf. $\emph{Gaussian function}$, wikipedia.org}}
+\begin{align}
+\mathcal{L}\{e^{-t^2}\}=\int_0^\infty e^{-st}e^{-t^2}\,dt=F(s).
+\end{align}
+In fact,
+\begin{align*}
+\mathcal{L}\{e^{-t^2}\}=
+\int_0^\infty e^{-(t^2+2\frac{s}{2}t+\frac{s^2}{4}-\frac{s^2}{4})}\,dt=
+e^\frac{s^2}{4}\!\!\int_0^\infty e^{-(t+\frac{s}{2})^2}\,dt.
+\end{align*}
+By making the change of variable $t+\frac{s}{2}=u$, we have (by the second equality in (1), the variable on operator's argument is immaterial)
+\begin{align*}
+\mathcal{L}\{e^{-t^2}\}=
+e^\frac{s^2}{4}\!\!\int_{\frac{s}{2}}^\infty e^{-u^2}\,du.
+\end{align*}
+That is,
+\begin{align*}
+\mathcal{L}\{e^{-t^2}\}=F(s)=
+\frac{\sqrt{\pi}}{2}e^\frac{s^2}{4}\mathrm{erfc}\Big(\frac{s}{2}\Big),
+\end{align*}
+where $\mathrm{erfc}(\cdot)$ is the complementary error function. Its path of integration is subject to the restriction $\arg{(u)}\to\theta$, with
+$|\theta|\leq\pi/4$ as $u\to\infty$ along the path, with equality only if $\Re{(u^2)}$ remains bounded to the left.
+
+%%%%%
+%%%%%
+\end{document}

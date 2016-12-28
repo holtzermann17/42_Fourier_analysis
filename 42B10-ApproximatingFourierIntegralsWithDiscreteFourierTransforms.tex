@@ -1,0 +1,223 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ApproximatingFourierIntegralsWithDiscreteFourierTransforms}
+\pmcreated{2013-03-22 16:28:23}
+\pmmodified{2013-03-22 16:28:23}
+\pmowner{stevecheng}{10074}
+\pmmodifier{stevecheng}{10074}
+\pmtitle{approximating Fourier integrals with discrete Fourier transforms}
+\pmrecord{9}{38637}
+\pmprivacy{1}
+\pmauthor{stevecheng}{10074}
+\pmtype{Derivation}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42B10}
+\pmclassification{msc}{65T50}
+\pmclassification{msc}{42A38}
+\pmrelated{DiscreteTimeFourierTransformInRelationWithItsContinousTimeFourierTransfrom}
+
+% The standard font packages
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% For neatly defining theorems and definitions
+%\usepackage{amsthm}
+
+% Including EPS/PDF graphics (\includegraphics)
+%\usepackage{graphicx}
+
+% Making matrix-based graphics
+%%%\usepackage{xypic}
+
+% Enumeration lists with different styles
+%\usepackage{enumerate}
+
+% Set up the theorem environments
+%\newtheorem{thm}{Theorem}
+%\newtheorem*{thm*}{Theorem}
+
+\providecommand{\defnterm}[1]{\emph{#1}}
+
+% The standard number systems
+\newcommand{\complex}{\mathbb{C}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\rat}{\mathbb{Q}}
+\newcommand{\nat}{\mathbb{N}}
+\newcommand{\intset}{\mathbb{Z}}
+
+% Absolute values and norms
+% Normal, wide, and big versions of the delimeters
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\absW}[1]{\left\lvert#1\right\rvert}
+\providecommand{\absB}[1]{\Bigl\lvert#1\Bigr\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\normW}[1]{\left\lVert#1\right\rVert}
+\providecommand{\normB}[1]{\Bigl\lVert#1\Bigr\rVert}
+
+% Differentiation operators
+\providecommand{\od}[2]{\frac{d #1}{d #2}}
+\providecommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\providecommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2}}
+\providecommand{\ipd}[2]{\partial #1 / \partial #2}
+
+% Differentials on integrals
+\newcommand{\dx}{\, dx}
+\newcommand{\dt}{\, dt}
+\newcommand{\dmu}{\, d\mu}
+
+% Inner products
+\providecommand{\ip}[2]{\langle {#1}, {#2} \rangle}
+
+% Calligraphic letters
+\newcommand{\sF}{\mathcal{F}}
+\newcommand{\sD}{\mathcal{D}}
+
+% Standard spaces
+\newcommand{\Hilb}{\mathcal{H}}
+\newcommand{\Le}{\mathbf{L}}
+
+% Operators and functions occassionally used in my articles
+\DeclareMathOperator{\D}{D}
+\DeclareMathOperator{\linspan}{span}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\lindim}{dim}
+\DeclareMathOperator{\sinc}{sinc}
+
+% Probability stuff
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+
+\providecommand{\ipB}[2]{\biggl\langle {#1}\,, {#2} \biggr\rangle}
+\DeclareMathOperator{\Vol}{Vol}
+\providecommand{\conjug}[1]{\overline{#1}}
+
+\begin{document}
+\PMlinkescapeword{formula}
+\PMlinkescapeword{size}
+\PMlinkescapeword{components}
+
+Suppose we have a continuous function $f \colon \real^\nu \to \complex$
+for which we want to numerically 
+compute the continuous Fourier transform:
+\[
+\hat{f}(\xi) = \int_{\real^\nu} f(x) \, e^{-2\pi i \xi \cdot x} \, dx\,, 
+\quad \xi \in \real^\nu\,.
+\]
+Assume that either the function $f$ is supported
+inside the compact rectangle
+ $C = [a_1, b_1] \times \dotsb \times [a_\nu, b_\nu]$,
+or that the Fourier integral is well approximated
+by truncating the domain to $C$.
+
+We develop an approximation to $\hat{f}$ 
+based on the discrete Fourier transform
+(which can be computed efficiently using the fast Fourier transform
+algorithm), and analyze the error in making this approximation.
+
+\subsection*{Derivation}
+
+Performing the linear substitution
+\[
+t_j = \frac{x - a_j}{b_j - a_j}\,, \quad j = 1, \dotsc, \nu\,,
+\]
+we find that 
+\begin{align*}
+&\int_C f(x) \, e^{-2\pi i \xi \cdot x } \, dx\\
+=& \Vol(C) \,  e^{-2\pi i \xi \cdot a}
+\int_0^1 \dotsb \int_0^1
+g(t) \,
+e^{-2\pi i \bigl( (b_1 - a_1) \xi_1 t_1 + \dotsb + (b_\nu - a_\nu) \xi_\nu t_\nu \bigr)}\, dt_1 \dotsb dt_\nu \\
+=& \Vol(C) \, e^{-2\pi i \xi \cdot a} \,
+\hat{g}\bigl((b_1 - a_1)\xi_1, \dotsc, (b_\nu - a_\nu) \xi_\nu\bigr)\,,
+\end{align*}
+where
+\[
+g(t_1, \dotsc, t_\nu) = f(a_1 + (b_1 - a_1) t_1, \dotsc, a_\nu + (b_\nu - a_\nu) t_\nu)\,,
+\quad
+t_j \in [0, 1]\,,
+\]
+and $\hat{g}$ denotes the Fourier transform of $g$ on the unit cube $[0,1]^\nu$.
+
+Let $u$ denote the vector with components
+$u(k_1, \dotsc, k_\nu) = g(k_1/N, \dotsc, k_\nu/N)$, for $k_j = 0, \dotsc, N-1$.
+The discrete Fourier transform
+of $u$ is
+\[
+\hat{u}(l) = \sum_{k \in \{0, \dotsc, N-1\}^\nu} u(k) \, e^{-2\pi i k \cdot l/N}\,, \quad l = \{0, \dotsc, N-1\}^\nu\,,
+\]
+and approximates $N^\nu \hat{g}(l)$
+since it is a Riemann sum (step size $1/N$) for the Fourier integral.
+
+Therefore, for $l_j = 0, \dotsc, N-1$,
+we have the approximation:
+\[
+\hat{f}\left( \frac{l_1}{b_1 - a_1}, \dotsc, \frac{l_\nu}{b_\nu - a_\nu} \right)
+\approx \frac{\Vol(C)}{N^\nu} \, e^{-2\pi i \left( \frac{a_1 l_1}{b_1 - a_1} + \dotsb + \frac{a_\nu l_\nu}{b_\nu - a_\nu} \right)} \, \hat{u}(l)\,.
+\]
+
+\subsection*{Analysing the error}
+
+Assume that $g$ can be represented by a pointwise-convergent\footnote{
+Since the discrete Fourier transform requires sampling of points, $\Le^2$
+convergence of the Fourier series is not sufficient. Also, the Fourier series
+may only be conditionally convergent.  If there are difficulties in assuring
+its convergence, Fej\'er summation can be
+used instead in this analysis.}
+ Fourier series:
+\[
+g(t) = \sum_{k \in \intset^\nu} \ip{g}{E_k} \, E_k(t)\,, 
+\]
+where
+\[
+E_k(t) = e^{2\pi i k \cdot t}\,, \quad
+\ip{\alpha}{\beta} = \int_{[0,1]^\nu} \alpha(t) \, \conjug{\beta(t)} \, dt\,.
+\]
+
+The Fourier coefficient of $g$ is 
+$\hat{g}(l) = \ip{g}{E_l}$, and in contrast 
+$\hat{u}(l) = N^\nu \, \ip{g}{E_k}_N$, where:
+\[
+\ip{\alpha}{\beta}_N = \frac{1}{N^\nu} 
+\sum_{k \in \{0, \dotsc, N-1\}^\nu} \alpha(k/N) \, \conjug{\beta(k/N)}
+\] 
+is a positive semi-definite inner product.
+
+We have the exact formula:
+\[
+\hat{f}\left( \frac{l_1}{b_1 - a_1}, \dotsc, \frac{l_\nu}{b_\nu - a_\nu} \right)
+= \Vol(C) \, e^{-2\pi i \left( \frac{a_1 l_1}{b_1 - a_1} + \dotsb + \frac{a_\nu l_\nu}{b_\nu - a_\nu} \right)} \, \hat{g}(l)\,;
+\]
+and we wish to know what error is introduced
+if we were to replace $\hat{g}(l) = \ip{g}{E_l}$
+by the discrete version of the inner product $\ip{g}{E_l}_N = \hat{u}(l)/N^\nu$.
+
+Expand $\ip{g}{E_l}_N$ as:
+\[
+\ip{g}{E_l}_N = \ipB{ 
+\sum_{k \in \intset^\nu} \ip{g}{E_k} E_k}{E_l}_N
+= \sum_{k \in \intset^\nu} \ip{g}{E_k} \ip{E_k}{E_l}_N \,.
+\]
+Since $\ip{E_k}{E_l}_N$ is $1$ if $k_j \equiv l_j \pmod N$ for all $j$,
+and is $0$ otherwise,
+the discrete inner product reduces to:
+\[
+\ip{g}{E_l}_N 
+= \sum_{k \in \intset^\nu} \ip{g}{E_{l + kN}} 
+= \ip{g}{E_l} + \sum_{k \in \intset^\nu \setminus \{0\} } \ip{g}{E_{l + kN}} \,.
+\]
+
+In other words, the approximation entails replacing
+the true Fourier coefficient $\hat{g}(l)$
+with the same coefficient
+plus other Fourier coefficients $\ip{g}{E_{l+kN}}$
+corresponding to higher
+frequencies, in multiples of $N$.
+The magnitude of the approximation error
+for $\hat{f}$
+thus depends on how fast the partial sums
+of the Fourier coefficients $\ip{g}{E_k}$ decay to zero.
+
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,88 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{GeneralizedRiemannLebesgueLemma}
+\pmcreated{2013-03-22 17:06:03}
+\pmmodified{2013-03-22 17:06:03}
+\pmowner{fernsanz}{8869}
+\pmmodifier{fernsanz}{8869}
+\pmtitle{generalized Riemann-Lebesgue lemma}
+\pmrecord{13}{39398}
+\pmprivacy{1}
+\pmauthor{fernsanz}{8869}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42A16}
+%\pmkeywords{Riemann}
+%\pmkeywords{Lebesgue}
+%\pmkeywords{Riemann-Lebesgue}
+%\pmkeywords{fourier coefficientes}
+%\pmkeywords{trigonometric series}
+\pmrelated{RiemannLebesgueLemma}
+\pmrelated{FourierCoefficients}
+\pmrelated{Integral2}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\newtheorem{lem}{Lemma}
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\Real}{\mathbb R}
+\newcommand{\Complex}{\mathbb C}
+\newcommand{\To}{\longrightarrow}
+\begin{document}
+\title{Generalized Riemann-Lebesgue lemma}%
+\author{Fernando Sanz Gamiz}%
+
+
+\begin{lem} Let $h \colon \Real \to \Complex$ be a bounded measurable function.
+If $h$ satisfies the \emph{averaging condition} $$\lim_{c \to
++\infty} \frac{1}{c} \int_0^c h(t) \,d t=0$$ then $$\lim_{\omega \to
+\infty} \int_a^b f(t)h(\omega t) \,d t=0$$ with $ -\infty <
+\! a < b < \! +\infty$ for any $f \in L^1[a,b]$
+
+\end{lem}
+
+\begin{proof}
+Obviously we only need to prove the lemma when both $h$ and $f$ are
+real and $0=a<b<\infty$.
+
+\smallskip
+
+\noindent Let $\mathbf 1_{[a,b]}$ be the indicator function of the
+interval $[a,b]$. Then
+$$\lim_{\omega \to \infty} \int_0^b \mathbf 1_{[a,b]} h(\omega t) \,d t= \lim_{\omega \to \infty} \frac{1}{\omega} \int_0^{\omega b} h(t) \,d
+t=0$$ by the hypothesis. Hence, the lemma is valid for indicators,
+therefore for step functions.
+
+\noindent Now let $C$ be a bound for $h$ and choose $\epsilon$ $>0$.
+As step functions are dense in $L^1$, we can find, for any $f\in
+L^1[a,b]$, a step function $g$ such that $\norm{f-g}_1<\epsilon$,
+therefore
+
+\begin{eqnarray*}
+\lim_{\omega \to \infty} \abs{\int_a^b f(t)h(\omega t)\,d t}  &
+\leqslant & \lim_{\omega \to \infty} \int_a^b \abs{f(t)-g(t)}
+\abs{h(\omega t)} \,d t + \lim_{\omega \to \infty} \abs{\int_a^b
+g(t)h(\omega t) \,d t}
+\\ & \leqslant & \lim_{\omega \to \infty} C\norm{f-g}_1 < C\epsilon
+\end{eqnarray*}
+
+\noindent because $\lim_{\omega \to \infty} \abs{\int_a^b
+g(t)h(\omega t) \,d t}=0$ by what we have proved for step
+functions. Since $\epsilon$ is arbitrary, we are done.
+
+\end{proof}
+%%%%%
+%%%%%
+\end{document}

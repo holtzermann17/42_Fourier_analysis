@@ -1,0 +1,155 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{CommonFourierSeries}
+\pmcreated{2013-03-22 15:41:51}
+\pmmodified{2013-03-22 15:41:51}
+\pmowner{stevecheng}{10074}
+\pmmodifier{stevecheng}{10074}
+\pmtitle{common Fourier series}
+\pmrecord{8}{37641}
+\pmprivacy{1}
+\pmauthor{stevecheng}{10074}
+\pmtype{Example}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42A16}
+%\pmkeywords{triangular wave}
+%\pmkeywords{square wave}
+%\pmkeywords{sawtooth wave}
+\pmrelated{SawBladeFunction}
+\pmrelated{MinimalityPropertyOfFourierCoefficients}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{graphicx}
+%\usepackage{psfrag}
+%%%\usepackage{xypic}
+
+% define commands here
+\newcommand{\complex}{\mathbb{C}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\nat}{\mathbb{N}}
+\newcommand{\intset}{\mathbb{Z}}
+
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\absW}[1]{\left\lvert#1\right\rvert}
+\providecommand{\absB}[1]{\Bigl\lvert#1\Bigr\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\normW}[1]{\left\lVert#1\right\rVert}
+\providecommand{\normB}[1]{\Bigl\lVert#1\Bigr\rVert}
+\providecommand{\defnterm}[1]{\emph{#1}}
+
+\newtheorem{ex}{Example}
+\begin{document}
+This entry gives some examples of commonly encountered periodic functions
+and their Fourier series, with graphs to show the speed of convergence.
+
+We take $[0,1]$ as the model interval,
+with the $n$th Fourier coefficient of a function $f$ defined as
+\[
+\widehat{f}(n) = \int_0^1 f(t) \, e^{-2\pi i n t} \, dt\,, \quad n \in \intset\,.
+\]
+The parameters of the functions in the examples 
+have been chosen to attempt to minimize
+the complexity of $\widehat{f}(0)$.  But the Fourier coefficients for
+the most common \PMlinkescapetext{variations} of the functions given below are easily derived
+by taking the appropriate linear transformations on the coefficients given.
+
+We do not dwell on the convergence of the Fourier series for each function,
+although we note that by a theorem of Dirichlet, the Fourier series for each function (each of bounded variation) converges uniformly on any compact interval where the function is continuous.
+
+\section{Square wave}
+\[
+f(t) = \begin{cases}
+-\frac{1}{2}\,, & t < \frac{1}{2} \\
++\frac{1}{2}\,, & t > \frac{1}{2}\,.
+\end{cases}
+\]
+
+% latex2html hang work-around
+\begin{makeimage}
+\begin{align*}
+\widehat{f}(n) &=
+\begin{cases}
+0\,, & n = 0\\
+\dfrac{1 - e^{i\pi n}}{-2 \pi i n}\,, & n \neq 0
+\end{cases} \\
+&=
+ \begin{cases}
+0\,, & \text{$n$ is even} \\
+-\dfrac{1}{\pi i n}\,, & \text{$n$ is odd.}
+\end{cases} \\
+f(x) &\sim - \frac{2}{\pi} \, \sum_{n \in \nat \text{ odd }} \, \frac{1}{n} \sin 2\pi n t\,.
+\end{align*}
+\end{makeimage}
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics{graphs-1.eps}
+\end{center}
+\caption{Square wave function}
+\end{figure}
+
+\section{Sawtooth wave}
+\[
+f(t) = t - \frac{1}{2}\,.
+\]
+
+% latex2html hang work-around
+\begin{makeimage}
+\begin{align*}
+\widehat{f}(n) &= 
+\begin{cases}
+0\,, & n=0 \\
+-\dfrac{1}{2\pi in}\,, & n \neq 0\,.
+\end{cases} 
+\\
+f(t) &\sim - \frac{1}{\pi} \, \sum_{n \in \nat} \, \frac{1}{n} \sin 2\pi n t\,.
+\end{align*}
+\end{makeimage}
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics{graphs-2.eps}
+\end{center}
+\caption{Sawtooth wave function}
+\end{figure}
+
+\section{Triangular wave}
+\[
+f(t) = \begin{cases}
+t - \frac{1}{4} \,, & t < \frac{1}{2} \\
+-t + \frac{3}{4} \,, & t > \frac{1}{2}\,.
+\end{cases}
+\]
+
+% latex2html hang work-around
+\begin{makeimage}
+\begin{align*}
+\widehat{f}(n) &= 
+\begin{cases}
+0\,, & n=0 \\
+- \dfrac{1-e^{i\pi n}}{2\pi^2 n^2}\,, & n \neq 0\,.
+\end{cases}  \\
+&=
+\begin{cases}
+0\,, & \text{$n$ is even} \\
+- \dfrac{1}{\pi^2 n^2}\,, & \text{$n$ is odd}\,.
+\end{cases} 
+\\
+f(t) &\sim - \frac{2}{\pi^2} \, \sum_{n \in \nat \text{ odd}} \, 
+\frac{1}{n^2} \cos 2\pi n t\,.
+\end{align*}
+\end{makeimage}
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics{graphs-3.eps}
+\end{center}
+\caption{Triangular wave function}
+\end{figure}
+%%%%%
+%%%%%
+\end{document}

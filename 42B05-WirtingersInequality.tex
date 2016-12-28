@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{WirtingersInequality}
+\pmcreated{2013-03-22 14:02:38}
+\pmmodified{2013-03-22 14:02:38}
+\pmowner{rspuzio}{6075}
+\pmmodifier{rspuzio}{6075}
+\pmtitle{Wirtinger's inequality}
+\pmrecord{9}{35393}
+\pmprivacy{1}
+\pmauthor{rspuzio}{6075}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42B05}
+\pmsynonym{Wirtinger inequality}{WirtingersInequality}
+%\pmkeywords{parseval}
+%\pmkeywords{isoperimetric}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\begin{document}
+\newcommand{\R}{\mathbb{R}}
+\PMlinkescapeword{proof}
+\PMlinkescapeword{identity}
+
+\textbf{Theorem: }
+Let $f\colon\R\to\R$ be a periodic function of period $2\pi$, which is
+continuous and has a continuous derivative throughout $\R$, and such
+that
+\begin{equation} \label{eq:1}
+\int_0^{2\pi}f(x)=0\;.
+\end{equation}
+Then
+\begin{equation} \label{eq:2}
+\int_0^{2\pi}f'^2(x)dx\ge\int_0^{2\pi}f^2(x)dx
+\end{equation}
+with equality if and only if $f(x)=a\cos x+b\sin x$ for some $a$ and $b$
+(or equivalently $f(x)=c\sin (x+d)$ for some $c$ and $d$).
+
+\textbf{Proof: }Since Dirichlet's conditions are met, we
+can write
+$$f(x)=\frac{1}{2}a_0+\sum_{n\ge 1}(a_n\sin nx+b_n\cos nx)$$
+and moreover $a_0=0$ by \eqref{eq:1}. By Parseval's identity,
+$$\int_0^{2\pi}f^2(x)dx=\sum_{n=1}^\infty(a_n^2+b_n^2)$$
+and
+$$\int_0^{2\pi}f'^2(x)dx=\sum_{n=1}^\infty n^2(a_n^2+b_n^2)$$
+and since the summands are all $\ge 0$, we get \eqref{eq:2},
+with equality if and only if $a_n=b_n=0$ for all $n\ge 2$.
+
+Hurwitz used Wirtinger's inequality in his tidy 1904
+proof of the isoperimetric inequality.
+%%%%%
+%%%%%
+\end{document}

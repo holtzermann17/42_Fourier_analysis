@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{EveryNormedSpaceWithSchauderBasisIsSeparable}
+\pmcreated{2013-03-22 17:36:07}
+\pmmodified{2013-03-22 17:36:07}
+\pmowner{asteroid}{17536}
+\pmmodifier{asteroid}{17536}
+\pmtitle{every normed space with Schauder basis is separable}
+\pmrecord{11}{40016}
+\pmprivacy{1}
+\pmauthor{asteroid}{17536}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42-00}
+\pmclassification{msc}{15A03}
+\pmclassification{msc}{46B15}
+%\pmkeywords{separable}
+%\pmkeywords{Schauder basis}
+%\pmkeywords{normed vector space}
+%\pmkeywords{normed space}
+%\pmkeywords{Banach space}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\PMlinkescapeword{completes}
+\PMlinkescapeword{dense}
+\PMlinkescapeword{density}
+\PMlinkescapeword{modification}
+\PMlinkescapephrase{dense in}
+
+Here we show that every normed space that has a Schauder basis is
+\PMlinkname{separable}{Separable}.
+Note that we are (implicitly) assuming that the normed spaces in question
+are spaces over the field $K$ where $K$ is either $\mathbb{R}$ or $\mathbb{C}$.
+So let $(X, \left\|\cdot\right\|)$ be a normed space with Schauder basis,
+say $S = \left\{e_1, e_2,\dots\right\}$.
+Notice that our notation implies that $S$ is infinite.
+In finite dimensional case,
+the same proof with a slight modification will yield the result.
+
+Now, set $Q$ to be the set of all finite sums $q_1e_1+\cdots + q_ne_n$
+such that each $q_j = a_j + b_ji$ where $a_j, b_j \in \mathbb{Q}$.
+Clearly $Q$ is countable.
+It remains to show that $Q$ is \PMlinkname{dense}{Dense} in $X$.
+
+Let $\epsilon > 0$. Let $x \in X$.
+By definition of Schauder basis,
+there is a sequence of scalars $(\alpha_n)$
+and there exists $N$ such that for all $n \geq N$ we have,
+$$\left\|\sum_{j=1}^{n}\alpha_je_j - x\right\| < \epsilon/2$$
+But then in particular,
+$$\left\|\sum_{j=1}^{N}\alpha_je_j - x\right\| < \epsilon/2$$
+Furthermore, by density of $\mathbb{Q}$ in $\mathbb{R}$,
+we know that there exist constants
+$a_1,\dots, a_N, b_1,\dots, b_N$ in $\mathbb{Q}$ such that,
+$$\left\|\sum_{j=1}^N(a_j + b_ji)e_j - \sum_{j=1}^N\alpha_je_j\right\|<\epsilon/2$$
+By triangle inequality we obtain:
+$$\left\|\sum_{j=1}^N(a_j + b_ji)e_j - x\right\| \leq \left\|\sum_{j=1}^N(a_j + b_ji)e_j - \sum_{j=1}^N\alpha_je_j\right\| + \left\|\sum_{j=1}^{N}\alpha_je_j - x\right\| < \epsilon$$
+Noting that
+$$\sum_{j=1}^N(a_j + b_ji)e_j$$ is an element of $Q$ (by construction of $Q$)
+and that $x$ and $\epsilon$ were arbitrary,
+we conclude that every neighborhood of $x$ contains an element of $Q$,
+for all $x$ in $X$.
+This proves that $Q$ is dense in $X$ and completes the proof.
+%%%%%
+%%%%%
+\end{document}

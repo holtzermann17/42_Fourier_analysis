@@ -1,0 +1,130 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{PlancherelsTheorem}
+\pmcreated{2013-03-22 16:29:00}
+\pmmodified{2013-03-22 16:29:00}
+\pmowner{stevecheng}{10074}
+\pmmodifier{stevecheng}{10074}
+\pmtitle{Plancherel's theorem}
+\pmrecord{11}{38651}
+\pmprivacy{1}
+\pmauthor{stevecheng}{10074}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42B10}
+\pmclassification{msc}{42A38}
+\pmrelated{ProofOfSamplingTheorem}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{enumerate}
+%\usepackage{graphicx}
+%\usepackage{psfrag}
+%%%\usepackage{xypic}
+
+% define commands here
+\newcommand{\complex}{\mathbb{C}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\rat}{\mathbb{Q}}
+\newcommand{\nat}{\mathbb{N}}
+
+\newcommand{\Le}{\mathbf{L}}
+\newcommand{\FT}{\mathcal{F}}
+\newcommand{\indc}{\mathbb{I}}
+
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\absW}[1]{\left\lvert#1\right\rvert}
+\providecommand{\absB}[1]{\Bigl\lvert#1\Bigr\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\normW}[1]{\left\lVert#1\right\rVert}
+\providecommand{\normB}[1]{\Bigl\lVert#1\Bigr\rVert}
+\providecommand{\defnterm}[1]{\emph{#1}}
+
+
+\begin{document}
+\PMlinkescapeword{states}
+\PMlinkescapeword{terms}
+\PMlinkescapeword{similar}
+
+\subsection{Statement of theorem}
+
+\emph{Plancherel's Theorem} states that 
+the unitary Fourier transform of $\Le^1$ functions 
+(the \PMlinkname{Lebesgue-integrable functions}{Integral3}) on $\real^n$
+extends to a unitary isomorphism on $\Le^2$ (the square-integrable functions).
+
+Thus, the following two fundamental properties hold
+for the Fourier transform $\FT$ on 
+$\Le^2$ functions $g \colon \real^n \to \complex$:
+\begin{enumerate}[i]
+\item
+\[
+\FT^{-1} (\FT g) = g = \FT( \FT^{-1} g )\,.
+\]
+The equalities are as elements of $\Le^2$; in terms of pointwise functions,
+the equalities hold almost everywhere on $\real^n$.
+\item
+The Fourier transform preserves $\Le^2$ norms:
+\[
+\int_{\real^n} \abs{\FT g(\xi)}^2 \, d\xi
+= \norm{ \FT g }_{\Le^2}^2 = \norm{g}_{\Le^2}^2
+= \int_{\real^n} \abs{g(x)}^2 \, dx\,.
+\]
+\end{enumerate}
+
+\subsection{Extension of the Fourier transform to $\Le^2$}
+
+The extension $\FT$ of the usual 
+Fourier transform can be described concretely as follows: given a $\Le^2$ function $g\colon \real^n \to \complex$,
+take any sequence $g_k \colon \real^n \to \complex$
+of $\Le^1$ functions that converge in $\Le^2$ to $g$.
+The Fourier transforms
+\[
+\FT g_k (\xi) = \int_{\real^n} g_k(x) \, e^{-2\pi i \xi \cdot x} \, dx\,,
+\quad \xi \in \real^n
+\]
+are defined as usual,
+and $\FT g$ can be obtained as the $\Le^2$ limit 
+of $\FT g_k$.
+
+In the one-dimensional case, a 
+common sequence of approximating sequences to take is
+$g_k = g \cdot \indc_{[-k,k]}$; in that case we have
+\[
+\FT g(\xi) = \lim_{T \to \infty} \int_{-T}^T g(t) \, e^{-2\pi i \xi t} \, dt\,,
+\quad \xi \in \real\,.
+\]
+
+The inverse Fourier transform $\FT^{-1}$ can be obtained in a similar way
+to $\FT$, using approximating functions $g_k$:
+\[
+\FT^{-1} g_k (x) = \int_{\real^n} g_k(\xi) \, e^{2\pi i \xi \cdot x} \, dx\,,
+\quad x \in \real^n\,.
+\]
+
+\subsection{Note on different conventions}
+
+Here, we have used the convention for the Fourier transform $\FT$ that $\xi$ denotes ``ordinary frequency'', i.e. the exponential contains factors of $2\pi$.  Another common convention has $\xi$ replaced by $\omega$ denoting the ``angular frequency'', with factors $2\pi$ occurring not in the exponent, but as multiplicative constants. In this case property (i) above still holds,
+but property (ii) will not hold unless the multiplicative constants
+in front of the forward and inverse Fourier transform are chosen properly.
+
+\begin{thebibliography}{3}
+\bibitem[Folland]{Folland}
+Gerald B. Folland. \emph{Real Analysis: Modern Techniques and Their Applications}, second ed. Wiley-Interscience, 1999.
+
+\bibitem[Katznelson]{Katznelson}
+Yitzhak Katznelson. \emph{An Introduction to Harmonic Analysis}, second ed. Dover Publications, 1976.
+
+\bibitem[Wiki]{Wiki}
+``
+\PMlinkexternal{Fourier transform}{http://en.wikipedia.org/wiki/Continuous_Fourier_transform}
+'', \emph{Wikipedia, The Free Encyclopedia}.  Accessed 22 December, 2006.
+
+\end{thebibliography}
+
+
+%%%%%
+%%%%%
+\end{document}

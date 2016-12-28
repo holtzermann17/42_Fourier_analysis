@@ -1,0 +1,77 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{FourierTransform}
+\pmcreated{2013-03-22 12:34:28}
+\pmmodified{2013-03-22 12:34:28}
+\pmowner{mathwizard}{128}
+\pmmodifier{mathwizard}{128}
+\pmtitle{Fourier transform}
+\pmrecord{17}{32823}
+\pmprivacy{1}
+\pmauthor{mathwizard}{128}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42A38}
+\pmrelated{Wavelet}
+\pmrelated{ProgressiveFunction}
+\pmrelated{DiscreteFourierTransform}
+\pmrelated{FourierSeriesInComplexFormAndFourierIntegral}
+\pmrelated{TwoDimensionalFourierTransforms}
+\pmrelated{TableOfGeneralizedFourierAndMeasuredGroupoidTransforms}
+\pmdefines{first Parseval theorem}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+The \emph{Fourier transform} $F(s)$ of a function $f(t)$ is defined as follows:
+
+$$ F(s)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-ist}f(t)dt.$$
+
+The Fourier transform exists if $f$ is Lebesgue integrable on the whole real axis.
+
+If $f$ is Lebesgue integrable and can be divided into a finite number of continuous, monotone functions and at every point both one-sided limits exist, the Fourier transform can be inverted:
+
+$$f(t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{ist}F(s)ds.$$
+
+Sometimes the Fourier transform is also defined without the factor $\frac{1}{\sqrt{2\pi}}$ in one direction, but therefore giving the transform into the other direction a factor $\frac{1}{2\pi}$. So when looking a transform up in a table you should find out how it is defined in that table.
+
+The Fourier transform has some important properties, that can be used when solving differential equations. We denote the Fourier transform of $f$ with respect to $t$ in terms of $s$ by $\mathcal{F}_t(f)$.
+\begin{itemize}
+\item $\mathcal{F}_t(af+bg)=a\mathcal{F}_t(f)+b\mathcal{F}_t(g),$\\
+where $a$ and $b$ are constants.
+\item $\mathcal{F}_t\left(\frac{\partial}{\partial t}f\right)=is\mathcal{F}_t(f).$
+\item $\mathcal{F}_t\left(\frac{\partial}{\partial x}f\right)=\frac{\partial}{\partial x}\mathcal{F}_t(f).$
+\item We define the bilateral convolution of two functions $f_1$ and $f_2$ as: 
+$$(f_1\ast f_2)(t):=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f_1(\tau)f_2(t-\tau)d\tau.$$
+Then the following equation holds:
+$$\mathcal{F}_t((f_1\ast f_2)(t))=\mathcal{F}_t(f_1)\cdot\mathcal{F}_t(f_2).$$
+\end{itemize}
+If $f(t)$ is some signal (maybe a \PMlinkescapeword{sound} wave) then the frequency domain of $f$ is given as $\mathcal{F}_t(f)$. Rayleigh's theorem states that then the energy $E$ carried by the signal $f$ given by:
+$$E=\int_{-\infty}^{\infty}|f(t)|^2dt$$
+can also be expressed as:
+$$E=\int_{-\infty}^{\infty}|\mathcal{F}_t(f)(s)|^2ds.$$
+In general we have:
+$$\int_{-\infty}^{\infty}|f(t)|^2dt=\int_{-\infty}^{\infty}|\mathcal{F}_t(f)(s)|^2ds,$$
+also known as the \emph{first Parseval theorem}.
+%%%%%
+%%%%%
+\end{document}

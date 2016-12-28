@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{PoissonSummationFormula}
+\pmcreated{2013-03-22 13:27:25}
+\pmmodified{2013-03-22 13:27:25}
+\pmowner{rmilson}{146}
+\pmmodifier{rmilson}{146}
+\pmtitle{Poisson summation formula}
+\pmrecord{16}{34022}
+\pmprivacy{1}
+\pmauthor{rmilson}{146}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42A16}
+\pmclassification{msc}{42A38}
+\pmsynonym{Poisson summation}{PoissonSummationFormula}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\newcommand{\Rset}{\mathbb{R}}
+\newcommand{\Zset}{\mathbb{Z}}
+\newcommand{\hf}{\hat{f}}
+\newcommand{\rLo}{L^{\!1}}
+\newtheorem{theorem}{Theorem}
+\begin{document}
+Let $f:\Rset\to\Rset$ be an integrable function and let   
+\[\hf(\xi)= \int_{\Rset} e^{-2\pi i\xi x} f(x)dx,\quad \xi\in\Rset.\] 
+be its Fourier transform.   The Poisson summation formula is the assertion that
+\begin{equation}
+  \label{eq:psf}
+  \sum_{n\in\Zset} f(n) = \sum_{n\in\Zset} \hf(n).
+\end{equation}
+whenever $f$ is such that both of the above infinite sums are
+absolutely convergent.
+
+Equation \eqref{eq:psf} is useful because it establishes a
+correspondence between Fourier series and Fourier integrals.  To see
+the connection, let
+\[ g(x)=\sum_{n\in\Zset} f(x+n),\quad x\in\Rset, \] be the periodic
+function obtained by pseudo-averaging\footnote{This terminology is at best a metaphor.  The operation in question is not a genuine mean, in the technical sense of that word.} $f$ relative to $\Zset$ acting
+as the discrete group of translations on $\Rset$.  Since $f$ was
+assumed to be integrable, $g$ is defined almost everywhere, and is
+integrable over $[0,1]$ with
+\[ \Vert g \Vert_{\rLo[0,1]}\leq \Vert f\Vert_{\rLo(\Rset)}.\]
+Since $f$ is integrable, we may interchange integration and summation
+to obtain
+\[\hf(k) = \sum_{n\in\Zset} \int_0^1 f(x+n)e^{-2\pi ik x} dx =
+\int_0^1 e^{-2\pi i k x} g(x) dx
+\] 
+for every $k\in\Zset$.  In other words, the restriction of the Fourier
+transform of $f$ to the integers gives the Fourier coefficients of the
+averaged, periodic function $g$.  Since we have assumed that the
+$\hf(k)$ form an absolutely convergent series, we have that
+\[ g(x) = \sum_{k\in\Zset} \hf(k) e^{2\pi ik x}\] in the sense of
+uniform convergence.  Evaluating the above equation at $x=0$, we
+obtain the Poisson summation formula \eqref{eq:psf}.
+%%%%%
+%%%%%
+\end{document}

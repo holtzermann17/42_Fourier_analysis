@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ProgressiveFunction}
+\pmcreated{2013-03-22 14:28:20}
+\pmmodified{2013-03-22 14:28:20}
+\pmowner{swiftset}{1337}
+\pmmodifier{swiftset}{1337}
+\pmtitle{progressive function}
+\pmrecord{4}{35993}
+\pmprivacy{1}
+\pmauthor{swiftset}{1337}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42A99}
+\pmrelated{FourierTransform}
+\pmdefines{regressive function}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+\newcommand{\supp}{\ensuremath{\mathop{\rm supp}}}
+\newcommand{\R}{\ensuremath{\mathbb R}}
+
+\paragraph{Definition}
+A function $f \in L^2(\R)$ is called \emph{progressive} iff its Fourier transform is supported by positive frequencies only:
+$$\supp \hat{f} \subseteq \R_+.$$
+It is called \emph{regressive} iff the time reversed function $f(-t)$ is progressive, or equivalently, if 
+$$\supp \hat{f} \subseteq \R_-.$$
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,188 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ProofOfSamplingTheorem}
+\pmcreated{2013-03-22 16:28:57}
+\pmmodified{2013-03-22 16:28:57}
+\pmowner{stevecheng}{10074}
+\pmmodifier{stevecheng}{10074}
+\pmtitle{proof of sampling theorem}
+\pmrecord{13}{38650}
+\pmprivacy{1}
+\pmauthor{stevecheng}{10074}
+\pmtype{Proof}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42A38}
+\pmclassification{msc}{94A20}
+\pmrelated{PlancherelsTheorem}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+%\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{graphicx}
+%\usepackage{psfrag}
+%%%\usepackage{xypic}
+
+% define commands here
+\newcommand{\complex}{\mathbb{C}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\rat}{\mathbb{Q}}
+\newcommand{\nat}{\mathbb{N}}
+\newcommand{\intset}{\mathbb{Z}}
+\newcommand{\Hilb}{\mathcal{H}}
+\newcommand{\FT}{\mathcal{F}}
+\newcommand{\Le}{\mathbf{L}}
+
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\absW}[1]{\left\lvert#1\right\rvert}
+\providecommand{\absB}[1]{\Bigl\lvert#1\Bigr\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\normW}[1]{\left\lVert#1\right\rVert}
+\providecommand{\normB}[1]{\Bigl\lVert#1\Bigr\rVert}
+\providecommand{\defnterm}[1]{\emph{#1}}
+
+\DeclareMathOperator{\sinc}{sinc}
+\begin{document}
+\PMlinkescapeword{sides}
+\PMlinkescapeword{side}
+\PMlinkescapeword{length}
+\PMlinkescapeword{estimate}
+\PMlinkescapeword{representation}
+
+\subsection{Set-up}
+
+Let $w > 0$ be the (two-sided) bandwidth.  The variable $\xi$ below will denote
+frequency, and the variable $t$ will denote time.
+(Both $w$ and $\xi$ are measured in \PMlinkescapetext{cycles per unit time}.)
+
+Consider the space of functions:
+\[
+\Hilb' = \{ g \in \Le^2(\real) \colon g(\xi) = 0 \text{ for almost all } \abs{\xi} > w/2 \}
+\]
+which is clearly seen to be a complex Hilbert space with the usual inner product for $\Le^2(\real)$.
+
+Let $\FT$ denote the Fourier transform on $\Le^2(\real)$,
+which is a unitary transform by Plancherel's theorem.
+So,
+\[
+\Hilb = \{ f \in \Le^2(\real) \colon 
+(\FT f)(\xi) = 0 \text{ for almost all } \abs{\xi} > w/2 \} 
+= \FT^{-1} \Hilb'
+\]
+is also a Hilbert space.
+
+\subsection{Computation of orthonormal basis}
+
+One orthonormal basis for $\Hilb'$ consists of the usual Fourier \PMlinkescapetext{basis} functions
+on the interval $[-w/2, w/2]$, extended to be zero on $\real \setminus [-w/2, w/2]$:
+\[
+\phi_n(\xi) = \begin{cases}
+\frac{1}{\sqrt{w}} e^{-2 \pi i n \xi/w}\,, & \abs{\xi} \leq w/2 \\
+0\,, & \abs{\xi} > w/2\,,
+\end{cases}
+\quad
+n \in \intset\,.
+\]
+Mapping these by $\FT^{-1}$ produces an orthonormal basis for $\Hilb$:
+\begin{align*}
+(\FT^{-1} \phi_n)(t) &= \frac{1}{\sqrt{w}} \int_{-w/2}^{w/2} e^{-2 \pi i n \xi/w}
+\, e^{2\pi i \xi t} \, d\xi \\
+&= \frac{1}{\sqrt{w}} \int_{-w/2}^{w/2} e^{2 \pi i \xi (t-n/w)} \, d\xi \\
+&= \frac{1}{\sqrt{w}} \bigl( w \, \sinc(w (t-n/w)) \bigr) = \sqrt{w} \, \sinc(wt-n)\,,
+\end{align*}
+where we have used the fact that the Fourier transform of $t \mapsto w \, \sinc(wt)$ (normalized sinc function)
+is the rectangular box function of bandwidth $w$, and vice versa.
+
+\subsection{Expansion by orthonormal basis}
+
+Given $f \in \Hilb$, let $g = \FT f \in \Hilb'$.
+We can expand $g$ in a Fourier series with respect
+to the \PMlinkescapetext{basis} $\{ \phi_n \}$:
+\[
+g(\xi) = \sum_{n \in \intset} \langle g, \phi_n \rangle \, \phi_n(\xi)\,,
+\]
+with the infinite sum converging in $\Le^2(\real)$.
+Taking $\FT^{-1}$ of both sides,
+we obtain:
+\[
+f(t) = (\FT^{-1} g)(t) = \sum_{n \in \intset}
+\langle g, \phi_n \rangle \, (\FT^{-1} \phi_n)(t) 
+=
+\sqrt{w} \sum_{n \in \intset}
+\langle g, \phi_n \rangle \, \sinc(wt-n)\,.
+\]
+Moreover,
+\[
+\langle g, \phi_n \rangle =
+\frac{1}{\sqrt{w}} \int_{-\infty}^\infty g(\xi) \, e^{2\pi i n \xi/w} \, d\xi
+= \frac{1}{\sqrt{w}} (\FT^{-1} g)\Bigl( \frac{n}{w} \Bigr) = \frac{1}{\sqrt{w}} f\Bigl( \frac{n}{w} \Bigr)\,.
+\]
+(Since $g$ is also in $\Le^1$, its inverse Fourier transform
+$\FT^{-1}g$ is a continuous function.  
+Provided that we modify
+$f$ on a set of measure zero, we can assume that $f = \FT^{-1} (\FT f) = \FT^{-1} g$ is continuous.  So it is legal to talk about the pointwise
+values $f(n/w)$.)
+
+\subsection{Result}
+
+Hence, we arrive at the representation:
+\[
+f(t) = \sum_{n \in \intset} f\Bigl( \frac{n}{w} \Bigr) \, \sinc(wt - n)\,,
+\]
+thereby reconstructing any $f \in \Hilb$ --- a square-integrable band-limited 
+function ---
+from its samples at every time period of length $1/w$.
+
+\subsection{Uniform and absolute convergence of series}
+
+The infinite series for $f$ converges in $\Le^2$
+by construction, but in fact it also converges uniformly and absolutely.
+To see this, first note that by the Cauchy-Schwarz inequality,
+\[
+\sum_{n \in \intset} \abs{ f(\tfrac{n}{w}) }
+\, \abs{\sinc (wt-n)}
+\leq \Bigl( \sum_{n \in \intset} \abs{f(\tfrac{n}{w})}^2 \Bigr)^{1/2}
+\Bigl( \sum_{n \in \intset} \sinc^2(wt -n) \Bigr)^{1/2}\,.
+\]
+The series $\sum_n \abs{f(n/w)}^2$ converges by Parseval's theorem
+($w^{-1/2} f(n/w)$ are the Fourier coefficients of $g$).
+Also, the series $\sum_n \sinc^2(wt-n)$ is uniformly bounded for all $t \in \real$.  To prove this, it suffices to 
+restrict to $t$ bounded inside $[0, 1/w]$
+as the function $t \mapsto \sum_n \sinc^2(wt-n)$ is $1/w$-periodic; and then 
+it becomes an easy estimate using the fact that $\sum_n n^{-2} < \infty$.
+It follows that the series $\sum_n \abs{f(n/w)} \abs{\sinc(wt-n)}$
+is uniformly bounded for all $t$,
+and its tail tends to zero uniformly in $t$.
+
+\subsection{Illustrations}
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics{bessel.eps}
+\caption{Reconstructing a Bessel function (of the first kind), using a $\sinc$ series with $n = -10, -9 \dotsc, 0, \dotsc, 10$.  Theoretically exact bandwidth is $w = 1/\pi \approx 0.32$.}
+\end{center}
+\end{figure}
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics{bessel-extra.eps}
+\caption{Effect of under-sampling and over-sampling beyond the actual bandwidth of the function}
+\end{center}
+\end{figure}
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics{basis.eps}
+\caption{The basis functions $\sinc(t)$, $\tfrac12 \sinc(t\pm 1)$, $\tfrac14 \sinc(t \pm 2)$}
+\end{center}
+\end{figure}
+
+\begin{itemize}
+\item
+\PMlinkexternal{Python program to produce the three figures}{http://aux.planetmath.org/files/objects/8650/sample.py}
+\end{itemize}
+
+%%%%%
+%%%%%
+\end{document}

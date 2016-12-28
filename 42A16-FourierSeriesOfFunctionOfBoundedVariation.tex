@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{FourierSeriesOfFunctionOfBoundedVariation}
+\pmcreated{2013-03-22 17:58:00}
+\pmmodified{2013-03-22 17:58:00}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{Fourier series of function of bounded variation}
+\pmrecord{7}{40472}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42A16}
+\pmclassification{msc}{42A20}
+\pmclassification{msc}{26A45}
+\pmrelated{DirichletConditions}
+\pmrelated{FourierCoefficients}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+ \usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\theoremstyle{definition}
+\newtheorem*{thmplain}{Theorem}
+
+\begin{document}
+\PMlinkescapeword{expansion}
+
+If the real function $f$ is of bounded variation on the interval \,$[-\pi,\,+\pi]$,\, then its Fourier series expansion
+\begin{align}
+\frac{a_0}{2}+\sum_{n=1}^\infty(a_n\cos{nx}+b_n\sin{nx})
+\end{align}
+with the \PMlinkname{coefficients}{FourierCoefficients}
+\begin{align}
+\begin{cases}
+a_n &= \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\cos{nx}\,dx\\
+b_n &= \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\sin{nx}\,dx
+\end{cases}
+\end{align}
+converges at every point of the interval. The sum of the series is at the interior points $x$ equal to the arithmetic mean of the \PMlinkname{left-sided}{OneSidedLimit} and the right-sided limit of $f$ at $x$ and at the end-points of the interval equal to\,
+$\displaystyle\frac{1}{2}\left(\lim_{x\to-\pi+}f(x)+\lim_{x\to+\pi-}f(x)\right)$.\\
+
+\textbf{Remark 1.}\, Because of the periodicity of the terms of the terms, the expansion (1) converges for all real values of $x$ and it represents a periodic function with the period $2\pi$.\\
+
+\textbf{Remark 2.}\, If the function $f$ is of bounded variation, instead of\, $[-\pi,\,+\pi]$,\, on the interval 
+\,$[-p,\,+p]$\, the equations (1) and (2) may be converted via the change of variable 
+\,$\displaystyle x := \frac{pt}{\pi}$\, to
+\begin{align}
+\frac{a_0}{2}+\sum_{n=1}^\infty(a_n\cos\frac{n\pi t}{p}+b_n\sin\frac{n\pi t}{p})
+\end{align}
+and
+\begin{align}
+\begin{cases}
+a_n &= \frac{1}{p}\int_{-p}^p f(t)\cos\frac{n\pi t}{p}\,dt\\
+b_n &= \frac{1}{p}\int_{-p}^p f(t)\sin\frac{n\pi t}{p}\,dt.
+\end{cases}
+\end{align}
+Correspondingly, the sum of (3) at the points of\, $[-p,\,+p]$\, is expressed via the left-sided and righr-sided limits of $f(t)$.
+
+
+
+%%%%%
+%%%%%
+\end{document}

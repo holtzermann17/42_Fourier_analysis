@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ParsevalEquality}
+\pmcreated{2013-03-22 13:57:10}
+\pmmodified{2013-03-22 13:57:10}
+\pmowner{asteroid}{17536}
+\pmmodifier{asteroid}{17536}
+\pmtitle{Parseval equality}
+\pmrecord{11}{34717}
+\pmprivacy{1}
+\pmauthor{asteroid}{17536}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42B05}
+\pmsynonym{Parseval equation}{ParsevalEquality}
+\pmsynonym{Parseval identity}{ParsevalEquality}
+\pmsynonym{Lyapunov equation}{ParsevalEquality}
+\pmrelated{BesselInequality}
+\pmrelated{ValueOfTheRiemannZetaFunctionAtS2}
+\pmdefines{Parseval theorem}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+\subsection{Parseval's Equality}
+
+{\bf Theorem. --} If $\{e_j\!:\; j \in J \}$ is an orthonormal basis of an Hilbert space $H$, then for every $x \in H$ the following equality holds:
+\begin{displaymath}
+\|x\|^2 = \sum_{j \in J} | \langle x , e_j \rangle |^2 .
+\end{displaymath}
+
+The above theorem is a more sophisticated form of Bessel's inequality (where the inequality is in fact an equality). The difference is that for Bessel's inequality it is only required that the set $\{e_j : j \in J \}$ is an orthonormal set, not necessarily an orthonormal basis.
+
+\subsection{Parseval's Theorem}
+
+Applying Parseval's equality on the Hilbert space \PMlinkname{$L^2([-\pi,\pi])$}{LpSpace}, of square integrable functions on the interval $[-\pi,\pi]$, with the orthonormal basis consisting of trigonometric functions, we obtain
+
+{\bf Theorem (Parseval's theorem). --} Let $f$ be a Riemann square integrable function from $[-\pi,\pi]$ to $\mathbb{R}$.\, The following equality holds
+$$\frac{1}{\pi}\int_{-\pi}^{\pi}f^2(x)dx = \frac{(a_0^f)^2}{2} + \sum_{k=1}^{\infty}[(a_k^f)^2+(b_k^f)^2],$$
+where $a_0^f$, $a_k^f$, $b_k^f$ are the Fourier coefficients of the function $f$.
+
+The function $f$ can be a Lebesgue-integrable function, if we use the Lebesgue integral in place of the Riemann integral.
+%%%%%
+%%%%%
+\end{document}

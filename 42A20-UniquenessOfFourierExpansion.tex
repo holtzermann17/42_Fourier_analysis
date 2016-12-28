@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{UniquenessOfFourierExpansion}
+\pmcreated{2013-03-22 18:22:16}
+\pmmodified{2013-03-22 18:22:16}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{uniqueness of Fourier expansion}
+\pmrecord{5}{41012}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Result}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42A20}
+\pmclassification{msc}{42A16}
+\pmclassification{msc}{26A06}
+\pmsynonym{uniqueness of Fourier series}{UniquenessOfFourierExpansion}
+\pmrelated{FourierSineAndCosineSeries}
+\pmrelated{MinimalityPropertyOfFourierCoefficients}
+\pmrelated{DeterminationOfFourierCoefficients}
+\pmrelated{ComplexSineAndCosine}
+\pmrelated{UniquenessOfDigitalRepresentation}
+\pmrelated{UniquenessOfLaurentExpansion}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+ \usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\theoremstyle{definition}
+\newtheorem*{thmplain}{Theorem}
+
+\begin{document}
+If a real function $f$, Riemann integrable on the interval\, $[-\pi,\,\pi]$,\, may be expressed as sum of a trigonometric series
+\begin{align}
+f(x) = \frac{a_0}{2}\!+\!\sum_{m=1}^\infty(a_m\cos{mx}+b_m\sin{mx})
+\end{align}
+where the series $a_1\!+\!b_1\!+\!a_2\!+\!b_2\!+\!a_3\!+\!b_3\!+\ldots$ of the coefficients converges absolutely, then the series (1) converges uniformly on the interval and can be \PMlinkname{integrated termwise}{SumFunctionOfSeries}.\, The same concerns apparently the series which are gotten by multiplying the equation (1) by $\cos{nx}$ and by $\sin{nx}$;\, the results of the integrations determine for the coefficients $a_n$ and $b_n$ the unique values
+\begin{align*}
+a_n &= \frac{1}{\pi}\!\int_{-\pi}^{\pi} f(x)\cos{nx}\,dx,\\
+b_n &= \frac{1}{\pi}\!\int_{-\pi}^{\pi} f(x)\sin{nx}\,dx
+\end{align*}
+for any $n$.\, So the Fourier series of $f$ is unique.\\
+
+As a consequence, we can infer that the well-known goniometric formula
+$$\sin^2{x} = \frac{1-\cos{2x}}{2}$$
+presents the Fourier series \PMlinkescapetext{expansion} of the even function $\sin^2{x}$.
+
+%%%%%
+%%%%%
+\end{document}

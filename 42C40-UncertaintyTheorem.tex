@@ -1,0 +1,109 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{UncertaintyTheorem}
+\pmcreated{2013-03-22 18:50:37}
+\pmmodified{2013-03-22 18:50:37}
+\pmowner{dh2718}{16929}
+\pmmodifier{dh2718}{16929}
+\pmtitle{uncertainty theorem}
+\pmrecord{14}{41649}
+\pmprivacy{1}
+\pmauthor{dh2718}{16929}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42C40}
+\pmrelated{UncertaintyPrinciple}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+The uncertainty principle, as first formulated by Heisenberg, states that the product of the standard deviations of two {\it conjugated} variables, cannot be less than some minimum. This statement has been generalized to a precise mathematical theorem, in the frame of {\it wavelet} theory.
+
+\section{THE UNCERTAINTY THEOREM}
+
+	Let $f(t)$ be a real function of the real variable, satisfying the $L^2$ condition (see below), and $F(\omega)$ its Fourier transform. The standard deviation $\Delta_t$ and $\Delta_\omega$ of $t$ and $\omega$ respectively, satisfy the following inequality:
+$$\Delta_t\Delta_\omega\geq\frac{1}{2}$$
+For this formula to make sense, $\Delta_t$ and $\Delta_\omega$ must be precisely defined. 
+
+\section{THE {\boldmath$L^2$} CONDITION}
+
+	A real function $f(t)$ of the real variable $t$ will be said to satisfy the 
+$L^2$ condition if $f(t)$, $tf(t)$ and the derivative $f'(t)$ are all in $L^2$. \newline
+ If $F(\omega)$ is its Fourier transform, $-i\omega F(\omega)$ is the transform of $f'(t)$. All the following functions belong to $L^2$:
+$$f(t),~f'(t),~tf(t),~F(\omega),~\omega F(\omega)$$
+The first three functions are just the definition and the two last ones result from Parseval's identity, recalled here in its integral form:
+$$\int_{-\infty}^{\infty} \overline{U(\omega)}V(\omega) d\omega~=~2\pi\int_{-\infty}^{\infty} \overline{u(t)}v(t) dt$$
+$U(\omega)$ and $V(\omega)$ are the Fourier transforms of $u(t)$ and $v(t)$.
+
+\section{DEFINITIONS}
+
+$f(t)$ and $F(\omega)$ being in $L^2$, we may define their finite norms:
+$$ \mid\mid f \mid\mid ^2  = \int_{-\infty}^{\infty} \mid f(t) \mid ^2 dt ~~~~~~~~ \mid\mid F \mid\mid ^2  = \int_{-\infty}^{\infty} \mid F(\omega) \mid ^2 d\omega $$
+By Parseval's identity, they are related:
+$$ \mid\mid f \mid\mid ^2  = \frac{1}{2\pi} \mid\mid F \mid\mid ^2$$
+We are now able to define the probability distributions $T(t)$ and $\Omega(\omega)$ for the "random" variables $t$ and $\omega$:
+$$ T(t) = \frac{\mid\ f(t) \mid ^2}{\mid\mid f \mid\mid ^2} ~~~~~~~~
+\Omega(\omega) = \frac{\mid\ F(\omega) \mid ^2}{\mid\mid F \mid\mid ^2}$$
+Since the $L^2$ integrals of $T$ and $\Omega$ are 1, they are proper probability distributions. The {\it mean value} $t_0$ of $t$ is defined the usual way:
+$$t_0 = \int_{-\infty}^{\infty}tT(t)dt$$
+Note that $\omega$'s mean value is always 0 because $f(t)$ is a real function.
+Finally, we have the standard deviations for the uncertainty theorem:
+$$\Delta_t^2 = \int_{-\infty}^\infty T(t)(t-t_0)^2dt ~~~~~~~~
+\Delta_{\omega}^2 = \int_{-\infty}^\infty \Omega(\omega)(t-t_0)^2d\omega$$
+
+\section{PROOF OF THE THEOREM}
+
+The heart of the proof is the Cauchy-Schwarz inequality in the $L^2$ Hilbert space: the product of the norms of two functions $u(t)$ and $v(t)$ is greater than, or equal to, the norm of their scalar product:
+$$\int_{-\infty}^\infty \mid u(t)\mid ^2 dt\int_{-\infty}^\infty \mid v(t)\mid ^2 dt ~~~\geq~~~
+\mid \int_{-\infty}^\infty \overline{u(t)} v(t) dt\mid ^2$$
+Equality occurs if, and only if, one of the functions is proportional to the other. For the two functions $u(t) = (t-t_0)f(t)$ and $v(t) = f'(t)$, we have therefore:
+$$\int_{-\infty}^\infty (t-t_0)^2 f(t)^2 dt \int_{-\infty}^\infty f'(t)^2 dt   ~~~\geq~~~  \mid\int_{-\infty}^\infty (t-t_0)f(t)f'(t)dt \mid ^2$$
+The integral at the right hand side can be integrated by parts. Using the definition of $\mid\mid f\mid\mid$:
+$$\int_{-\infty}^\infty (t-t_0)^2 f(t)^2 dt \int_{-\infty}^\infty f'(t)^2 dt   ~~~\geq~~~ \frac{1}{4}\mid\mid f\mid\mid^4$$
+But $\mid\mid f\mid\mid$ and $\mid\mid F\mid\mid$ are related by a $2\pi$ factor, so:
+$$\int_{-\infty}^\infty (t-t_0)^2 f(t)^2 dt \int_{-\infty}^\infty f'(t)^2 dt   ~~~\geq~~~ \frac{1}{8\pi}\mid\mid f\mid\mid^2\mid\mid F\mid\mid^2$$
+Applying Parseval's identity to the second integral of the left hand side, we get:
+$$\frac{1}{2\pi}\int_{-\infty}^\infty (t-t_0)^2 f(t)^2 dt \int_{-\infty}^\infty \omega^2
+F(\omega)^2 d\omega ~~~\geq~~~ \frac{1}{8\pi}\mid\mid f\mid\mid^2\mid\mid F\mid\mid^2$$
+We have used the fact that the Fourier transform of $f'(t)$ if $-i\omega F(\omega)$. \newline
+Now, dividing both sides by the norms, and simplifying by the $2\pi$ factor, we get exactly the uncertainty theorem:
+$$\int_{-\infty}^\infty (t-t_0)^2 T(t) dt \int_{-\infty}^\infty \omega^2
+F(\omega)^2 d\omega   ~~~\geq~~~ \frac{1}{4}$$
+
+\section{THE GAUSSIAN FUNCTION}
+
+The Cauchy-Schwarz inequality becomes an equality if, and only if, one of the functions is proportional to the other. In our case, this condition is expressed by $f'(t)=\lambda(t-t_0)f(t)$ where $\lambda$ is a constant. This differential equation is readily solved: $f(t)=ke^{\lambda (t-t_0)^2}$. $f(t)$ must be in $L^2$ so that $\lambda$ must be negative. Defining $\lambda = \frac{-1}{2\sigma^2}$, we get the gaussian function in its traditional form: $$f(t)=e^{\frac{-(t-t_0)^2}{2\sigma^2}}$$ The constant $k$ has been omitted because it cancels anyway in the probability distributions. The standard deviations are easily computed from their definitions:
+$$\Delta_t = \frac{\sigma}{\sqrt{2}} \hspace{32pt} \Delta_\omega = \frac{1}{\sigma\sqrt{2}}$$
+Their product is $\frac{1}{2}$, independent of $\sigma$. There is no other function with this property.
+
+\begin{thebibliography}{1}
+\bibitem {A} Roberto Celi {\it Time-Frequency visualization of helicopter noise}\newline 
+http://celi.umd.edu/Jour/NoisePaperColor.pdf\newline
+Despite its frightening title, this paper is mostly theoretical and it is the only place where I saw the uncertainty theorem clearly stated.
+\bibitem {B} Robi Polikar {\it The wavelet tutorial}\newline
+http://users.rowan.edu/~polikar/wavelets/wttutorial.html
+\end{thebibliography}
+
+%%%%%
+%%%%%
+\end{document}

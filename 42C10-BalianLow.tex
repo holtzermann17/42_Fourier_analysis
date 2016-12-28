@@ -1,0 +1,49 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{BalianLow}
+\pmcreated{2013-03-22 15:35:12}
+\pmmodified{2013-03-22 15:35:12}
+\pmowner{swiftset}{1337}
+\pmmodifier{swiftset}{1337}
+\pmtitle{Balian-Low}
+\pmrecord{4}{37497}
+\pmprivacy{1}
+\pmauthor{swiftset}{1337}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42C10}
+%\pmkeywords{OrthonormalBasis}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\newtheorem{thm}{Theorem}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\begin{document}
+\begin{thm}[Balian-Low]
+Suppose $g \in L^2(\R)$ and $g_{m,n}(x) = e^{2\pi i m x} g(x - n)$, where $m,n \in \Z$.
+If $\{g_{m,n}: m, n \in \Z\}$ is an orthonormal basis for $L^2(\R)$, then either
+$$\int_{-\infty}^\infty x^2 |g(x)|^2\; dx = \infty \text{ or } \int_{-\infty}^\infty \xi^2|\hat{g}(\xi)|^2\; d\xi = \infty. $$
+\end{thm}
+%%%%%
+%%%%%
+\end{document}

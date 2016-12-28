@@ -1,0 +1,156 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{PeriodicExtension}
+\pmcreated{2013-03-22 17:33:00}
+\pmmodified{2013-03-22 17:33:00}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{periodic extension}
+\pmrecord{17}{39955}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42A99}
+\pmrelated{PeriodicFunctions}
+\pmrelated{TriangularWaveFunction}
+\pmrelated{SawBladeFunction}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+\usepackage{psfrag}
+
+% define commands here
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\begin{document}
+Let $f$ be a function defined on some real interval $[a,b]$.  By a \emph{periodic extension} of $f$ to the real line we mean a function $g$ such that 
+\begin{enumerate}
+\item $g$ is defined on $\mathbb{R}$ except perhaps at points $a+n(b-a)$, where $n\in\mathbb{Z}$;
+\item $g(x)=f(x)$ for all $x\in (a,b)$, and
+\item $g(x+n(a-b))=g(x)$ for all $x\in (a,b)$ and all integers $n$.
+\end{enumerate}
+
+The best way to understand periodic extensions of a function is to look the graph of a periodic extension of a real-valued function.  For example, let $f(x)=x$ be defined on $[-1,1]$.  The graph of $f$ looks like 
+\begin{center}
+\begin{pspicture}(-6,-2)(6,2)
+\psaxes[Dx=9,Dy=2]{->}(0,0)(-5.5,-1.5)(5.5,1.5)
+\rput(5.8,0){$x$}
+\rput(0.2,1.6){$y$}
+\psline(-1,-1)(1,1)
+\psdots[dotscale=1](1,1)(-1,-1)
+\end{pspicture}
+\end{center}
+
+Then the graph a periodic extension $g$ of $f$ may look like
+\begin{center}
+\begin{pspicture}(-6,-2)(6,2)
+\psaxes[Dx=9,Dy=2]{->}(0,0)(-5.5,-1.5)(5.5,1.5)
+\rput(5.8,0){$x$}
+\rput(0.2,1.6){$y$}
+\psline(-5.5,0.5)(-5,1)
+\psline(-5,-1)(-3,1)
+\psline(-3,-1)(-1,1)
+\psline(-1,-1)(1,1)
+\psline(1,-1)(3,1)
+\psline(3,-1)(5,1)
+\psline(5,-1)(5.5,-0.5)
+\psdots[dotstyle=o,dotscale=1](-1,-1)(-3,-1)(1,-1)(-5,-1)(3,-1)(5,-1)
+\psdots[dotscale=1](1,1)(-1,1)(3,1)(-3,1)(5,1)(-5,1)
+\end{pspicture}
+\end{center}
+
+or look like
+
+\begin{center}
+\begin{pspicture}(-5.5,-2)(5.5,2)
+\psaxes[Dx=9,Dy=2]{->}(0,0)(-5.5,-1.5)(5.5,1.5)
+\rput(5.8,0){$x$}
+\rput(0.2,1.6){$y$}
+\psline(-5.5,0.5)(-5,1)
+\psline(-5,-1)(-3,1)
+\psline(-3,-1)(-1,1)
+\psline(-1,-1)(1,1)
+\psline(1,-1)(3,1)
+\psline(3,-1)(5,1)
+\psline(5,-1)(5.5,-0.5)
+\psdots[dotstyle=o,dotscale=1](-1,-1)(1,1)(-3,-1)(-1,1)(1,-1)(3,1)(-5,-1)(-3,1)(3,-1)(5,1)(-5,1)(5,-1)
+\psdots[dotscale=1](-1,0)(1,0)(-3,0)(3,0)(-5,0)(5,0)
+\end{pspicture}
+\end{center}
+
+Notice the two periodic extensions of $f$ are identical except at odd integer points on the $x$-axis.  The reason why we do not require $g$ to agree with $f$ on the end points of $[a,b]$ is because we do not know if $f(a)=f(b)$.  If they do not agree, requiring that $g=f$ on all of $[a,b]$ may result in points $a+n(b-a)$ getting mapped to two distinct values $f(a)$ and $f(b)$, rendering $g$ not well-defined.  In fact, if $f$ does not agree on its endpoints, no periodic extensions of $f$ are continuous.
+
+Notice, also, that the domain of function $f$ does not have to be the entire closed interval $[a,b]$.  The domain of $f$ may very well be a subset $S\subseteq [a,b]$.  For example, $f(x)=x$ may be a function defined on the open interval $(-1,1)$.  The two graphs above are again graphs of periodic extensions of $f$.  
+
+However, if $S$ is a proper subset of $[a,b]$ that is not the open interval $(a,b)$, then the definition of a periodic extension needs to be modified: $g$ is a periodic extension of $f$ defined on $S\subseteq [a,b]$ if 
+\begin{enumerate}
+\item $g$ is defined on a subset $T\subseteq \mathbb{R}$ except perhaps at points $a+n(b-a)$, where $T=\lbrace x+n(a-b)\mid x\in S\rbrace$ and $n\in\mathbb{Z}$;
+\item $g(x)=f(x)$ for all $x\in S-\lbrace a,b\rbrace$, and
+\item $g(x+n(a-b))=g(x)$ for all $x\in S-\lbrace a,b\rbrace$ and all integers $n$.
+\end{enumerate}
+We generally assume that $a=\inf S$ and $b=\sup S$.
+
+For example, if $f(x)=x$ for all rational numbers $x\in [-1,1]$, then a periodic extension of $f$ has its domain the set of all rational numbers except perhaps at are odd integers.
+
+\textbf{Remarks}.
+\begin{itemize}
+\item
+Trigonometric functions defined on $\mathbb{R}$ are periodic extensions of the trigonometric functions defined for angles in the interval $[0,2\pi]$.
+\item
+Suppose $f$ is defined either on a closed interval $[a,b]$ or an open interval $(a,b)$, $f$ has a continuous periodic extension (defined on all of $\mathbb{R}$) iff $f$ is continuous and that 
+\begin{enumerate}
+\item
+either $f(a)=f(b)$ when $f$ is defined on a closed interval, or 
+\item
+$f(a+)=f(b-)$ when $f$ is defined on an open interval, where $f(a+)$ is the one-sided limit approaching $a$ from the right, and $f(b-)$ is the one-sided limit approaching $b$ from the left.
+\end{enumerate}
+Simply define the periodic extension $g$ so that either $g(a)=f(a)$, or $g(a)=f(a+)$.  For example, the following graph
+\begin{center}
+\begin{pspicture}(-6,-0.5)(6,2)
+\psaxes[Dx=9,Dy=2]{->}(0,0)(-5.5,-0.5)(5.5,1.5)
+\rput(5.8,0){$x$}
+\rput(0.2,1.6){$y$}
+\psline(-5.5,0.5)(-5,1)
+\psline(-5,1)(-4,0)
+\psline(-4,0)(-3,1)
+\psline(-3,1)(-2,0)
+\psline(-2,0)(-1,1)
+\psline(-1,1)(0,0)
+\psline(0,0)(1,1)
+\psline(1,1)(2,0)
+\psline(2,0)(3,1)
+\psline(3,1)(4,0)
+\psline(4,0)(5,1)
+\psline(5,1)(5.5,0.5)
+\end{pspicture}
+\end{center}
+is the graph of the continuous periodic extension of a function $f_1$ given by $f_1(x)=|x|$ defined on $(-1,1)$, or a function $f_2$ defined on $(0,2)$, given by $f_2(x)=x$ for $0<x\le 1$ and $f_2(x)=2-x$ for $1\le x<2$.  With $f_1$, we see that $f_1(-1+)=f_1(1-)=1$, while with $f_2$, we have $f_2(0+)=f_2(2-)=0$.
+
+It is easy to see that if a continuous periodic extension of a function exists, then it is unique.
+\item
+Higher dimensional periodic extensions may also be defined for functions defined on a parallelepiped ($n$-dimensional analog of a parallelogram).  A periodic extension $g$ of a function $f$ defined on a parallelepiped is a function such that its projection $p_i(g)$ onto axis $i$ in $\mathbb{R}^n$ is a periodic extension of the projection $p_i(f)$ of $f$ onto axis $i$.
+\end{itemize}
+
+\begin{thebibliography}{9}
+\bibitem{gt} G.P. Tolstov, \textsl{Fourier Series}, Prentice-Hall, 1962.
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

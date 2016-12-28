@@ -1,0 +1,92 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ExampleOfFourierSeries}
+\pmcreated{2013-03-22 13:57:13}
+\pmmodified{2013-03-22 13:57:13}
+\pmowner{alozano}{2414}
+\pmmodifier{alozano}{2414}
+\pmtitle{example of Fourier series}
+\pmrecord{10}{34718}
+\pmprivacy{1}
+\pmauthor{alozano}{2414}
+\pmtype{Example}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42A16}
+\pmsynonym{example of Fourier coefficients}{ExampleOfFourierSeries}
+\pmrelated{ValueOfTheRiemannZetaFunctionAtS2}
+\pmrelated{FourierSineAndCosineSeries}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}{Definition}
+\newtheorem{prop}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{cor}{Corollary}
+
+% Some sets
+\newcommand{\Nats}{\mathbb{N}}
+\newcommand{\Ints}{\mathbb{Z}}
+\newcommand{\Reals}{\mathbb{R}}
+\newcommand{\Complex}{\mathbb{C}}
+\newcommand{\Rats}{\mathbb{Q}}
+\begin{document}
+Here we present an example of Fourier series:
+
+{\bf Example:}
+
+Let $f\colon (-\pi,\pi) \to \Reals$ be the ``identity'' function,
+defined by
+$$f(x)=x, \text{ for all }x\in (-\pi,\pi).$$
+We will compute the Fourier coefficients for this function. Notice
+that $\cos(nx)$ is an even function, while $f$ and $\sin(nx)$ are
+odd functions.
+\begin{eqnarray*}
+a_0^f & =&
+\frac{1}{2\pi}\int_{-\pi}^{\pi}f(x)dx=\frac{1}{2\pi}\int_{-\pi}^{\pi}
+x dx= 0\\
+a_n^f &=& \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos(nx)dx=
+\frac{1}{\pi}\int_{-\pi}^{\pi}x \cos(nx)dx = 0\\
+b_n^f &=&
+\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin(nx)dx=\frac{1}{\pi}\int_{-\pi}^{\pi}
+x \sin(nx)dx =\\
+&=& \frac{2}{\pi}\int_{0}^{\pi} x\sin(nx) dx= \frac{2}{\pi}\left(
+\left[-\frac{x\cos(nx)}{n}\right]_0^{\pi}+\left[\frac{\sin(nx)}{n^2}\right]_0^{\pi}=
+\right)=(-1)^{n+1}\frac{2}{n}
+\end{eqnarray*}
+
+Notice that $a_0^f,a_n^f$ are $0$ because $x$ and $x \cos(nx)$ are
+odd functions. Hence the Fourier series for $f(x)=x$ is:
+
+\begin{eqnarray*}
+ f(x)=x &=& a_0^f +
+\sum_{n=1}^{\infty}(a_n^f\cos(nx)+b_n^f\sin(nx)) =\\
+&=& \sum_{n=1}^{\infty}(-1)^{n+1}\frac{2}{n} \sin(nx), \quad \forall x\in (-\pi,\pi)
+\end{eqnarray*}
+
+For an application of this Fourier series, see value of the
+Riemann zeta function at $s=2$.
+%%%%%
+%%%%%
+\end{document}

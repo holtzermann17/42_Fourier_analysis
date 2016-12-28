@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{PropertiesOfOrthogonalPolynomials}
+\pmcreated{2013-03-22 19:05:34}
+\pmmodified{2013-03-22 19:05:34}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{properties of orthogonal polynomials}
+\pmrecord{12}{41983}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Topic}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42C05}
+\pmclassification{msc}{33D45}
+\pmrelated{HilbertSpace}
+\pmrelated{TopicsOnPolynomials}
+\pmrelated{IndexOfSpecialFunctions}
+\pmrelated{OrthogonalityOfLaguerrePolynomials}
+\pmrelated{OrthogonalityOfChebyshevPolynomials}
+\pmdefines{Rodrigues formula}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+ \usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\theoremstyle{definition}
+\newtheorem*{thmplain}{Theorem}
+
+\begin{document}
+A countable \emph{system of orthogonal polynomials}
+\begin{align}
+p_0(x),\,p_1(x),\,p_2(x),\,\ldots
+\end{align}
+on an interval \,$[a,\,b]$,\, where a inner product of two functions 
+$$(f,\,g) \;:=\; \int_a^b\!f(x)g(x)W(x)\,dx$$
+is defined with respect to a weighting function $W(x)$, satisfies the \PMlinkname{orthogonality condition}{OrthogonalVectors}
+$$(p_m,\,p_n) \;=\; 0 \quad \mbox{always when}\quad m \neq n.$$
+One also requires that
+$$\deg\left(p_n(x)\right) \;=\; n \quad \mbox{for all } n.$$\\
+
+
+Such a system (1) may be used as basis for the vector space of functions defined on\, $[a,\,b]$, i.e. certain such functions $f$ may be expanded as a \PMlinkname{series}{FunctionSeries}
+$$f(x) \;=\; c_0p_0(x)+c_1p_1(x)+c_2p_2(x)+\ldots$$
+where the coefficients $c_n$ have the expression
+$$c_n \;=\; \int_a^b\!f(x)p_n(x)W(x)\,dx.$$\\
+
+\textbf{Other properties}
+
+\begin{itemize}
+
+\item The basis property of the system (1) comprises that any polynomial $P(x)$ of degree $n$ can be uniquely expressed as a finite linear combination$\!$
+$$P(x) \;=\; c_0p_0(x)+c_1p_1(x)+\ldots+c_np_n(x).$$
+
+\item Every member $p_n(x)$ of (1) is orthogonal to any polynomial $P(x)$ of degree less than $n$.
+
+\item There is a recurrence relation
+$$p_{n+1}(x) \;=\; (a_nx\!+\!b_n)p_n(x)+c_np_{n-1}(x)$$
+enabling to determine a \PMlinkescapetext{member of (1) in terms of the two preceding members}.
+
+\item The zeros of $p_n(x)$ are all real and belong to the open interval \,$(a,\,b)$;\, between two of those zeros there are always zeros of $p_{n+1}(x)$.
+
+\item The Sturm--Liouville differential equation
+\begin{align}
+Q(x)p''+L(x)p'+\lambda p \;=\; 0,
+\end{align}
+where $Q(x)$ is a polynomial of at most degree 2 and $L(x)$ a linear polynomial, gives under certain conditions, as \PMlinkid{solutions}{8719} $p$ a system of orthogonal polynomials $p_0,\,p_1,\,\ldots$\, corresponding suitable values (eigenvalues) $\lambda_0,\,\lambda_1,\,\ldots$\, of the parametre $\lambda$.\, Those \PMlinkescapetext{solutions} satisfy the Rodrigues formula
+$$p_n(x) \;=\; \frac{k_n}{W(x)}\frac{d^n}{dx^n}\left(W(x)[Q(x)]^n\right),$$
+where $k_n$ is a constant and
+$$W(x) \;:=\; \frac{1}{Q(x)}e^{\int\frac{L(x)}{Q(x)}dx}.$$
+The classical \PMlinkname{Chebyshev}{ChebyshevPolynomial}, \PMlinkname{Hermite}{HermitePolynomials}, \PMlinkname{Laguerre}{LaguerrePolynomial}, and Legendre polynomials all satisfy an equation (2).
+
+\end{itemize}
+
+[Not ready . . .]
+%%%%%
+%%%%%
+\end{document}

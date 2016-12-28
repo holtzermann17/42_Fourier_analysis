@@ -1,0 +1,152 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{FourierSineAndCosineSeries}
+\pmcreated{2013-03-22 15:42:20}
+\pmmodified{2013-03-22 15:42:20}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{Fourier sine and cosine series}
+\pmrecord{26}{37650}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Topic}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42A32}
+\pmclassification{msc}{42A20}
+\pmclassification{msc}{42A16}
+\pmclassification{msc}{26A06}
+%\pmkeywords{odd function}
+%\pmkeywords{even function}
+\pmrelated{SubstitutionNotation}
+\pmrelated{IntegralsOfEvenAndOddFunctions}
+\pmrelated{CosineAtMultiplesOfStraightAngle}
+\pmrelated{ExampleOfFourierSeries}
+\pmrelated{DoubleSeries}
+\pmrelated{UniquenessOfFourierExpansion}
+\pmrelated{DeterminationOfFourierCoefficients}
+\pmrelated{TwoDimensionalFourierTransforms}
+\pmdefines{Fourier sine series}
+\pmdefines{Fourier cosine series}
+\pmdefines{sine series}
+\pmdefines{cosine series}
+\pmdefines{half-interval}
+\pmdefines{Fourier double sine series}
+\pmdefines{Fourier double cosine series}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+ \usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\newcommand{\sijoitus}[2]%
+{\operatornamewithlimits{\Big/}_{\!\!\!#1}^{\,#2}}
+
+
+\theoremstyle{definition}
+\newtheorem*{thmplain}{Theorem}
+\begin{document}
+One sees from the formulae 
+\begin{align*}
+a_n &= \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\cos{nx}\,dx,\\
+b_n &= \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\sin{nx}\,dx
+\end{align*}
+of the coefficients $a_n$ and $b_n$ for the Fourier series \PMlinkescapetext{expansion}
+$$f(x) = \frac{a_0}{2}+\sum_{n=1}^\infty(a_n\cos{nx}+b_n\sin{nx})$$
+of the Riemann integrable real function $f$ on the interval\, $[-\pi,\,\pi]$,\, that 
+\begin{itemize}
+\item $\displaystyle a_n = \frac{2}{\pi}\int_0^\pi\!f(x)\cos{nx}\,dx$,\,\, 
+$b_n = 0$\, $\forall n$\, if $f$ is an even function;
+\item $\displaystyle b_n = \frac{2}{\pi}\int_0^\pi\!f(x)\sin{nx}\,dx$,\,\, 
+$a_n = 0$\, $\forall n$\, if $f$ is an odd function.
+\end{itemize}
+Thus the Fourier series of an even function \PMlinkescapetext{contains} mere cosine \PMlinkescapetext{terms} and of an odd function mere sine \PMlinkescapetext{terms}.\, This concerns the whole interval\, 
+$[-\pi,\,\pi]$.\, So e.g. one has on this interval
+$$x \,\equiv\, 
+ 2\!\left(\frac{\sin{x}}{1}\!-\!\frac{\sin{2x}}{2}\!+\!\frac{\sin{3x}}{3}\!
+-+\cdots\right).$$\\
+
+\textbf{Remark 1}.\, On the {\em half-interval}\, $[0,\,\pi]$\, one can in any case expand each Riemann integrable function $f$ both to a cosine series and to a sine series, irrespective of how it is defined for the negative half-interval or is it defined here at all.\\
+
+\textbf{Remark 2.}\, On an interval\, $[-p,\,p]$,\, instead of\, 
+$[-\pi,\,\pi]$,\, the Fourier coefficients of the series
+$$f(x) = 
+\frac{a_0}{2}+\sum_{n=1}^\infty\left(a_n\cos\frac{n\pi x}{p}
++b_n\sin\frac{n\pi x}{p}\right)$$
+have the expressions
+\begin{itemize}
+\item $\displaystyle a_n = 
+ \frac{2}{p}\int_0^p\!f(x)\cos\frac{n\pi x}{p}\,dx$,\,\, 
+$b_n = 0$\, $\forall n$\, if $f$ is an even function;
+\item $\displaystyle b_n =
+ \frac{2}{p}\int_0^p\!f(x)\sin\frac{n\pi x}{p}\,dx$,\,\,
+$a_n = 0$\, $\forall n$\, if $f$ is an odd function.
+\end{itemize}
+
+
+\textbf{Example.}\, Expand the \PMlinkname{identity function}{IdentityMap}\, $x\mapsto x$\, to a Fourier cosine series on\, $[0,\,\pi]$.
+
+This odd function may be replaced with the even function\, $f: x\mapsto |x|$.\, Then we get
+ $$a_0 = \frac{2}{\pi}\int_0^\pi x\,dx = \pi$$
+and, integrating by parts,
+ $$a_n = \frac{2}{\pi}\int_0^\pi\!x\cos{nx}\,dx 
+= \frac{2}{\pi}\left[\sijoitus{0}{\quad\pi}\!x\frac{\sin{nx}}{n}
+                   -\int_0^\pi \frac{\sin{nx}}{n}\,dx\right] 
+= \frac{2}{\pi}\sijoitus{0}{\quad\pi}\!\frac{\cos{nx}}{n^2}
+= \frac{2}{\pi n^2}((-1)^n\!-\!1));$$
+this equals to $\displaystyle-\frac{4}{\pi n^2}$ if $n$ is an odd integer, but vanishes for each even $n$.\, Thus we obtain on the interval\, $[0,\,\pi]$\, the cosine series
+$$x \,\equiv\, 
+\frac{\pi}{2}\!-\!\frac{4}{\pi}\!\left(\frac{\cos{x}}{1^2}\!+\!\frac{\cos{3x}}{3^2}
+          \!+\!\frac{\cos{5x}}{5^2}\!+\cdots\right).$$
+Chosing here\, $x := 0$\, one gets the result
+$$\frac{\pi^2}{8} \;=\; 1+\frac{1}{3^2}+\frac{1}{5^2}+\ldots$$
+(cf. the entry on \PMlinkid{Dirichlet eta function at 2}{11010}).\\
+
+
+\textbf{Fourier double series.}\, The Fourier sine and cosine series introduced in Remark 1 on the half-interval\, $[0,\,\pi]$\, for a function of one real variable may be generalized for e.g. functions of two real variables on a rectangle\, $\{(x,\,y)\in \mathbb{R}^2\,\vdots\,\, 0\le x \le a,\,0\le y \le b\}$:
+\begin{align}
+f(x,\,y) = \sum_{m=1}^\infty\sum_{n=1}^\infty c_{mn}\sin\frac{m\pi x}{a}
+\sin\frac{n\pi y}{b},
+\end{align}
+\begin{align}
+f(x,\,y) = \frac{d_{00}}{4}+\frac{1}{2}\sum_{l=1}^\infty \left(d_{l0}\cos\frac{l\pi x}{a}+d_{0l}\cos\frac{l\pi y}{b}\right)+
+\sum_{m=1}^\infty\sum_{n=1}^\infty d_{mn}\cos\frac{m\pi x}{a}
+\cos\frac{n\pi y}{b}
+\end{align}
+The coefficients of the {\em Fourier double sine series} (1) are got by the double integral
+$$c_{mn} = \frac{4}{ab}
+\int_0^a\int_0^b f(x,\,y)\,\sin\frac{m\pi x}{a}\sin\frac{n\pi y}{b}\,dx\,dy$$
+where\, $m = 1,\,2,\,3,\,\ldots$\, and\, $n = 1,\,2,\,3,\,\ldots$\, The coefficients of the {\em Fourier double cosine series} (2) are correspondingly
+$$d_{mn} = \frac{4}{ab}
+\int_0^a\int_0^b f(x,\,y)\,\cos\frac{m\pi x}{a}\cos\frac{n\pi y}{b}\,dx\,dy$$
+where\, $m = 0,\,1,\,2,\,\ldots$\, and\, $n = 0,\,1,\,2,\,\ldots$\\
+
+\textbf{Note.}\, One can use in the double series of (1) and (2) also the {\em diagonal summing}, e.g. for the double sine series as follows:\\
+$c_{11}\sin\!\frac{\pi x}{a}\sin\!\frac{\pi y}{b}\!+\!
+\left(c_{12}\sin\!\frac{\pi x}{a}\sin\!\frac{2\pi y}{b}\!+\!
+      c_{21}\sin\!\frac{2\pi x}{a}\sin\!\frac{\pi y}{b}\right)\!+\!
+\left(c_{13}\sin\!\frac{\pi x}{a}\sin\!\frac{3\pi y}{b}\!+\!
+      c_{22}\sin\!\frac{2\pi x}{a}\sin\!\frac{2\pi y}{b}\!+\!
+      c_{31}\sin\!\frac{3\pi x}{a}\sin\!\frac{\pi y}{b}\right)\!+\ldots$
+
+\begin{thebibliography}{9}
+\bibitem{K.V.}{\sc K. V\"ais\"al\"a:} {\em Matematiikka IV}.\, Hand-out Nr. 141.\quad Teknillisen korkeakoulun ylioppilaskunta, Otaniemi, Finland (1967).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

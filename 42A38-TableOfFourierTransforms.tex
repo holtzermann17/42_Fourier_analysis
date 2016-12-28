@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{TableOfFourierTransforms}
+\pmcreated{2013-03-22 18:08:12}
+\pmmodified{2013-03-22 18:08:12}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{table of Fourier transforms}
+\pmrecord{7}{40689}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Feature}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{42A38}
+\pmsynonym{Groupoid Transforms}{TableOfFourierTransforms}
+\pmdefines{Fourier-Stieltjes generalization of FT}
+
+\usepackage{amssymb,amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{tabls}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%\usepackage{xypic}
+\usepackage{pst-plot}
+
+% define commands here
+\newcommand*{\abs}[1]{\left\lvert #1\right\rvert}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\mpdiff}[3]{\frac{\partial^#1 #2}{\partial #3^#1}}
+\newcommand{\F}[1]{\mathcal{F}\lbrace #1\rbrace}
+\begin{document}
+Below are tables of \PMlinkname{Fourier transforms}{FourierTransform}; one lists some of the common properties, and the other lists some common examples.
+
+\subsubsection*{Properties}
+
+\begin{center}
+\begin{tabular}{|c|c|p{4cm}|c|}
+\hline\hline
+Original & Transformed & comment & derivation \\
+\hline\hline
+$af(t)+bg(t)$ & $a\F{f(t)}+b\F{g(t)}$ & linearity & \\
+\hline
+$f(t)*g(t)$ & $\F{f(t)}\F{g(t)}$ & convolution property & \\
+\hline
+$f(t+\alpha)$ & $F(s)\exp(-i \alpha s)$ & time shift, where $F(s)=\F{f(t)}$ & \\
+\hline
+$f'(t)$ & $is \F{f(t)}$ & differentiation & \\
+\hline
+$\overline{f(t)}$ & $\overline{F(-s)}$ & conjugation, where $F(s)=\F{f(t)}$ & \\
+\hline
+$f(\alpha t)$ & $\displaystyle{\frac{1}{|\alpha|}F(\frac{s}{\alpha})}$ & scaling, where $F(s)=\F{f(t)}$ with $\alpha\ne 0$ & \\
+\hline
+
+\end{tabular}
+\end{center}
+
+\subsubsection*{Examples}
+
+\begin{center}
+\begin{tabular}{|c|c|c|p{4cm}|c|}
+\hline\hline
+$f(t)$ & $\F{f(t)}$ & conditions & explanation & derivation \\
+\hline\hline
+$\delta(t)$ & $1$ & & Dirac delta function & \\
+\hline
+$1$ & $2\pi \delta(s)$ & & & \\
+\hline
+$e^{i a t}$ & $2\pi \delta(s - \alpha)$ & $a\in \mathbb{R}$ & & \\
+\hline
+$\cos(at)$ & $\pi (\delta(s+a) + \delta(s-a))$ & $a\in \mathbb{R}$ & &\\
+\hline
+$\sin(at)$ & $i \pi (\delta(s+a) - \delta(s-a))$ & $a\in \mathbb{R}$ & &\\
+\hline
+
+\end{tabular}
+\end{center}
+%%%%%
+%%%%%
+\end{document}
