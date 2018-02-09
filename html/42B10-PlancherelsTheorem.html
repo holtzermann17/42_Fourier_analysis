@@ -1,0 +1,230 @@
+<!DOCTYPE html><html>
+<head>
+<title>Plancherel’s theorem</title>
+<!--Generated on Fri Feb  9 21:30:09 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">Plancherel’s theorem</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+</div>
+<section id="S0.SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">0.1 </span>Statement of theorem</h2>
+
+<div id="S0.SS1.p1" class="ltx_para">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">Plancherel’s Theorem</em> states that
+the unitary Fourier transform of <math id="S0.SS1.p1.m1" class="ltx_Math" alttext="\mathbf{L}^{1}" display="inline"><msup><mi>𝐋</mi><mn>1</mn></msup></math> functions
+(the Lebesgue-integrable functions (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/Integral3</span>)) on <math id="S0.SS1.p1.m2" class="ltx_Math" alttext="\mathbb{R}^{n}" display="inline"><msup><mi>ℝ</mi><mi>n</mi></msup></math>
+extends to a unitary isomorphism on <math id="S0.SS1.p1.m3" class="ltx_Math" alttext="\mathbf{L}^{2}" display="inline"><msup><mi>𝐋</mi><mn>2</mn></msup></math> (the square-integrable functions).</p>
+</div>
+<div id="S0.SS1.p2" class="ltx_para">
+<p class="ltx_p">Thus, the following two fundamental properties hold
+for the Fourier transform <math id="S0.SS1.p2.m1" class="ltx_Math" alttext="\mathcal{F}" display="inline"><mi class="ltx_font_mathcaligraphic">ℱ</mi></math> on
+<math id="S0.SS1.p2.m2" class="ltx_Math" alttext="\mathbf{L}^{2}" display="inline"><msup><mi>𝐋</mi><mn>2</mn></msup></math> functions <math id="S0.SS1.p2.m3" class="ltx_Math" alttext="g\colon\mathbb{R}^{n}\to\mathbb{C}" display="inline"><mrow><mi>g</mi><mo>:</mo><mrow><msup><mi>ℝ</mi><mi>n</mi></msup><mo>→</mo><mi>ℂ</mi></mrow></mrow></math>:</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">i</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex1.m1" class="ltx_Math" alttext="\mathcal{F}^{-1}(\mathcal{F}g)=g=\mathcal{F}(\mathcal{F}^{-1}g)\,." display="block"><mrow><mrow><mrow><msup><mi class="ltx_font_mathcaligraphic">ℱ</mi><mrow><mo>-</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi class="ltx_font_mathcaligraphic">ℱ</mi><mo>⁢</mo><mi>g</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>g</mi><mo>=</mo><mrow><mi class="ltx_font_mathcaligraphic">ℱ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msup><mi class="ltx_font_mathcaligraphic">ℱ</mi><mrow><mo>-</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>g</mi></mrow><mo rspace="4.2pt" stretchy="false">)</mo></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">The equalities are as elements of <math id="I1.i1.p1.m1" class="ltx_Math" alttext="\mathbf{L}^{2}" display="inline"><msup><mi>𝐋</mi><mn>2</mn></msup></math>; in terms of pointwise functions,
+the equalities hold almost everywhere on <math id="I1.i1.p1.m2" class="ltx_Math" alttext="\mathbb{R}^{n}" display="inline"><msup><mi>ℝ</mi><mi>n</mi></msup></math>.</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">ii</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">The Fourier transform preserves <math id="I1.i2.p1.m1" class="ltx_Math" alttext="\mathbf{L}^{2}" display="inline"><msup><mi>𝐋</mi><mn>2</mn></msup></math> norms:</p>
+<table id="S0.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex2.m1" class="ltx_Math" alttext="\int_{\mathbb{R}^{n}}\lvert\mathcal{F}g(\xi)\rvert^{2}\,d\xi=\lVert\mathcal{F}%
+g\rVert_{\mathbf{L}^{2}}^{2}=\lVert g\rVert_{\mathbf{L}^{2}}^{2}=\int_{\mathbb%
+{R}^{n}}\lvert g(x)\rvert^{2}\,dx\,." display="block"><mrow><mrow><mrow><msub><mo largeop="true" symmetric="true">∫</mo><msup><mi>ℝ</mi><mi>n</mi></msup></msub><mrow><mpadded width="+1.7pt"><msup><mrow><mo fence="true" stretchy="false">|</mo><mrow><mi class="ltx_font_mathcaligraphic">ℱ</mi><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ξ</mi><mo stretchy="false">)</mo></mrow></mrow><mo fence="true" stretchy="false">|</mo></mrow><mn>2</mn></msup></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mi>ξ</mi></mrow></mrow></mrow><mo>=</mo><msubsup><mrow><mo fence="true" stretchy="false">∥</mo><mrow><mi class="ltx_font_mathcaligraphic">ℱ</mi><mo>⁢</mo><mi>g</mi></mrow><mo fence="true" stretchy="false">∥</mo></mrow><msup><mi>𝐋</mi><mn>2</mn></msup><mn>2</mn></msubsup><mo>=</mo><msubsup><mrow><mo fence="true" stretchy="false">∥</mo><mi>g</mi><mo fence="true" stretchy="false">∥</mo></mrow><msup><mi>𝐋</mi><mn>2</mn></msup><mn>2</mn></msubsup><mo>=</mo><mrow><msub><mo largeop="true" symmetric="true">∫</mo><msup><mi>ℝ</mi><mi>n</mi></msup></msub><mrow><mpadded width="+1.7pt"><msup><mrow><mo fence="true" stretchy="false">|</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo fence="true" stretchy="false">|</mo></mrow><mn>2</mn></msup></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mpadded width="+1.7pt"><mi>x</mi></mpadded></mrow></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</section>
+<section id="S0.SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">0.2 </span>Extension of the Fourier transform to <math id="S0.SS2.m1" class="ltx_Math" alttext="\mathbf{L}^{2}" display="inline"><msup><mi>𝐋</mi><mn>2</mn></msup></math>
+</h2>
+
+<div id="S0.SS2.p1" class="ltx_para">
+<p class="ltx_p">The extension <math id="S0.SS2.p1.m1" class="ltx_Math" alttext="\mathcal{F}" display="inline"><mi class="ltx_font_mathcaligraphic">ℱ</mi></math> of the usual
+Fourier transform can be described concretely as follows: given a <math id="S0.SS2.p1.m2" class="ltx_Math" alttext="\mathbf{L}^{2}" display="inline"><msup><mi>𝐋</mi><mn>2</mn></msup></math> function <math id="S0.SS2.p1.m3" class="ltx_Math" alttext="g\colon\mathbb{R}^{n}\to\mathbb{C}" display="inline"><mrow><mi>g</mi><mo>:</mo><mrow><msup><mi>ℝ</mi><mi>n</mi></msup><mo>→</mo><mi>ℂ</mi></mrow></mrow></math>,
+take any sequence <math id="S0.SS2.p1.m4" class="ltx_Math" alttext="g_{k}\colon\mathbb{R}^{n}\to\mathbb{C}" display="inline"><mrow><msub><mi>g</mi><mi>k</mi></msub><mo>:</mo><mrow><msup><mi>ℝ</mi><mi>n</mi></msup><mo>→</mo><mi>ℂ</mi></mrow></mrow></math>
+of <math id="S0.SS2.p1.m5" class="ltx_Math" alttext="\mathbf{L}^{1}" display="inline"><msup><mi>𝐋</mi><mn>1</mn></msup></math> functions that converge in <math id="S0.SS2.p1.m6" class="ltx_Math" alttext="\mathbf{L}^{2}" display="inline"><msup><mi>𝐋</mi><mn>2</mn></msup></math> to <math id="S0.SS2.p1.m7" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math>.
+The Fourier transforms</p>
+<table id="S0.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex3.m1" class="ltx_Math" alttext="\mathcal{F}g_{k}(\xi)=\int_{\mathbb{R}^{n}}g_{k}(x)\,e^{-2\pi i\xi\cdot x}\,dx%
+\,,\quad\xi\in\mathbb{R}^{n}" display="block"><mrow><mrow><mrow><mi class="ltx_font_mathcaligraphic">ℱ</mi><mo>⁢</mo><msub><mi>g</mi><mi>k</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ξ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mo largeop="true" symmetric="true">∫</mo><msup><mi>ℝ</mi><mi>n</mi></msup></msub><mrow><msub><mi>g</mi><mi>k</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo rspace="4.2pt" stretchy="false">)</mo></mrow><mo>⁢</mo><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mo>-</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>ξ</mi></mrow><mo>⋅</mo><mi>x</mi></mrow></mrow></msup></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mpadded width="+1.7pt"><mi>x</mi></mpadded></mrow></mrow></mrow></mrow><mo rspace="12.5pt">,</mo><mrow><mi>ξ</mi><mo>∈</mo><msup><mi>ℝ</mi><mi>n</mi></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">are defined as usual,
+and <math id="S0.SS2.p1.m8" class="ltx_Math" alttext="\mathcal{F}g" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">ℱ</mi><mo>⁢</mo><mi>g</mi></mrow></math> can be obtained as the <math id="S0.SS2.p1.m9" class="ltx_Math" alttext="\mathbf{L}^{2}" display="inline"><msup><mi>𝐋</mi><mn>2</mn></msup></math> limit
+of <math id="S0.SS2.p1.m10" class="ltx_Math" alttext="\mathcal{F}g_{k}" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">ℱ</mi><mo>⁢</mo><msub><mi>g</mi><mi>k</mi></msub></mrow></math>.</p>
+</div>
+<div id="S0.SS2.p2" class="ltx_para">
+<p class="ltx_p">In the one-dimensional case, a
+common sequence of approximating sequences to take is
+<math id="S0.SS2.p2.m1" class="ltx_Math" alttext="g_{k}=g\cdot\mathbb{I}_{[-k,k]}" display="inline"><mrow><msub><mi>g</mi><mi>k</mi></msub><mo>=</mo><mrow><mi>g</mi><mo>⋅</mo><msub><mi>𝕀</mi><mrow><mo stretchy="false">[</mo><mrow><mo>-</mo><mi>k</mi></mrow><mo>,</mo><mi>k</mi><mo stretchy="false">]</mo></mrow></msub></mrow></mrow></math>; in that case we have</p>
+<table id="S0.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex4.m1" class="ltx_Math" alttext="\mathcal{F}g(\xi)=\lim_{T\to\infty}\int_{-T}^{T}g(t)\,e^{-2\pi i\xi t}\,dt\,,%
+\quad\xi\in\mathbb{R}\,." display="block"><mrow><mrow><mrow><mrow><mi class="ltx_font_mathcaligraphic">ℱ</mi><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ξ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><munder><mo movablelimits="false">lim</mo><mrow><mi>T</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow></munder><mo>⁡</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mrow><mo>-</mo><mi>T</mi></mrow><mi>T</mi></msubsup><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo rspace="4.2pt" stretchy="false">)</mo></mrow><mo>⁢</mo><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mo>-</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>ξ</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mpadded width="+1.7pt"><mi>t</mi></mpadded></mrow></mrow></mrow></mrow></mrow><mo rspace="12.5pt">,</mo><mrow><mi>ξ</mi><mo>∈</mo><mpadded width="+1.7pt"><mi>ℝ</mi></mpadded></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S0.SS2.p3" class="ltx_para">
+<p class="ltx_p">The inverse Fourier transform <math id="S0.SS2.p3.m1" class="ltx_Math" alttext="\mathcal{F}^{-1}" display="inline"><msup><mi class="ltx_font_mathcaligraphic">ℱ</mi><mrow><mo>-</mo><mn>1</mn></mrow></msup></math> can be obtained in a similar way
+to <math id="S0.SS2.p3.m2" class="ltx_Math" alttext="\mathcal{F}" display="inline"><mi class="ltx_font_mathcaligraphic">ℱ</mi></math>, using approximating functions <math id="S0.SS2.p3.m3" class="ltx_Math" alttext="g_{k}" display="inline"><msub><mi>g</mi><mi>k</mi></msub></math>:</p>
+<table id="S0.Ex5" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex5.m1" class="ltx_Math" alttext="\mathcal{F}^{-1}g_{k}(x)=\int_{\mathbb{R}^{n}}g_{k}(\xi)\,e^{2\pi i\xi\cdot x}%
+\,dx\,,\quad x\in\mathbb{R}^{n}\,." display="block"><mrow><mrow><mrow><mrow><msup><mi class="ltx_font_mathcaligraphic">ℱ</mi><mrow><mo>-</mo><mn>1</mn></mrow></msup><mo>⁢</mo><msub><mi>g</mi><mi>k</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mo largeop="true" symmetric="true">∫</mo><msup><mi>ℝ</mi><mi>n</mi></msup></msub><mrow><msub><mi>g</mi><mi>k</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ξ</mi><mo rspace="4.2pt" stretchy="false">)</mo></mrow><mo>⁢</mo><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>ξ</mi></mrow><mo>⋅</mo><mi>x</mi></mrow></msup></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mpadded width="+1.7pt"><mi>x</mi></mpadded></mrow></mrow></mrow></mrow><mo rspace="12.5pt">,</mo><mrow><mi>x</mi><mo>∈</mo><mpadded width="+1.7pt"><msup><mi>ℝ</mi><mi>n</mi></msup></mpadded></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+</section>
+<section id="S0.SS3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">0.3 </span>Note on different conventions</h2>
+
+<div id="S0.SS3.p1" class="ltx_para">
+<p class="ltx_p">Here, we have used the convention for the Fourier transform <math id="S0.SS3.p1.m1" class="ltx_Math" alttext="\mathcal{F}" display="inline"><mi class="ltx_font_mathcaligraphic">ℱ</mi></math> that <math id="S0.SS3.p1.m2" class="ltx_Math" alttext="\xi" display="inline"><mi>ξ</mi></math> denotes “ordinary frequency”, i.e. the exponential contains factors of <math id="S0.SS3.p1.m3" class="ltx_Math" alttext="2\pi" display="inline"><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></math>. Another common convention has <math id="S0.SS3.p1.m4" class="ltx_Math" alttext="\xi" display="inline"><mi>ξ</mi></math> replaced by <math id="S0.SS3.p1.m5" class="ltx_Math" alttext="\omega" display="inline"><mi>ω</mi></math> denoting the “angular frequency”, with factors <math id="S0.SS3.p1.m6" class="ltx_Math" alttext="2\pi" display="inline"><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></math> occurring not in the exponent, but as multiplicative constants. In this case property (i) above still holds,
+but property (ii) will not hold unless the multiplicative constants
+in front of the forward and inverse Fourier transform are chosen properly.</p>
+</div>
+</section>
+<section id="bib" class="ltx_bibliography">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+
+<ul class="ltx_biblist">
+      
+<li id="bib.bibx1" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">Folland</span>
+        
+<span class="ltx_bibblock">
+Gerald B. Folland. <em class="ltx_emph ltx_font_italic">Real Analysis: Modern Techniques and Their Applications</em>, second ed. Wiley-Interscience, 1999.
+
+</span>
+      </li>
+      
+<li id="bib.bibx2" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">Katznelson</span>
+        
+<span class="ltx_bibblock">
+Yitzhak Katznelson. <em class="ltx_emph ltx_font_italic">An Introduction to Harmonic Analysis</em>, second ed. Dover Publications, 1976.
+
+</span>
+      </li>
+      
+<li id="bib.bibx3" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">Wiki</span>
+        
+<span class="ltx_bibblock">
+“
+<span class="ltx_text ltx_font_typewriter">http://en.wikipedia.org/wiki/Continuous_Fourier_transform</span>Fourier transform
+”, <em class="ltx_emph ltx_font_italic">Wikipedia, The Free Encyclopedia</em>. Accessed 22 December, 2006.
+
+</span>
+      </li>
+    
+</ul>
+</section>
+<div id="p2" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">Plancherel’s theorem</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">PlancherelsTheorem</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 16:29:00</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 16:29:00</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">stevecheng (10074)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">stevecheng (10074)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">11</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">stevecheng (10074)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Theorem</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 42B10</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 42A38</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">ProofOfSamplingTheorem</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Fri Feb  9 21:30:09 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

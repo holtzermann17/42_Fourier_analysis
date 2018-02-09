@@ -1,0 +1,252 @@
+<!DOCTYPE html><html>
+<head>
+<title>uncertainty principle</title>
+<!--Generated on Fri Feb  9 21:29:33 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">uncertainty principle</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">We will find the Fourier transform</p>
+<table id="A0.EGx1" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="S0.E1"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.E1.m1" class="ltx_Math" alttext="\displaystyle F(\omega):=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(t)e^{-i%
+\omega t}\,dt" display="inline"><mrow><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><msqrt><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msqrt></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo largeop="true" symmetric="true">∫</mo><mrow><mo>-</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mo>-</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">of the Gaussian bell-shaped function</p>
+<table id="A0.EGx2" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="S0.E2"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.E2.m1" class="ltx_Math" alttext="\displaystyle f(t)\;=\;Ce^{-at^{2}}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo rspace="5.3pt" stretchy="false">)</mo></mrow></mrow><mo rspace="5.3pt">=</mo><mrow><mi>C</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>-</mo><mrow><mi>a</mi><mo>⁢</mo><msup><mi>t</mi><mn>2</mn></msup></mrow></mrow></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">where <math id="p2.m1" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> and <math id="p2.m2" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math> are positive constants.
+<br class="ltx_break"></p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">We get first</p>
+<table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex1.m1" class="ltx_Math" alttext="F(\omega)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}Ce^{-at^{2}}e^{-i\omega t%
+}\,dt\;=\;\frac{C}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-at^{2}-i\omega t}\,dt." display="block"><mrow><mrow><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><msqrt><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msqrt></mfrac><mo>⁢</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mrow><mo>-</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><mi>C</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>-</mo><mrow><mi>a</mi><mo>⁢</mo><msup><mi>t</mi><mn>2</mn></msup></mrow></mrow></msup><mo>⁢</mo><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mo>-</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mpadded width="+2.8pt"><mi>t</mi></mpadded></mrow></mrow></mrow></mrow><mo rspace="5.3pt">=</mo><mrow><mfrac><mi>C</mi><msqrt><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msqrt></mfrac><mo>⁢</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mrow><mo>-</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mrow><mo>-</mo><mrow><mi>a</mi><mo>⁢</mo><msup><mi>t</mi><mn>2</mn></msup></mrow></mrow><mo>-</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Completing the square in</p>
+<table id="S0.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex2.m1" class="ltx_Math" alttext="-at^{2}-i\omega t\,=\,-a\left(t^{2}+\frac{i\omega t}{a}\right)\,=\,-a\left(t+%
+\frac{i\omega}{2a}\right)^{2}-\frac{\omega^{2}}{4a}" display="block"><mrow><mrow><mrow><mo>-</mo><mrow><mi>a</mi><mo>⁢</mo><msup><mi>t</mi><mn>2</mn></msup></mrow></mrow><mo>-</mo><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mpadded width="+1.7pt"><mi>t</mi></mpadded></mrow></mrow><mo rspace="4.2pt">=</mo><mrow><mo>-</mo><mrow><mi>a</mi><mo>⁢</mo><mrow><mo>(</mo><mrow><msup><mi>t</mi><mn>2</mn></msup><mo>+</mo><mfrac><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>t</mi></mrow><mi>a</mi></mfrac></mrow><mo rspace="4.2pt">)</mo></mrow></mrow></mrow><mo rspace="4.2pt">=</mo><mrow><mrow><mo>-</mo><mrow><mi>a</mi><mo>⁢</mo><msup><mrow><mo>(</mo><mrow><mi>t</mi><mo>+</mo><mfrac><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi></mrow><mrow><mn>2</mn><mo>⁢</mo><mi>a</mi></mrow></mfrac></mrow><mo>)</mo></mrow><mn>2</mn></msup></mrow></mrow><mo>-</mo><mfrac><msup><mi>ω</mi><mn>2</mn></msup><mrow><mn>4</mn><mo>⁢</mo><mi>a</mi></mrow></mfrac></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">and substituting  <math id="p3.m1" class="ltx_Math" alttext="\sqrt{a}\left(t+\frac{i\omega}{2a}\right)\,:=\,z" display="inline"><mrow><mrow><msqrt><mi>a</mi></msqrt><mo>⁢</mo><mrow><mo>(</mo><mrow><mi>t</mi><mo>+</mo><mfrac><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi></mrow><mrow><mn>2</mn><mo>⁢</mo><mi>a</mi></mrow></mfrac></mrow><mo rspace="4.2pt">)</mo></mrow></mrow><mo rspace="4.2pt">:=</mo><mi>z</mi></mrow></math>,  we may write</p>
+<table id="A0.EGx3" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="S0.E3"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.E3.m1" class="ltx_Math" alttext="\displaystyle F(\omega)\,=\,\frac{C}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-a%
+\left(t+\frac{i\omega}{2a}\right)^{2}}e^{-\frac{\omega^{2}}{4a}}\,dt\,=\,\frac%
+{C}{\sqrt{2\pi a}}e^{-\frac{\omega^{2}}{4a}}\int_{l}e^{-z^{2}}\,dz," display="inline"><mrow><mrow><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo rspace="4.2pt" stretchy="false">)</mo></mrow></mrow><mo rspace="4.2pt">=</mo><mrow><mstyle displaystyle="true"><mfrac><mi>C</mi><msqrt><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msqrt></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo largeop="true" symmetric="true">∫</mo><mrow><mo>-</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><msup><mi>e</mi><mrow><mo>-</mo><mrow><mi>a</mi><mo>⁢</mo><msup><mrow><mo>(</mo><mrow><mi>t</mi><mo>+</mo><mfrac><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi></mrow><mrow><mn>2</mn><mo>⁢</mo><mi>a</mi></mrow></mfrac></mrow><mo>)</mo></mrow><mn>2</mn></msup></mrow></mrow></msup><mo>⁢</mo><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mo>-</mo><mfrac><msup><mi>ω</mi><mn>2</mn></msup><mrow><mn>4</mn><mo>⁢</mo><mi>a</mi></mrow></mfrac></mrow></msup></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mpadded width="+1.7pt"><mi>t</mi></mpadded></mrow></mrow></mrow></mrow><mo rspace="4.2pt">=</mo><mrow><mstyle displaystyle="true"><mfrac><mi>C</mi><msqrt><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>a</mi></mrow></msqrt></mfrac></mstyle><mo>⁢</mo><msup><mi>e</mi><mrow><mo>-</mo><mfrac><msup><mi>ω</mi><mn>2</mn></msup><mrow><mn>4</mn><mo>⁢</mo><mi>a</mi></mrow></mfrac></mrow></msup><mo>⁢</mo><mrow><mstyle displaystyle="true"><msub><mo largeop="true" symmetric="true">∫</mo><mi>l</mi></msub></mstyle><mrow><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mo>-</mo><msup><mi>z</mi><mn>2</mn></msup></mrow></msup></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mi>z</mi></mrow></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">where <math id="p3.m2" class="ltx_Math" alttext="l" display="inline"><mi>l</mi></math> is a line of the complex plane parallel to the real axis and passing through the point
+ <math id="p3.m3" class="ltx_Math" alttext="z=\frac{i\omega}{2\sqrt{a}}" display="inline"><mrow><mi>z</mi><mo>=</mo><mfrac><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi></mrow><mrow><mn>2</mn><mo>⁢</mo><msqrt><mi>a</mi></msqrt></mrow></mfrac></mrow></math>.  Now we can show that the integral</p>
+<table id="S0.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex3.m1" class="ltx_Math" alttext="I_{y}\,:=\,\int_{l}e^{-z^{2}}\,dz=\int_{-\infty}^{\infty}e^{-(x+iy)^{2}}\,dx" display="block"><mrow><mpadded width="+1.7pt"><msub><mi>I</mi><mi>y</mi></msub></mpadded><mo rspace="4.2pt">:=</mo><mrow><msub><mo largeop="true" symmetric="true">∫</mo><mi>l</mi></msub><mrow><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mo>-</mo><msup><mi>z</mi><mn>2</mn></msup></mrow></msup></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mi>z</mi></mrow></mrow></mrow><mo>=</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mrow><mo>-</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mo>-</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></msup></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">does not depend on <math id="p3.m4" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> at all.  In fact, we have</p>
+<table id="S0.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex4.m1" class="ltx_Math" alttext="\frac{\partial I_{y}}{\partial y}\,=\,\int_{-\infty}^{\infty}\frac{\partial}{%
+\partial y}e^{-(x+iy)^{2}}dx\,=\,-2i\int_{-\infty}^{\infty}e^{-(x+iy)^{2}}(x+%
+iy)\,dx\,=\,i\!\operatornamewithlimits{\Big{/}}_{\!\!\!x\,=-\infty}^{\,\quad%
+\infty}\!e^{-(x+iy)^{2}}\,=\,i\!\operatornamewithlimits{\Big{/}}_{\!\!\!x\,=-%
+\infty}^{\,\quad\infty}\!e^{-x^{2}+y^{2}}e^{-2ixy}\,=\,0." display="block"><mrow><mrow><mpadded width="+1.7pt"><mfrac><mrow><mo>∂</mo><mo>⁡</mo><msub><mi>I</mi><mi>y</mi></msub></mrow><mrow><mo>∂</mo><mo>⁡</mo><mi>y</mi></mrow></mfrac></mpadded><mo rspace="4.2pt">=</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mrow><mo>-</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mi>y</mi></mrow></mfrac><mo>⁢</mo><msup><mi>e</mi><mrow><mo>-</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></msup><mo>⁢</mo><mrow><mo>𝑑</mo><mpadded width="+1.7pt"><mi>x</mi></mpadded></mrow></mrow></mrow><mo rspace="4.2pt">=</mo><mrow><mo>-</mo><mrow><mn>2</mn><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mrow><mo>-</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><msup><mi>e</mi><mrow><mo>-</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo rspace="4.2pt" stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo>𝑑</mo><mpadded width="+1.7pt"><mi>x</mi></mpadded></mrow></mrow></mrow></mrow></mrow><mo rspace="4.2pt">=</mo><mrow><mpadded width="-1.7pt"><mi>i</mi></mpadded><mo>⁢</mo><mrow><mpadded width="-1.7pt"><munderover><mo mathsize="160%" movablelimits="false" stretchy="false">/</mo><mrow><mpadded lspace="-5pt" width="-3.3pt"><mi>x</mi></mpadded><mo>=</mo><mrow><mo>-</mo><mi mathvariant="normal">∞</mi></mrow></mrow><mpadded lspace="11.7pt" width="+11.7pt"><mi mathvariant="normal">∞</mi></mpadded></munderover></mpadded><mo>⁡</mo><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mo>-</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mrow><mi>i</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></msup></mpadded></mrow></mrow><mo rspace="4.2pt">=</mo><mrow><mpadded width="-1.7pt"><mi>i</mi></mpadded><mo>⁢</mo><mrow><mpadded width="-1.7pt"><munderover><mo mathsize="160%" movablelimits="false" stretchy="false">/</mo><mrow><mpadded lspace="-5pt" width="-3.3pt"><mi>x</mi></mpadded><mo>=</mo><mrow><mo>-</mo><mi mathvariant="normal">∞</mi></mrow></mrow><mpadded lspace="11.7pt" width="+11.7pt"><mi mathvariant="normal">∞</mi></mpadded></munderover></mpadded><mo>⁡</mo><mrow><msup><mi>e</mi><mrow><mrow><mo>-</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></msup><mo>⁢</mo><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mo>-</mo><mrow><mn>2</mn><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mrow></msup></mpadded></mrow></mrow></mrow><mo>=</mo><mn> 0</mn></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Hence we may evaluate <math id="p3.m5" class="ltx_Math" alttext="I_{y}" display="inline"><msub><mi>I</mi><mi>y</mi></msub></math> as</p>
+<table id="S0.Ex5" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex5.m1" class="ltx_Math" alttext="I_{y}\,=\,I_{0}=\int_{-\infty}^{\infty}e^{-x^{2}}\,dx\;=\;\sqrt{\pi}" display="block"><mrow><mpadded width="+1.7pt"><msub><mi>I</mi><mi>y</mi></msub></mpadded><mo rspace="4.2pt">=</mo><msub><mi>I</mi><mn>0</mn></msub><mo>=</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mrow><mo>-</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mo>-</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mpadded width="+2.8pt"><mi>x</mi></mpadded></mrow></mrow></mrow><mo rspace="5.3pt">=</mo><msqrt><mi>π</mi></msqrt></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">(see the area under Gaussian curve).  Putting this value to (3) yields the result</p>
+<table id="A0.EGx4" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="S0.E4"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.E4.m1" class="ltx_Math" alttext="\displaystyle F(\omega)\;=\;\frac{C}{\sqrt{2a}}e^{-\frac{\omega^{2}}{4a}}." display="inline"><mrow><mrow><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo rspace="5.3pt" stretchy="false">)</mo></mrow></mrow><mo rspace="5.3pt">=</mo><mrow><mstyle displaystyle="true"><mfrac><mi>C</mi><msqrt><mrow><mn>2</mn><mo>⁢</mo><mi>a</mi></mrow></msqrt></mfrac></mstyle><mo>⁢</mo><msup><mi>e</mi><mrow><mo>-</mo><mfrac><msup><mi>ω</mi><mn>2</mn></msup><mrow><mn>4</mn><mo>⁢</mo><mi>a</mi></mrow></mfrac></mrow></msup></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Thus, we have gotten another Gaussian bell-shaped function (4) corresponding to the given Gaussian bell-shaped function (2).
+<br class="ltx_break"></p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Interpretation.</span>  One can take for the <span class="ltx_text ltx_font_italic">breadth</span> of the bell the portion of the abscissa axis, outside which the ordinate drops under the maximum value divided by <math id="p4.m1" class="ltx_Math" alttext="e" display="inline"><mi>e</mi></math>, for example.  Then, for the bell (2) one writes</p>
+<table id="S0.Ex6" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex6.m1" class="ltx_Math" alttext="Ce^{-at^{2}}=Ce^{-1}," display="block"><mrow><mrow><mrow><mi>C</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>-</mo><mrow><mi>a</mi><mo>⁢</mo><msup><mi>t</mi><mn>2</mn></msup></mrow></mrow></msup></mrow><mo>=</mo><mrow><mi>C</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>-</mo><mn>1</mn></mrow></msup></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">whence  <math id="p4.m2" class="ltx_Math" alttext="t=\frac{1}{\sqrt{a}}" display="inline"><mrow><mi>t</mi><mo>=</mo><mfrac><mn>1</mn><msqrt><mi>a</mi></msqrt></mfrac></mrow></math>  giving, by evenness (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/EvenFunction</span>) of the function, the breadth  <math id="p4.m3" class="ltx_Math" alttext="\Delta t=\frac{2}{\sqrt{a}}" display="inline"><mrow><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>t</mi></mrow><mo>=</mo><mfrac><mn>2</mn><msqrt><mi>a</mi></msqrt></mfrac></mrow></math>.  Similarly, the breadth of the bell (4) is  <math id="p4.m4" class="ltx_Math" alttext="\Delta\omega=4\sqrt{a}" display="inline"><mrow><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>ω</mi></mrow><mo>=</mo><mrow><mn>4</mn><mo>⁢</mo><msqrt><mi>a</mi></msqrt></mrow></mrow></math>.  We see that the product</p>
+<table id="A0.EGx5" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="S0.E5"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.E5.m1" class="ltx_Math" alttext="\displaystyle\Delta t\cdot\Delta\omega=8" display="inline"><mrow><mrow><mrow><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>t</mi></mrow><mo>⋅</mo><mi mathvariant="normal">Δ</mi></mrow><mo>⁢</mo><mi>ω</mi></mrow><mo>=</mo><mn>8</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">has a constant value.  One can show that any other shape of the graphs of <math id="p4.m5" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> and <math id="p4.m6" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math> produces a relation  to (5).  The breadths are thus inversely proportional (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/Proportion</span>).
+<br class="ltx_break"></p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">If <math id="p5.m1" class="ltx_Math" alttext="t" display="inline"><mi>t</mi></math> is the time and <math id="p5.m2" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> is the  on a system of oscillators with their natural frequencies, then in the formula</p>
+<table id="S0.Ex7" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex7.m1" class="ltx_Math" alttext="f(t)\;=\;\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}F(\omega)e^{i\omega t}\,d\omega" display="block"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo rspace="5.3pt" stretchy="false">)</mo></mrow></mrow><mo rspace="5.3pt">=</mo><mrow><mfrac><mn>1</mn><msqrt><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msqrt></mfrac><mo>⁢</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mrow><mo>-</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>ω</mi><mo>⁢</mo><mi>t</mi></mrow></msup></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mi>ω</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">of the inverse Fourier transform, <math id="p5.m3" class="ltx_Math" alttext="F(\omega)" display="inline"><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ω</mi><mo stretchy="false">)</mo></mrow></mrow></math> means the amplitude of the oscillator with angular frequency <math id="p5.m4" class="ltx_Math" alttext="\omega" display="inline"><mi>ω</mi></math>.  We can infer from (5) that the more localised (<math id="p5.m5" class="ltx_Math" alttext="\Delta t" display="inline"><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>t</mi></mrow></math> small) the external force is in time, the more spread (<math id="p5.m6" class="ltx_Math" alttext="\Delta\omega" display="inline"><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>ω</mi></mrow></math> great) is its spectrum of frequencies, i.e. the greater is the amount of the oscillators the force has excited with roughly the same amplitude.  If one, conversely, wants to better the selectivity, i.e. to compress the spectrum narrower, then one has to spread out the external action in time.  The impossibility to simultaneously localise the action in time and enhance the selectivity of the action is one of the manifestations of the quantum-mechanical <span class="ltx_text ltx_font_italic">uncertainty principle</span>, which has a fundamental role in modern physics.</p>
+</div>
+<section id="bib" class="ltx_bibliography">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+
+<ul class="ltx_biblist">
+      
+<li id="bib.bib1" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">1</span>
+        
+<span class="ltx_bibblock"> Я. Б. Зельдович &amp;  А. Д. Мышкис:
+<span class="ltx_text ltx_font_italic">Элементы  прикладной  математики</span>.  Издательство 
+‘‘Наука’’.  Москва (1976).
+
+</span>
+      </li>
+      
+<li id="bib.bib2" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">2</span>
+        
+<span class="ltx_bibblock">
+Ya. B. Zel’dovich and A. D. Myshkis: ‘‘<span class="ltx_text ltx_font_italic">Elements of applied mathematics</span>’’.
+Nauka (Science) Publishers, Moscow (1976).
+
+</span>
+      </li>
+    
+</ul>
+</section>
+<div id="p6" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">uncertainty principle</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">UncertaintyPrinciple</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 18:38:25</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 18:38:25</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">pahio (2872)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">pahio (2872)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">10</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">pahio (2872)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Example</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 42A38</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_r">UncertaintyTheorem</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_r">SubstitutionNotation</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">GraphOfEquationXyConstant</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Fri Feb  9 21:29:33 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

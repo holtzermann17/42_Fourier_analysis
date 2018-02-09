@@ -1,0 +1,295 @@
+<!DOCTYPE html><html>
+<head>
+<title>approximating Fourier integrals with discrete Fourier transforms</title>
+<!--Generated on Fri Feb  9 21:30:06 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">approximating Fourier integrals with discrete Fourier transforms</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Suppose we have a continuous function <math id="p2.m1" class="ltx_Math" alttext="f\colon\mathbb{R}^{\nu}\to\mathbb{C}" display="inline"><mrow><mi>f</mi><mo>:</mo><mrow><msup><mi>ℝ</mi><mi>ν</mi></msup><mo>→</mo><mi>ℂ</mi></mrow></mrow></math>
+for which we want to numerically
+compute the continuous Fourier transform:</p>
+<table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex1.m1" class="ltx_Math" alttext="\hat{f}(\xi)=\int_{\mathbb{R}^{\nu}}f(x)\,e^{-2\pi i\xi\cdot x}\,dx\,,\quad\xi%
+\in\mathbb{R}^{\nu}\,." display="block"><mrow><mrow><mrow><mrow><mover accent="true"><mi>f</mi><mo stretchy="false">^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>ξ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mo largeop="true" symmetric="true">∫</mo><msup><mi>ℝ</mi><mi>ν</mi></msup></msub><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo rspace="4.2pt" stretchy="false">)</mo></mrow><mo>⁢</mo><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mo>-</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>ξ</mi></mrow><mo>⋅</mo><mi>x</mi></mrow></mrow></msup></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mpadded width="+1.7pt"><mi>x</mi></mpadded></mrow></mrow></mrow></mrow><mo rspace="12.5pt">,</mo><mrow><mi>ξ</mi><mo>∈</mo><mpadded width="+1.7pt"><msup><mi>ℝ</mi><mi>ν</mi></msup></mpadded></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Assume that either the function <math id="p2.m2" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> is supported
+inside the compact rectangle
+<math id="p2.m3" class="ltx_Math" alttext="C=[a_{1},b_{1}]\times\cdots\times[a_{\nu},b_{\nu}]" display="inline"><mrow><mi>C</mi><mo>=</mo><mrow><mrow><mo stretchy="false">[</mo><msub><mi>a</mi><mn>1</mn></msub><mo>,</mo><msub><mi>b</mi><mn>1</mn></msub><mo stretchy="false">]</mo></mrow><mo>×</mo><mi mathvariant="normal">⋯</mi><mo>×</mo><mrow><mo stretchy="false">[</mo><msub><mi>a</mi><mi>ν</mi></msub><mo>,</mo><msub><mi>b</mi><mi>ν</mi></msub><mo stretchy="false">]</mo></mrow></mrow></mrow></math>,
+or that the Fourier integral is well approximated
+by truncating the domain to <math id="p2.m4" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math>.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">We develop an approximation to <math id="p3.m1" class="ltx_Math" alttext="\hat{f}" display="inline"><mover accent="true"><mi>f</mi><mo stretchy="false">^</mo></mover></math>
+based on the discrete Fourier transform
+(which can be computed efficiently using the fast Fourier transform
+algorithm), and analyze the error in making this approximation.</p>
+</div>
+<section id="S0.SSx1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">Derivation</h2>
+
+<div id="S0.SSx1.p1" class="ltx_para">
+<p class="ltx_p">Performing the linear substitution</p>
+<table id="S0.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex2.m1" class="ltx_Math" alttext="t_{j}=\frac{x-a_{j}}{b_{j}-a_{j}}\,,\quad j=1,\ldots,\nu\,," display="block"><mrow><mrow><mrow><msub><mi>t</mi><mi>j</mi></msub><mo>=</mo><mpadded width="+1.7pt"><mfrac><mrow><mi>x</mi><mo>-</mo><msub><mi>a</mi><mi>j</mi></msub></mrow><mrow><msub><mi>b</mi><mi>j</mi></msub><mo>-</mo><msub><mi>a</mi><mi>j</mi></msub></mrow></mfrac></mpadded></mrow><mo rspace="12.5pt">,</mo><mrow><mi>j</mi><mo>=</mo><mrow><mn>1</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mpadded width="+1.7pt"><mi>ν</mi></mpadded></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">we find that</p>
+<table id="S0.EGx1" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tr id="S0.Ex3" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex3.m2" class="ltx_Math" alttext="\displaystyle\int_{C}f(x)\,e^{-2\pi i\xi\cdot x}\,dx" display="inline"><mrow><mstyle displaystyle="true"><msub><mo largeop="true" symmetric="true">∫</mo><mi>C</mi></msub></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo rspace="4.2pt" stretchy="false">)</mo></mrow><mo>⁢</mo><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mo>-</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>ξ</mi></mrow><mo>⋅</mo><mi>x</mi></mrow></mrow></msup></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mi>x</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr id="S0.Ex4" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex4.m1" class="ltx_Math" alttext="\displaystyle=" display="inline"><mo>=</mo></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex4.m2" class="ltx_Math" alttext="\displaystyle\operatorname{Vol}(C)\,e^{-2\pi i\xi\cdot a}\int_{0}^{1}\cdots%
+\int_{0}^{1}g(t)\,e^{-2\pi i\bigl{(}(b_{1}-a_{1})\xi_{1}t_{1}+\cdots+(b_{\nu}-%
+a_{\nu})\xi_{\nu}t_{\nu}\bigr{)}}\,dt_{1}\cdots dt_{\nu}" display="inline"><mrow><mrow><mi>Vol</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>C</mi><mo rspace="4.2pt" stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>-</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>ξ</mi></mrow><mo>⋅</mo><mi>a</mi></mrow></mrow></msup><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mi mathvariant="normal">⋯</mi><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo rspace="4.2pt" stretchy="false">)</mo></mrow><mo>⁢</mo><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mo>-</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mrow><mo maxsize="171%" minsize="171%">(</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>b</mi><mn>1</mn></msub><mo>-</mo><msub><mi>a</mi><mn>1</mn></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>ξ</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>t</mi><mn>1</mn></msub></mrow><mo>+</mo><mi mathvariant="normal">⋯</mi><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>b</mi><mi>ν</mi></msub><mo>-</mo><msub><mi>a</mi><mi>ν</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>ξ</mi><mi>ν</mi></msub><mo>⁢</mo><msub><mi>t</mi><mi>ν</mi></msub></mrow></mrow><mo maxsize="171%" minsize="171%">)</mo></mrow></mrow></mrow></msup></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><msub><mi>t</mi><mn>1</mn></msub></mrow><mo>⁢</mo><mi mathvariant="normal">⋯</mi><mo>⁢</mo><mrow><mo>𝑑</mo><msub><mi>t</mi><mi>ν</mi></msub></mrow></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr id="S0.Ex5" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex5.m1" class="ltx_Math" alttext="\displaystyle=" display="inline"><mo>=</mo></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex5.m2" class="ltx_Math" alttext="\displaystyle\operatorname{Vol}(C)\,e^{-2\pi i\xi\cdot a}\,\hat{g}\bigl{(}(b_{%
+1}-a_{1})\xi_{1},\ldots,(b_{\nu}-a_{\nu})\xi_{\nu}\bigr{)}\,," display="inline"><mrow><mrow><mrow><mi>Vol</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>C</mi><mo rspace="4.2pt" stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mo>-</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>ξ</mi></mrow><mo>⋅</mo><mi>a</mi></mrow></mrow></msup></mpadded><mo>⁢</mo><mover accent="true"><mi>g</mi><mo stretchy="false">^</mo></mover><mo>⁢</mo><mrow><mo maxsize="120%" minsize="120%">(</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>b</mi><mn>1</mn></msub><mo>-</mo><msub><mi>a</mi><mn>1</mn></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>ξ</mi><mn>1</mn></msub></mrow><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>b</mi><mi>ν</mi></msub><mo>-</mo><msub><mi>a</mi><mi>ν</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>ξ</mi><mi>ν</mi></msub></mrow><mo maxsize="120%" minsize="120%" rspace="4.2pt">)</mo></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">where</p>
+<table id="S0.Ex6" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex6.m1" class="ltx_Math" alttext="g(t_{1},\ldots,t_{\nu})=f(a_{1}+(b_{1}-a_{1})t_{1},\ldots,a_{\nu}+(b_{\nu}-a_{%
+\nu})t_{\nu})\,,\quad t_{j}\in[0,1]\,," display="block"><mrow><mrow><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>t</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>t</mi><mi>ν</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>b</mi><mn>1</mn></msub><mo>-</mo><msub><mi>a</mi><mn>1</mn></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>t</mi><mn>1</mn></msub></mrow></mrow><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><msub><mi>a</mi><mi>ν</mi></msub><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><msub><mi>b</mi><mi>ν</mi></msub><mo>-</mo><msub><mi>a</mi><mi>ν</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>t</mi><mi>ν</mi></msub></mrow></mrow><mo rspace="4.2pt" stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="12.5pt">,</mo><mrow><msub><mi>t</mi><mi>j</mi></msub><mo>∈</mo><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo rspace="4.2pt" stretchy="false">]</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">and <math id="S0.SSx1.p1.m1" class="ltx_Math" alttext="\hat{g}" display="inline"><mover accent="true"><mi>g</mi><mo stretchy="false">^</mo></mover></math> denotes the Fourier transform of <math id="S0.SSx1.p1.m2" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> on the unit cube <math id="S0.SSx1.p1.m3" class="ltx_Math" alttext="[0,1]^{\nu}" display="inline"><msup><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><mi>ν</mi></msup></math>.</p>
+</div>
+<div id="S0.SSx1.p2" class="ltx_para">
+<p class="ltx_p">Let <math id="S0.SSx1.p2.m1" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> denote the vector with components
+<math id="S0.SSx1.p2.m2" class="ltx_Math" alttext="u(k_{1},\ldots,k_{\nu})=g(k_{1}/N,\ldots,k_{\nu}/N)" display="inline"><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>k</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>k</mi><mi>ν</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>k</mi><mn>1</mn></msub><mo>/</mo><mi>N</mi></mrow><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><msub><mi>k</mi><mi>ν</mi></msub><mo>/</mo><mi>N</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, for <math id="S0.SSx1.p2.m3" class="ltx_Math" alttext="k_{j}=0,\ldots,N-1" display="inline"><mrow><msub><mi>k</mi><mi>j</mi></msub><mo>=</mo><mrow><mn>0</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>N</mi><mo>-</mo><mn>1</mn></mrow></mrow></mrow></math>.
+The discrete Fourier transform
+of <math id="S0.SSx1.p2.m4" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> is</p>
+<table id="S0.Ex7" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex7.m1" class="ltx_Math" alttext="\hat{u}(l)=\sum_{k\in\{0,\ldots,N-1\}^{\nu}}u(k)\,e^{-2\pi ik\cdot l/N}\,,%
+\quad l=\{0,\ldots,N-1\}^{\nu}\,," display="block"><mrow><mrow><mrow><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>l</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><munder><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>k</mi><mo>∈</mo><msup><mrow><mo stretchy="false">{</mo><mn>0</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>N</mi><mo>-</mo><mn>1</mn></mrow><mo stretchy="false">}</mo></mrow><mi>ν</mi></msup></mrow></munder><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>k</mi><mo rspace="4.2pt" stretchy="false">)</mo></mrow><mo>⁢</mo><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mo>-</mo><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>k</mi></mrow><mo>⋅</mo><mi>l</mi></mrow><mo>/</mo><mi>N</mi></mrow></mrow></msup></mpadded></mrow></mrow></mrow><mo rspace="12.5pt">,</mo><mrow><mi>l</mi><mo>=</mo><mpadded width="+1.7pt"><msup><mrow><mo stretchy="false">{</mo><mn>0</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>N</mi><mo>-</mo><mn>1</mn></mrow><mo stretchy="false">}</mo></mrow><mi>ν</mi></msup></mpadded></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">and approximates <math id="S0.SSx1.p2.m5" class="ltx_Math" alttext="N^{\nu}\hat{g}(l)" display="inline"><mrow><msup><mi>N</mi><mi>ν</mi></msup><mo>⁢</mo><mover accent="true"><mi>g</mi><mo stretchy="false">^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>l</mi><mo stretchy="false">)</mo></mrow></mrow></math>
+since it is a Riemann sum (step size <math id="S0.SSx1.p2.m6" class="ltx_Math" alttext="1/N" display="inline"><mrow><mn>1</mn><mo>/</mo><mi>N</mi></mrow></math>) for the Fourier integral.</p>
+</div>
+<div id="S0.SSx1.p3" class="ltx_para">
+<p class="ltx_p">Therefore, for <math id="S0.SSx1.p3.m1" class="ltx_Math" alttext="l_{j}=0,\ldots,N-1" display="inline"><mrow><msub><mi>l</mi><mi>j</mi></msub><mo>=</mo><mrow><mn>0</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>N</mi><mo>-</mo><mn>1</mn></mrow></mrow></mrow></math>,
+we have the approximation:</p>
+<table id="S0.Ex8" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex8.m1" class="ltx_Math" alttext="\hat{f}\left(\frac{l_{1}}{b_{1}-a_{1}},\ldots,\frac{l_{\nu}}{b_{\nu}-a_{\nu}}%
+\right)\approx\frac{\operatorname{Vol}(C)}{N^{\nu}}\,e^{-2\pi i\left(\frac{a_{%
+1}l_{1}}{b_{1}-a_{1}}+\cdots+\frac{a_{\nu}l_{\nu}}{b_{\nu}-a_{\nu}}\right)}\,%
+\hat{u}(l)\,." display="block"><mrow><mrow><mrow><mover accent="true"><mi>f</mi><mo stretchy="false">^</mo></mover><mo>⁢</mo><mrow><mo>(</mo><mfrac><msub><mi>l</mi><mn>1</mn></msub><mrow><msub><mi>b</mi><mn>1</mn></msub><mo>-</mo><msub><mi>a</mi><mn>1</mn></msub></mrow></mfrac><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mfrac><msub><mi>l</mi><mi>ν</mi></msub><mrow><msub><mi>b</mi><mi>ν</mi></msub><mo>-</mo><msub><mi>a</mi><mi>ν</mi></msub></mrow></mfrac><mo>)</mo></mrow></mrow><mo>≈</mo><mrow><mpadded width="+1.7pt"><mfrac><mrow><mi>Vol</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>C</mi><mo stretchy="false">)</mo></mrow></mrow><msup><mi>N</mi><mi>ν</mi></msup></mfrac></mpadded><mo>⁢</mo><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mo>-</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mrow><mo>(</mo><mrow><mfrac><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>l</mi><mn>1</mn></msub></mrow><mrow><msub><mi>b</mi><mn>1</mn></msub><mo>-</mo><msub><mi>a</mi><mn>1</mn></msub></mrow></mfrac><mo>+</mo><mi mathvariant="normal">⋯</mi><mo>+</mo><mfrac><mrow><msub><mi>a</mi><mi>ν</mi></msub><mo>⁢</mo><msub><mi>l</mi><mi>ν</mi></msub></mrow><mrow><msub><mi>b</mi><mi>ν</mi></msub><mo>-</mo><msub><mi>a</mi><mi>ν</mi></msub></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></mrow></msup></mpadded><mo>⁢</mo><mover accent="true"><mi>u</mi><mo stretchy="false">^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>l</mi><mo rspace="4.2pt" stretchy="false">)</mo></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+</section>
+<section id="S0.SSx2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">Analysing the error</h2>
+
+<div id="S0.SSx2.p1" class="ltx_para">
+<p class="ltx_p">Assume that <math id="S0.SSx2.p1.m1" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> can be represented by a pointwise-convergent<span class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup>
+Since the discrete Fourier transform requires sampling of points, <math id="S0.SSx2.p1.m2" class="ltx_Math" alttext="\mathbf{L}^{2}" display="inline"><msup><mi>𝐋</mi><mn>2</mn></msup></math>
+convergence of the Fourier series is not sufficient. Also, the Fourier series
+may only be conditionally convergent. If there are difficulties in assuring
+its convergence, Fejér summation can be
+used instead in this analysis.</span></span></span>
+Fourier series:</p>
+<table id="S0.Ex9" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex9.m1" class="ltx_Math" alttext="g(t)=\sum_{k\in\mathbb{Z}^{\nu}}\langle{g},{E_{k}}\rangle\,E_{k}(t)\,," display="block"><mrow><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><munder><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>k</mi><mo>∈</mo><msup><mi>ℤ</mi><mi>ν</mi></msup></mrow></munder><mrow><mrow><mo stretchy="false">⟨</mo><mi>g</mi><mo>,</mo><msub><mi>E</mi><mi>k</mi></msub><mo rspace="4.2pt" stretchy="false">⟩</mo></mrow><mo>⁢</mo><msub><mi>E</mi><mi>k</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo rspace="4.2pt" stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">where</p>
+<table id="S0.Ex10" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex10.m1" class="ltx_Math" alttext="E_{k}(t)=e^{2\pi ik\cdot t}\,,\quad\langle{\alpha},{\beta}\rangle=\int_{[0,1]^%
+{\nu}}\alpha(t)\,\overline{\beta(t)}\,dt\,." display="block"><mrow><mrow><mrow><mrow><msub><mi>E</mi><mi>k</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>k</mi></mrow><mo>⋅</mo><mi>t</mi></mrow></msup></mpadded></mrow><mo rspace="12.5pt">,</mo><mrow><mrow><mo stretchy="false">⟨</mo><mi>α</mi><mo>,</mo><mi>β</mi><mo stretchy="false">⟩</mo></mrow><mo>=</mo><mrow><msub><mo largeop="true" symmetric="true">∫</mo><msup><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><mi>ν</mi></msup></msub><mrow><mi>α</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo rspace="4.2pt" stretchy="false">)</mo></mrow><mo>⁢</mo><mpadded width="+1.7pt"><mover accent="true"><mrow><mi>β</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>¯</mo></mover></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mpadded width="+1.7pt"><mi>t</mi></mpadded></mrow></mrow></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S0.SSx2.p2" class="ltx_para">
+<p class="ltx_p">The Fourier coefficient of <math id="S0.SSx2.p2.m1" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> is
+<math id="S0.SSx2.p2.m2" class="ltx_Math" alttext="\hat{g}(l)=\langle{g},{E_{l}}\rangle" display="inline"><mrow><mrow><mover accent="true"><mi>g</mi><mo stretchy="false">^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>l</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo stretchy="false">⟨</mo><mi>g</mi><mo>,</mo><msub><mi>E</mi><mi>l</mi></msub><mo stretchy="false">⟩</mo></mrow></mrow></math>, and in contrast
+<math id="S0.SSx2.p2.m3" class="ltx_Math" alttext="\hat{u}(l)=N^{\nu}\,\langle{g},{E_{k}}\rangle_{N}" display="inline"><mrow><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>l</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mpadded width="+1.7pt"><msup><mi>N</mi><mi>ν</mi></msup></mpadded><mo>⁢</mo><msub><mrow><mo stretchy="false">⟨</mo><mi>g</mi><mo>,</mo><msub><mi>E</mi><mi>k</mi></msub><mo stretchy="false">⟩</mo></mrow><mi>N</mi></msub></mrow></mrow></math>, where:</p>
+<table id="S0.Ex11" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex11.m1" class="ltx_Math" alttext="\langle{\alpha},{\beta}\rangle_{N}=\frac{1}{N^{\nu}}\sum_{k\in\{0,\ldots,N-1\}%
+^{\nu}}\alpha(k/N)\,\overline{\beta(k/N)}" display="block"><mrow><msub><mrow><mo stretchy="false">⟨</mo><mi>α</mi><mo>,</mo><mi>β</mi><mo stretchy="false">⟩</mo></mrow><mi>N</mi></msub><mo>=</mo><mrow><mfrac><mn>1</mn><msup><mi>N</mi><mi>ν</mi></msup></mfrac><mo>⁢</mo><mrow><munder><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>k</mi><mo>∈</mo><msup><mrow><mo stretchy="false">{</mo><mn>0</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>N</mi><mo>-</mo><mn>1</mn></mrow><mo stretchy="false">}</mo></mrow><mi>ν</mi></msup></mrow></munder><mrow><mi>α</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>/</mo><mi>N</mi></mrow><mo rspace="4.2pt" stretchy="false">)</mo></mrow><mo>⁢</mo><mover accent="true"><mrow><mi>β</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>/</mo><mi>N</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>¯</mo></mover></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">is a positive semi-definite inner product.</p>
+</div>
+<div id="S0.SSx2.p3" class="ltx_para">
+<p class="ltx_p">We have the exact formula:</p>
+<table id="S0.Ex12" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex12.m1" class="ltx_Math" alttext="\hat{f}\left(\frac{l_{1}}{b_{1}-a_{1}},\ldots,\frac{l_{\nu}}{b_{\nu}-a_{\nu}}%
+\right)=\operatorname{Vol}(C)\,e^{-2\pi i\left(\frac{a_{1}l_{1}}{b_{1}-a_{1}}+%
+\cdots+\frac{a_{\nu}l_{\nu}}{b_{\nu}-a_{\nu}}\right)}\,\hat{g}(l)\,;" display="block"><mrow><mrow><mrow><mover accent="true"><mi>f</mi><mo stretchy="false">^</mo></mover><mo>⁢</mo><mrow><mo>(</mo><mfrac><msub><mi>l</mi><mn>1</mn></msub><mrow><msub><mi>b</mi><mn>1</mn></msub><mo>-</mo><msub><mi>a</mi><mn>1</mn></msub></mrow></mfrac><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mfrac><msub><mi>l</mi><mi>ν</mi></msub><mrow><msub><mi>b</mi><mi>ν</mi></msub><mo>-</mo><msub><mi>a</mi><mi>ν</mi></msub></mrow></mfrac><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>Vol</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>C</mi><mo rspace="4.2pt" stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mo>-</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mrow><mo>(</mo><mrow><mfrac><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>l</mi><mn>1</mn></msub></mrow><mrow><msub><mi>b</mi><mn>1</mn></msub><mo>-</mo><msub><mi>a</mi><mn>1</mn></msub></mrow></mfrac><mo>+</mo><mi mathvariant="normal">⋯</mi><mo>+</mo><mfrac><mrow><msub><mi>a</mi><mi>ν</mi></msub><mo>⁢</mo><msub><mi>l</mi><mi>ν</mi></msub></mrow><mrow><msub><mi>b</mi><mi>ν</mi></msub><mo>-</mo><msub><mi>a</mi><mi>ν</mi></msub></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></mrow></msup></mpadded><mo>⁢</mo><mover accent="true"><mi>g</mi><mo stretchy="false">^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>l</mi><mo rspace="4.2pt" stretchy="false">)</mo></mrow></mrow></mrow><mo>;</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">and we wish to know what error is introduced
+if we were to replace <math id="S0.SSx2.p3.m1" class="ltx_Math" alttext="\hat{g}(l)=\langle{g},{E_{l}}\rangle" display="inline"><mrow><mrow><mover accent="true"><mi>g</mi><mo stretchy="false">^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>l</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo stretchy="false">⟨</mo><mi>g</mi><mo>,</mo><msub><mi>E</mi><mi>l</mi></msub><mo stretchy="false">⟩</mo></mrow></mrow></math>
+by the discrete version of the inner product <math id="S0.SSx2.p3.m2" class="ltx_Math" alttext="\langle{g},{E_{l}}\rangle_{N}=\hat{u}(l)/N^{\nu}" display="inline"><mrow><msub><mrow><mo stretchy="false">⟨</mo><mi>g</mi><mo>,</mo><msub><mi>E</mi><mi>l</mi></msub><mo stretchy="false">⟩</mo></mrow><mi>N</mi></msub><mo>=</mo><mrow><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>l</mi><mo stretchy="false">)</mo></mrow></mrow><mo>/</mo><msup><mi>N</mi><mi>ν</mi></msup></mrow></mrow></math>.</p>
+</div>
+<div id="S0.SSx2.p4" class="ltx_para">
+<p class="ltx_p">Expand <math id="S0.SSx2.p4.m1" class="ltx_Math" alttext="\langle{g},{E_{l}}\rangle_{N}" display="inline"><msub><mrow><mo stretchy="false">⟨</mo><mi>g</mi><mo>,</mo><msub><mi>E</mi><mi>l</mi></msub><mo stretchy="false">⟩</mo></mrow><mi>N</mi></msub></math> as:</p>
+<table id="S0.Ex13" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex13.m1" class="ltx_Math" alttext="\langle{g},{E_{l}}\rangle_{N}=\biggl{\langle}{\sum_{k\in\mathbb{Z}^{\nu}}%
+\langle{g},{E_{k}}\rangle E_{k}}\,,{E_{l}}\biggr{\rangle}_{N}=\sum_{k\in%
+\mathbb{Z}^{\nu}}\langle{g},{E_{k}}\rangle\langle{E_{k}},{E_{l}}\rangle_{N}\,." display="block"><mrow><mrow><msub><mrow><mo stretchy="false">⟨</mo><mi>g</mi><mo>,</mo><msub><mi>E</mi><mi>l</mi></msub><mo stretchy="false">⟩</mo></mrow><mi>N</mi></msub><mo>=</mo><msub><mrow><mo maxsize="210%" minsize="210%">⟨</mo><mrow><munder><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>k</mi><mo>∈</mo><msup><mi>ℤ</mi><mi>ν</mi></msup></mrow></munder><mrow><mrow><mo stretchy="false">⟨</mo><mi>g</mi><mo>,</mo><msub><mi>E</mi><mi>k</mi></msub><mo stretchy="false">⟩</mo></mrow><mo>⁢</mo><mpadded width="+1.7pt"><msub><mi>E</mi><mi>k</mi></msub></mpadded></mrow></mrow><mo>,</mo><msub><mi>E</mi><mi>l</mi></msub><mo maxsize="210%" minsize="210%">⟩</mo></mrow><mi>N</mi></msub><mo>=</mo><mrow><munder><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>k</mi><mo>∈</mo><msup><mi>ℤ</mi><mi>ν</mi></msup></mrow></munder><mrow><mrow><mo stretchy="false">⟨</mo><mi>g</mi><mo>,</mo><msub><mi>E</mi><mi>k</mi></msub><mo stretchy="false">⟩</mo></mrow><mo>⁢</mo><mpadded width="+1.7pt"><msub><mrow><mo stretchy="false">⟨</mo><msub><mi>E</mi><mi>k</mi></msub><mo>,</mo><msub><mi>E</mi><mi>l</mi></msub><mo stretchy="false">⟩</mo></mrow><mi>N</mi></msub></mpadded></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Since <math id="S0.SSx2.p4.m2" class="ltx_Math" alttext="\langle{E_{k}},{E_{l}}\rangle_{N}" display="inline"><msub><mrow><mo stretchy="false">⟨</mo><msub><mi>E</mi><mi>k</mi></msub><mo>,</mo><msub><mi>E</mi><mi>l</mi></msub><mo stretchy="false">⟩</mo></mrow><mi>N</mi></msub></math> is <math id="S0.SSx2.p4.m3" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math> if <math id="S0.SSx2.p4.m4" class="ltx_Math" alttext="k_{j}\equiv l_{j}\pmod{N}" display="inline"><mrow><msub><mi>k</mi><mi>j</mi></msub><mo>≡</mo><mrow><msub><mi>l</mi><mi>j</mi></msub><mspace width="veryverythickmathspace"></mspace><mrow><mo lspace="8.1pt" stretchy="false">(</mo><mrow><mo>mod</mo><mi>N</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math> for all <math id="S0.SSx2.p4.m5" class="ltx_Math" alttext="j" display="inline"><mi>j</mi></math>,
+and is <math id="S0.SSx2.p4.m6" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math> otherwise,
+the discrete inner product reduces to:</p>
+<table id="S0.Ex14" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex14.m1" class="ltx_Math" alttext="\langle{g},{E_{l}}\rangle_{N}=\sum_{k\in\mathbb{Z}^{\nu}}\langle{g},{E_{l+kN}}%
+\rangle=\langle{g},{E_{l}}\rangle+\sum_{k\in\mathbb{Z}^{\nu}\setminus\{0\}}%
+\langle{g},{E_{l+kN}}\rangle\,." display="block"><mrow><mrow><msub><mrow><mo stretchy="false">⟨</mo><mi>g</mi><mo>,</mo><msub><mi>E</mi><mi>l</mi></msub><mo stretchy="false">⟩</mo></mrow><mi>N</mi></msub><mo>=</mo><mrow><munder><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>k</mi><mo>∈</mo><msup><mi>ℤ</mi><mi>ν</mi></msup></mrow></munder><mrow><mo stretchy="false">⟨</mo><mi>g</mi><mo>,</mo><msub><mi>E</mi><mrow><mi>l</mi><mo>+</mo><mrow><mi>k</mi><mo>⁢</mo><mi>N</mi></mrow></mrow></msub><mo stretchy="false">⟩</mo></mrow></mrow><mo>=</mo><mrow><mrow><mo stretchy="false">⟨</mo><mi>g</mi><mo>,</mo><msub><mi>E</mi><mi>l</mi></msub><mo stretchy="false">⟩</mo></mrow><mo>+</mo><mrow><munder><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>k</mi><mo>∈</mo><mrow><msup><mi>ℤ</mi><mi>ν</mi></msup><mo>∖</mo><mrow><mo stretchy="false">{</mo><mn>0</mn><mo stretchy="false">}</mo></mrow></mrow></mrow></munder><mrow><mo stretchy="false">⟨</mo><mi>g</mi><mo>,</mo><msub><mi>E</mi><mrow><mi>l</mi><mo>+</mo><mrow><mi>k</mi><mo>⁢</mo><mi>N</mi></mrow></mrow></msub><mo rspace="4.2pt" stretchy="false">⟩</mo></mrow></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S0.SSx2.p5" class="ltx_para">
+<p class="ltx_p">In other words, the approximation entails replacing
+the true Fourier coefficient <math id="S0.SSx2.p5.m1" class="ltx_Math" alttext="\hat{g}(l)" display="inline"><mrow><mover accent="true"><mi>g</mi><mo stretchy="false">^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>l</mi><mo stretchy="false">)</mo></mrow></mrow></math>
+with the same coefficient
+plus other Fourier coefficients <math id="S0.SSx2.p5.m2" class="ltx_Math" alttext="\langle{g},{E_{l+kN}}\rangle" display="inline"><mrow><mo stretchy="false">⟨</mo><mi>g</mi><mo>,</mo><msub><mi>E</mi><mrow><mi>l</mi><mo>+</mo><mrow><mi>k</mi><mo>⁢</mo><mi>N</mi></mrow></mrow></msub><mo stretchy="false">⟩</mo></mrow></math>
+corresponding to higher
+frequencies, in multiples of <math id="S0.SSx2.p5.m3" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math>.
+The magnitude of the approximation error
+for <math id="S0.SSx2.p5.m4" class="ltx_Math" alttext="\hat{f}" display="inline"><mover accent="true"><mi>f</mi><mo stretchy="false">^</mo></mover></math>
+thus depends on how fast the partial sums
+of the Fourier coefficients <math id="S0.SSx2.p5.m5" class="ltx_Math" alttext="\langle{g},{E_{k}}\rangle" display="inline"><mrow><mo stretchy="false">⟨</mo><mi>g</mi><mo>,</mo><msub><mi>E</mi><mi>k</mi></msub><mo stretchy="false">⟩</mo></mrow></math> decay to zero.</p>
+</div>
+<div id="S0.SSx2.p6" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">approximating Fourier integrals with discrete Fourier transforms</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">ApproximatingFourierIntegralsWithDiscreteFourierTransforms</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 16:28:23</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 16:28:23</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">stevecheng (10074)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">stevecheng (10074)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">9</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">stevecheng (10074)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Derivation</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 42B10</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 65T50</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 42A38</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">DiscreteTimeFourierTransformInRelationWithItsContinousTimeFourierTransfrom</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Fri Feb  9 21:30:06 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

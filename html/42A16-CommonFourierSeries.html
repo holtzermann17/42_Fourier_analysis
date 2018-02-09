@@ -1,0 +1,236 @@
+<!DOCTYPE html><html>
+<head>
+<title>common Fourier series</title>
+<!--Generated on Fri Feb  9 21:28:40 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">common Fourier series</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">This entry gives some examples of commonly encountered periodic functions
+and their Fourier series, with graphs to show the speed of convergence.
+</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">We take <math id="p2.m1" class="ltx_Math" alttext="[0,1]" display="inline"><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">]</mo></mrow></math> as the model interval,
+with the <math id="p2.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>th Fourier coefficient of a function <math id="p2.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> defined as</p>
+<table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex1.m1" class="ltx_Math" alttext="\widehat{f}(n)=\int_{0}^{1}f(t)\,e^{-2\pi int}\,dt\,,\quad n\in\mathbb{Z}\,." display="block"><mrow><mrow><mrow><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mn>1</mn></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo rspace="4.2pt" stretchy="false">)</mo></mrow><mo>⁢</mo><mpadded width="+1.7pt"><msup><mi>e</mi><mrow><mo>-</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></msup></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mpadded width="+1.7pt"><mi>t</mi></mpadded></mrow></mrow></mrow></mrow><mo rspace="12.5pt">,</mo><mrow><mi>n</mi><mo>∈</mo><mpadded width="+1.7pt"><mi>ℤ</mi></mpadded></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">The parameters of the functions in the examples
+have been chosen to attempt to minimize
+the complexity of <math id="p2.m4" class="ltx_Math" alttext="\widehat{f}(0)" display="inline"><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></math>. But the Fourier coefficients for
+the most common  of the functions given below are easily derived
+by taking the appropriate linear transformations on the coefficients given.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">We do not dwell on the convergence of the Fourier series for each function,
+although we note that by a theorem of Dirichlet, the Fourier series for each function (each of bounded variation) converges uniformly on any compact interval where the function is continuous.</p>
+</div>
+<section id="S1" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1 </span>Square wave</h2>
+
+<div id="S1.p1" class="ltx_para">
+<table id="S1.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S1.Ex2.m1" class="ltx_Math" alttext="f(t)=\begin{cases}-\frac{1}{2}\,,&amp;t&lt;\frac{1}{2}\\
++\frac{1}{2}\,,&amp;t&gt;\frac{1}{2}\,.\end{cases}" display="block"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="left"><mrow><mrow><mo>-</mo><mpadded width="+1.7pt"><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mpadded></mrow><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mi>t</mi><mo>&lt;</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mrow><mo>+</mo><mpadded width="+1.7pt"><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mpadded></mrow><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mrow><mi>t</mi><mo>&gt;</mo><mpadded width="+1.7pt"><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mpadded></mrow><mo>.</mo></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<span class="ltx_ERROR undefined">{makeimage}</span>
+<div id="S1.p2" class="ltx_para">
+<table id="S3.EGx1" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tr id="S1.Ex3" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S1.Ex3.m1" class="ltx_Math" alttext="\displaystyle\widehat{f}(n)" display="inline"><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S1.Ex3.m2" class="ltx_Math" alttext="\displaystyle=\begin{cases}0\,,&amp;n=0\\
+\dfrac{1-e^{i\pi n}}{-2\pi in}\,,&amp;n\neq 0\end{cases}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd columnalign="left"><mrow><mpadded width="+1.7pt"><mn>0</mn></mpadded><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mpadded width="+1.7pt"><mstyle displaystyle="true"><mfrac><mrow><mn>1</mn><mo>-</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>n</mi></mrow></msup></mrow><mrow><mo>-</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>n</mi></mrow></mrow></mfrac></mstyle></mpadded><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mi>n</mi><mo>≠</mo><mn>0</mn></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr id="S1.Ex4" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S1.Ex4.m2" class="ltx_Math" alttext="\displaystyle=\begin{cases}0\,,&amp;\text{$n$ is even}\\
+-\dfrac{1}{\pi in}\,,&amp;\text{$n$ is odd.}\end{cases}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd columnalign="left"><mrow><mpadded width="+1.7pt"><mn>0</mn></mpadded><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mi>n</mi><mtext> is even</mtext></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mrow><mo>-</mo><mpadded width="+1.7pt"><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mi>π</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>n</mi></mrow></mfrac></mstyle></mpadded></mrow><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mi>n</mi><mtext> is odd.</mtext></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr id="S1.Ex5" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S1.Ex5.m1" class="ltx_Math" alttext="\displaystyle f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S1.Ex5.m2" class="ltx_Math" alttext="\displaystyle\sim-\frac{2}{\pi}\,\sum_{n\in\mathbb{N}\text{ odd }}\,\frac{1}{n%
+}\sin 2\pi nt\,." display="inline"><mrow><mrow><mi></mi><mo>∼</mo><mrow><mo>-</mo><mrow><mpadded width="+1.7pt"><mstyle displaystyle="true"><mfrac><mn>2</mn><mi>π</mi></mfrac></mstyle></mpadded><mo>⁢</mo><mrow><mpadded width="+1.7pt"><mstyle displaystyle="true"><munder><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>n</mi><mo>∈</mo><mrow><mi>ℕ</mi><mo>⁢</mo><mtext> odd </mtext></mrow></mrow></munder></mstyle></mpadded><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>n</mi></mfrac></mstyle><mo>⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mpadded width="+1.7pt"><mi>t</mi></mpadded></mrow></mrow></mrow></mrow></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<figure id="S1.F1" class="ltx_figure"><img src="graphs-1.eps" id="S1.F1.g1" class="ltx_graphics ltx_centering" alt="">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_figure">Figure 1: </span>Square wave function</figcaption>
+</figure>
+</section>
+<section id="S2" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2 </span>Sawtooth wave</h2>
+
+<div id="S2.p1" class="ltx_para">
+<table id="S2.Ex6" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S2.Ex6.m1" class="ltx_Math" alttext="f(t)=t-\frac{1}{2}\,." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>t</mi><mo>-</mo><mpadded width="+1.7pt"><mfrac><mn>1</mn><mn>2</mn></mfrac></mpadded></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<span class="ltx_ERROR undefined">{makeimage}</span>
+<div id="S2.p2" class="ltx_para">
+<table id="S3.EGx2" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tr id="S2.Ex7" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S2.Ex7.m1" class="ltx_Math" alttext="\displaystyle\widehat{f}(n)" display="inline"><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S2.Ex7.m2" class="ltx_Math" alttext="\displaystyle=\begin{cases}0\,,&amp;n=0\\
+-\dfrac{1}{2\pi in}\,,&amp;n\neq 0\,.\end{cases}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd columnalign="left"><mrow><mpadded width="+1.7pt"><mn>0</mn></mpadded><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mrow><mo>-</mo><mpadded width="+1.7pt"><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>i</mi><mo>⁢</mo><mi>n</mi></mrow></mfrac></mstyle></mpadded></mrow><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mrow><mi>n</mi><mo>≠</mo><mpadded width="+1.7pt"><mn>0</mn></mpadded></mrow><mo>.</mo></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr id="S2.Ex8" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S2.Ex8.m1" class="ltx_Math" alttext="\displaystyle f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S2.Ex8.m2" class="ltx_Math" alttext="\displaystyle\sim-\frac{1}{\pi}\,\sum_{n\in\mathbb{N}}\,\frac{1}{n}\sin 2\pi nt\,." display="inline"><mrow><mrow><mi></mi><mo>∼</mo><mrow><mo>-</mo><mrow><mpadded width="+1.7pt"><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>π</mi></mfrac></mstyle></mpadded><mo>⁢</mo><mrow><mpadded width="+1.7pt"><mstyle displaystyle="true"><munder><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>n</mi><mo>∈</mo><mi>ℕ</mi></mrow></munder></mstyle></mpadded><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>n</mi></mfrac></mstyle><mo>⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mpadded width="+1.7pt"><mi>t</mi></mpadded></mrow></mrow></mrow></mrow></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<figure id="S2.F2" class="ltx_figure"><img src="graphs-2.eps" id="S2.F2.g1" class="ltx_graphics ltx_centering" alt="">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_figure">Figure 2: </span>Sawtooth wave function</figcaption>
+</figure>
+</section>
+<section id="S3" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3 </span>Triangular wave</h2>
+
+<div id="S3.p1" class="ltx_para">
+<table id="S3.Ex9" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S3.Ex9.m1" class="ltx_Math" alttext="f(t)=\begin{cases}t-\frac{1}{4}\,,&amp;t&lt;\frac{1}{2}\\
+-t+\frac{3}{4}\,,&amp;t&gt;\frac{1}{2}\,.\end{cases}" display="block"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="left"><mrow><mrow><mi>t</mi><mo>-</mo><mpadded width="+1.7pt"><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>4</mn></mfrac></mstyle></mpadded></mrow><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mi>t</mi><mo>&lt;</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mrow><mrow><mo>-</mo><mi>t</mi></mrow><mo>+</mo><mpadded width="+1.7pt"><mstyle displaystyle="false"><mfrac><mn>3</mn><mn>4</mn></mfrac></mstyle></mpadded></mrow><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mrow><mi>t</mi><mo>&gt;</mo><mpadded width="+1.7pt"><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mpadded></mrow><mo>.</mo></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<span class="ltx_ERROR undefined">{makeimage}</span>
+<div id="S3.p2" class="ltx_para">
+<table id="S3.EGx3" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tr id="S3.Ex10" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S3.Ex10.m1" class="ltx_Math" alttext="\displaystyle\widehat{f}(n)" display="inline"><mrow><mover accent="true"><mi>f</mi><mo>^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S3.Ex10.m2" class="ltx_Math" alttext="\displaystyle=\begin{cases}0\,,&amp;n=0\\
+-\dfrac{1-e^{i\pi n}}{2\pi^{2}n^{2}}\,,&amp;n\neq 0\,.\end{cases}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd columnalign="left"><mrow><mpadded width="+1.7pt"><mn>0</mn></mpadded><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mrow><mo>-</mo><mpadded width="+1.7pt"><mstyle displaystyle="true"><mfrac><mrow><mn>1</mn><mo>-</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>n</mi></mrow></msup></mrow><mrow><mn>2</mn><mo>⁢</mo><msup><mi>π</mi><mn>2</mn></msup><mo>⁢</mo><msup><mi>n</mi><mn>2</mn></msup></mrow></mfrac></mstyle></mpadded></mrow><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mrow><mi>n</mi><mo>≠</mo><mpadded width="+1.7pt"><mn>0</mn></mpadded></mrow><mo>.</mo></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr id="S3.Ex11" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S3.Ex11.m2" class="ltx_Math" alttext="\displaystyle=\begin{cases}0\,,&amp;\text{$n$ is even}\\
+-\dfrac{1}{\pi^{2}n^{2}}\,,&amp;\text{$n$ is odd}\,.\end{cases}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd columnalign="left"><mrow><mpadded width="+1.7pt"><mn>0</mn></mpadded><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mi>n</mi><mtext> is even</mtext></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mrow><mo>-</mo><mpadded width="+1.7pt"><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><msup><mi>π</mi><mn>2</mn></msup><mo>⁢</mo><msup><mi>n</mi><mn>2</mn></msup></mrow></mfrac></mstyle></mpadded></mrow><mo>,</mo></mrow></mtd><mtd columnalign="left"><mrow><mpadded width="+1.7pt"><mrow><mi>n</mi><mtext> is odd</mtext></mrow></mpadded><mo>.</mo></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr id="S3.Ex12" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S3.Ex12.m1" class="ltx_Math" alttext="\displaystyle f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S3.Ex12.m2" class="ltx_Math" alttext="\displaystyle\sim-\frac{2}{\pi^{2}}\,\sum_{n\in\mathbb{N}\text{ odd}}\,\frac{1%
+}{n^{2}}\cos 2\pi nt\,." display="inline"><mrow><mrow><mi></mi><mo>∼</mo><mrow><mo>-</mo><mrow><mpadded width="+1.7pt"><mstyle displaystyle="true"><mfrac><mn>2</mn><msup><mi>π</mi><mn>2</mn></msup></mfrac></mstyle></mpadded><mo>⁢</mo><mrow><mpadded width="+1.7pt"><mstyle displaystyle="true"><munder><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>n</mi><mo>∈</mo><mrow><mi>ℕ</mi><mo>⁢</mo><mtext> odd</mtext></mrow></mrow></munder></mstyle></mpadded><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><msup><mi>n</mi><mn>2</mn></msup></mfrac></mstyle><mo>⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>n</mi><mo>⁢</mo><mpadded width="+1.7pt"><mi>t</mi></mpadded></mrow></mrow></mrow></mrow></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<figure id="S3.F3" class="ltx_figure"><img src="graphs-3.eps" id="S3.F3.g1" class="ltx_graphics ltx_centering" alt="">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_figure">Figure 3: </span>Triangular wave function</figcaption>
+</figure>
+<div id="S3.p3" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">common Fourier series</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">CommonFourierSeries</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 15:41:51</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 15:41:51</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">stevecheng (10074)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">stevecheng (10074)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">8</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">stevecheng (10074)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Example</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 42A16</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_r">SawBladeFunction</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Related topic</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">MinimalityPropertyOfFourierCoefficients</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Fri Feb  9 21:28:40 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html><html>
+<head>
+<title>Fourier sine and cosine series</title>
+<!--Generated on Fri Feb  9 21:29:04 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">Fourier sine and cosine series</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">One sees from the formulae</p>
+<table id="A0.EGx1" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tr id="S0.Ex1" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex1.m1" class="ltx_Math" alttext="\displaystyle a_{n}" display="inline"><msub><mi>a</mi><mi>n</mi></msub></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex1.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos{nx}\,dx," display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>π</mi></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo largeop="true" symmetric="true">∫</mo><mrow><mo>-</mo><mi>π</mi></mrow><mi>π</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mi>n</mi><mo>⁢</mo><mpadded width="+1.7pt"><mi>x</mi></mpadded><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr id="S0.Ex2" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex2.m1" class="ltx_Math" alttext="\displaystyle b_{n}" display="inline"><msub><mi>b</mi><mi>n</mi></msub></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex2.m2" class="ltx_Math" alttext="\displaystyle=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin{nx}\,dx" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>π</mi></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo largeop="true" symmetric="true">∫</mo><mrow><mo>-</mo><mi>π</mi></mrow><mi>π</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mi>n</mi><mo>⁢</mo><mpadded width="+1.7pt"><mi>x</mi></mpadded><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">of the coefficients <math id="p1.m1" class="ltx_Math" alttext="a_{n}" display="inline"><msub><mi>a</mi><mi>n</mi></msub></math> and <math id="p1.m2" class="ltx_Math" alttext="b_{n}" display="inline"><msub><mi>b</mi><mi>n</mi></msub></math> for the Fourier series</p>
+<table id="S0.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex3.m1" class="ltx_Math" alttext="f(x)=\frac{a_{0}}{2}+\sum_{n=1}^{\infty}(a_{n}\cos{nx}+b_{n}\sin{nx})" display="block"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><msub><mi>a</mi><mn>0</mn></msub><mn>2</mn></mfrac><mo>+</mo><mrow><munderover><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><mo stretchy="false">(</mo><mrow><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mi>n</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow><mo>+</mo><mrow><msub><mi>b</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mi>n</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">of the Riemann integrable real function <math id="p1.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> on the interval  <math id="p1.m4" class="ltx_Math" alttext="[-\pi,\,\pi]" display="inline"><mrow><mo stretchy="false">[</mo><mrow><mo>-</mo><mi>π</mi></mrow><mo rspace="4.2pt">,</mo><mi>π</mi><mo stretchy="false">]</mo></mrow></math>,  that</p>
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="\displaystyle a_{n}=\frac{2}{\pi}\int_{0}^{\pi}\!f(x)\cos{nx}\,dx" display="inline"><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>2</mn><mi>π</mi></mfrac></mstyle><mo>⁢</mo><mrow><mpadded width="-1.7pt"><mstyle displaystyle="true"><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mi>π</mi></msubsup></mstyle></mpadded><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mi>n</mi><mo>⁢</mo><mpadded width="+1.7pt"><mi>x</mi></mpadded><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></mrow></math>,  
+<math id="I1.i1.p1.m2" class="ltx_Math" alttext="b_{n}=0" display="inline"><mrow><msub><mi>b</mi><mi>n</mi></msub><mo>=</mo><mn>0</mn></mrow></math>  <math id="I1.i1.p1.m3" class="ltx_Math" alttext="\forall n" display="inline"><mrow><mo>∀</mo><mi>n</mi></mrow></math>  if <math id="I1.i1.p1.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> is an even function;</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i2.p1.m1" class="ltx_Math" alttext="\displaystyle b_{n}=\frac{2}{\pi}\int_{0}^{\pi}\!f(x)\sin{nx}\,dx" display="inline"><mrow><msub><mi>b</mi><mi>n</mi></msub><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>2</mn><mi>π</mi></mfrac></mstyle><mo>⁢</mo><mrow><mpadded width="-1.7pt"><mstyle displaystyle="true"><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mi>π</mi></msubsup></mstyle></mpadded><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mi>n</mi><mo>⁢</mo><mpadded width="+1.7pt"><mi>x</mi></mpadded><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></mrow></math>,  
+<math id="I1.i2.p1.m2" class="ltx_Math" alttext="a_{n}=0" display="inline"><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>0</mn></mrow></math>  <math id="I1.i2.p1.m3" class="ltx_Math" alttext="\forall n" display="inline"><mrow><mo>∀</mo><mi>n</mi></mrow></math>  if <math id="I1.i2.p1.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> is an odd function.</p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">Thus the Fourier series of an even function  mere cosine  and of an odd function mere sine .  This concerns the whole interval 
+<math id="p1.m5" class="ltx_Math" alttext="[-\pi,\,\pi]" display="inline"><mrow><mo stretchy="false">[</mo><mrow><mo>-</mo><mi>π</mi></mrow><mo rspace="4.2pt">,</mo><mi>π</mi><mo stretchy="false">]</mo></mrow></math>.  So e.g. one has on this interval</p>
+<table id="S0.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex4.m1" class="ltx_Math" alttext="x\,\equiv\,2\!\left(\frac{\sin{x}}{1}\!-\!\frac{\sin{2x}}{2}\!+\!\frac{\sin{3x%
+}}{3}\!-+\cdots\right)." display="block"><mrow><mpadded width="+1.7pt"><mi>x</mi></mpadded><mo>≡</mo><mpadded width="-1.7pt"><mn> 2</mn></mpadded><mrow><mo>(</mo><mpadded width="-1.7pt"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mi>x</mi></mrow><mn>1</mn></mfrac></mpadded><mo rspace="0.8pt">-</mo><mpadded width="-1.7pt"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mn>2</mn></mfrac></mpadded><mo rspace="0.8pt">+</mo><mpadded width="-1.7pt"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mn>3</mn></mfrac></mpadded><mo>-</mo><mo>+</mo><mi mathvariant="normal">⋯</mi><mo>)</mo></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<br class="ltx_break">
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Remark 1</span>.  On the <span class="ltx_text ltx_font_italic">half-interval</span>  <math id="p2.m1" class="ltx_Math" alttext="[0,\,\pi]" display="inline"><mrow><mo stretchy="false">[</mo><mn>0</mn><mo rspace="4.2pt">,</mo><mi>π</mi><mo stretchy="false">]</mo></mrow></math>  one can in any case expand each Riemann integrable function <math id="p2.m2" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> both to a cosine series and to a sine series, irrespective of how it is defined for the negative half-interval or is it defined here at all.
+<br class="ltx_break"></p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Remark 2.</span>  On an interval  <math id="p3.m1" class="ltx_Math" alttext="[-p,\,p]" display="inline"><mrow><mo stretchy="false">[</mo><mrow><mo>-</mo><mi>p</mi></mrow><mo rspace="4.2pt">,</mo><mi>p</mi><mo stretchy="false">]</mo></mrow></math>,  instead of 
+<math id="p3.m2" class="ltx_Math" alttext="[-\pi,\,\pi]" display="inline"><mrow><mo stretchy="false">[</mo><mrow><mo>-</mo><mi>π</mi></mrow><mo rspace="4.2pt">,</mo><mi>π</mi><mo stretchy="false">]</mo></mrow></math>,  the Fourier coefficients of the series</p>
+<table id="S0.Ex5" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex5.m1" class="ltx_Math" alttext="f(x)=\frac{a_{0}}{2}+\sum_{n=1}^{\infty}\left(a_{n}\cos\frac{n\pi x}{p}+b_{n}%
+\sin\frac{n\pi x}{p}\right)" display="block"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><msub><mi>a</mi><mn>0</mn></msub><mn>2</mn></mfrac><mo>+</mo><mrow><munderover><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><mo>(</mo><mrow><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>p</mi></mfrac></mrow></mrow><mo>+</mo><mrow><msub><mi>b</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>p</mi></mfrac></mrow></mrow></mrow><mo>)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">have the expressions</p>
+<ul id="I2" class="ltx_itemize">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i1.p1.m1" class="ltx_Math" alttext="\displaystyle a_{n}=\frac{2}{p}\int_{0}^{p}\!f(x)\cos\frac{n\pi x}{p}\,dx" display="inline"><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>2</mn><mi>p</mi></mfrac></mstyle><mo>⁢</mo><mrow><mpadded width="-1.7pt"><mstyle displaystyle="true"><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mi>p</mi></msubsup></mstyle></mpadded><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mpadded width="+1.7pt"><mstyle displaystyle="true"><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>p</mi></mfrac></mstyle></mpadded><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></mrow></math>,  
+<math id="I2.i1.p1.m2" class="ltx_Math" alttext="b_{n}=0" display="inline"><mrow><msub><mi>b</mi><mi>n</mi></msub><mo>=</mo><mn>0</mn></mrow></math>  <math id="I2.i1.p1.m3" class="ltx_Math" alttext="\forall n" display="inline"><mrow><mo>∀</mo><mi>n</mi></mrow></math>  if <math id="I2.i1.p1.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> is an even function;</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i2.p1.m1" class="ltx_Math" alttext="\displaystyle b_{n}=\frac{2}{p}\int_{0}^{p}\!f(x)\sin\frac{n\pi x}{p}\,dx" display="inline"><mrow><msub><mi>b</mi><mi>n</mi></msub><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>2</mn><mi>p</mi></mfrac></mstyle><mo>⁢</mo><mrow><mpadded width="-1.7pt"><mstyle displaystyle="true"><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mi>p</mi></msubsup></mstyle></mpadded><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mpadded width="+1.7pt"><mstyle displaystyle="true"><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>p</mi></mfrac></mstyle></mpadded><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></mrow></math>,  
+<math id="I2.i2.p1.m2" class="ltx_Math" alttext="a_{n}=0" display="inline"><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mn>0</mn></mrow></math>  <math id="I2.i2.p1.m3" class="ltx_Math" alttext="\forall n" display="inline"><mrow><mo>∀</mo><mi>n</mi></mrow></math>  if <math id="I2.i2.p1.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> is an odd function.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Example.</span>  Expand the identity function (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/IdentityMap</span>)  <math id="p4.m1" class="ltx_Math" alttext="x\mapsto x" display="inline"><mrow><mi>x</mi><mo>↦</mo><mi>x</mi></mrow></math>  to a Fourier cosine series on  <math id="p4.m2" class="ltx_Math" alttext="[0,\,\pi]" display="inline"><mrow><mo stretchy="false">[</mo><mn>0</mn><mo rspace="4.2pt">,</mo><mi>π</mi><mo stretchy="false">]</mo></mrow></math>.</p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">This odd function may be replaced with the even function  <math id="p5.m1" class="ltx_Math" alttext="f:x\mapsto|x|" display="inline"><mrow><mi>f</mi><mo>:</mo><mrow><mi>x</mi><mo>↦</mo><mrow><mo stretchy="false">|</mo><mi>x</mi><mo stretchy="false">|</mo></mrow></mrow></mrow></math>.  Then we get</p>
+<table id="S0.Ex6" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex6.m1" class="ltx_Math" alttext="a_{0}=\frac{2}{\pi}\int_{0}^{\pi}x\,dx=\pi" display="block"><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mrow><mfrac><mn>2</mn><mi>π</mi></mfrac><mo>⁢</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mi>π</mi></msubsup><mrow><mpadded width="+1.7pt"><mi>x</mi></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo>=</mo><mi>π</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">and, integrating by parts,</p>
+<table id="S0.Ex7" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex7.m1" class="ltx_Math" alttext="a_{n}=\frac{2}{\pi}\int_{0}^{\pi}\!x\cos{nx}\,dx=\frac{2}{\pi}\left[%
+\operatornamewithlimits{\Big{/}}_{\!\!\!0}^{\,\quad\pi}\!x\frac{\sin{nx}}{n}-%
+\int_{0}^{\pi}\frac{\sin{nx}}{n}\,dx\right]=\frac{2}{\pi}%
+\operatornamewithlimits{\Big{/}}_{\!\!\!0}^{\,\quad\pi}\!\frac{\cos{nx}}{n^{2}%
+}=\frac{2}{\pi n^{2}}((-1)^{n}\!-\!1));" display="block"><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mfrac><mn>2</mn><mi>π</mi></mfrac><mpadded width="-1.7pt"><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mi>π</mi></msubsup></mpadded><mi>x</mi><mi>cos</mi><mi>n</mi><mpadded width="+1.7pt"><mi>x</mi></mpadded><mi>d</mi><mi>x</mi><mo>=</mo><mfrac><mn>2</mn><mi>π</mi></mfrac><mrow><mo>[</mo><mpadded width="-1.7pt"><munderover><mo mathsize="160%" movablelimits="false" stretchy="false">/</mo><mpadded lspace="-5pt" width="-5pt"><mn>0</mn></mpadded><mpadded lspace="11.7pt" width="+11.7pt"><mi>π</mi></mpadded></munderover></mpadded><mi>x</mi><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mi>n</mi><mo>⁢</mo><mi>x</mi></mrow></mrow><mi>n</mi></mfrac><mo>-</mo><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mi>π</mi></msubsup><mpadded width="+1.7pt"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mi>n</mi><mo>⁢</mo><mi>x</mi></mrow></mrow><mi>n</mi></mfrac></mpadded><mi>d</mi><mi>x</mi><mo>]</mo></mrow><mo>=</mo><mfrac><mn>2</mn><mi>π</mi></mfrac><mpadded width="-1.7pt"><munderover><mo mathsize="160%" movablelimits="false" stretchy="false">/</mo><mpadded lspace="-5pt" width="-5pt"><mn>0</mn></mpadded><mpadded lspace="11.7pt" width="+11.7pt"><mi>π</mi></mpadded></munderover></mpadded><mfrac><mrow><mi>cos</mi><mo>⁡</mo><mrow><mi>n</mi><mo>⁢</mo><mi>x</mi></mrow></mrow><msup><mi>n</mi><mn>2</mn></msup></mfrac><mo>=</mo><mfrac><mn>2</mn><mrow><mi>π</mi><mo>⁢</mo><msup><mi>n</mi><mn>2</mn></msup></mrow></mfrac><mrow><mo stretchy="false">(</mo><mpadded width="-1.7pt"><msup><mrow><mo stretchy="false">(</mo><mo>-</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mi>n</mi></msup></mpadded><mo rspace="0.8pt">-</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mo stretchy="false">)</mo><mo>;</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">this equals to <math id="p5.m2" class="ltx_Math" alttext="\displaystyle-\frac{4}{\pi n^{2}}" display="inline"><mrow><mo>-</mo><mstyle displaystyle="true"><mfrac><mn>4</mn><mrow><mi>π</mi><mo>⁢</mo><msup><mi>n</mi><mn>2</mn></msup></mrow></mfrac></mstyle></mrow></math> if <math id="p5.m3" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> is an odd integer, but vanishes for each even <math id="p5.m4" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>.  Thus we obtain on the interval  <math id="p5.m5" class="ltx_Math" alttext="[0,\,\pi]" display="inline"><mrow><mo stretchy="false">[</mo><mn>0</mn><mo rspace="4.2pt">,</mo><mi>π</mi><mo stretchy="false">]</mo></mrow></math>  the cosine series</p>
+<table id="S0.Ex8" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex8.m1" class="ltx_Math" alttext="x\,\equiv\,\frac{\pi}{2}\!-\!\frac{4}{\pi}\!\left(\frac{\cos{x}}{1^{2}}\!+\!%
+\frac{\cos{3x}}{3^{2}}\!+\!\frac{\cos{5x}}{5^{2}}\!+\cdots\right)." display="block"><mrow><mrow><mpadded width="+1.7pt"><mi>x</mi></mpadded><mo rspace="4.2pt">≡</mo><mrow><mpadded width="-1.7pt"><mfrac><mi>π</mi><mn>2</mn></mfrac></mpadded><mo rspace="0.8pt">-</mo><mrow><mpadded width="-1.7pt"><mfrac><mn>4</mn><mi>π</mi></mfrac></mpadded><mo>⁢</mo><mrow><mo>(</mo><mrow><mpadded width="-1.7pt"><mfrac><mrow><mi>cos</mi><mo>⁡</mo><mi>x</mi></mrow><msup><mn>1</mn><mn>2</mn></msup></mfrac></mpadded><mo rspace="0.8pt">+</mo><mpadded width="-1.7pt"><mfrac><mrow><mi>cos</mi><mo>⁡</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><msup><mn>3</mn><mn>2</mn></msup></mfrac></mpadded><mo rspace="0.8pt">+</mo><mpadded width="-1.7pt"><mfrac><mrow><mi>cos</mi><mo>⁡</mo><mrow><mn>5</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><msup><mn>5</mn><mn>2</mn></msup></mfrac></mpadded><mo rspace="0.8pt">+</mo><mi mathvariant="normal">⋯</mi></mrow><mo>)</mo></mrow></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Chosing here  <math id="p5.m6" class="ltx_Math" alttext="x:=0" display="inline"><mrow><mi>x</mi><mo>:=</mo><mn>0</mn></mrow></math>  one gets the result</p>
+<table id="S0.Ex9" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex9.m1" class="ltx_Math" alttext="\frac{\pi^{2}}{8}\;=\;1+\frac{1}{3^{2}}+\frac{1}{5^{2}}+\ldots" display="block"><mrow><mpadded width="+2.8pt"><mfrac><msup><mi>π</mi><mn>2</mn></msup><mn>8</mn></mfrac></mpadded><mo>=</mo><mrow><mn> 1</mn><mo>+</mo><mfrac><mn>1</mn><msup><mn>3</mn><mn>2</mn></msup></mfrac><mo>+</mo><mfrac><mn>1</mn><msup><mn>5</mn><mn>2</mn></msup></mfrac><mo>+</mo><mi mathvariant="normal">…</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">(cf. the entry on <span class="ltx_text ltx_font_typewriter">http://planetmath.org/node/11010</span>Dirichlet eta function at 2).
+<br class="ltx_break"></p>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Fourier double series.</span>  The Fourier sine and cosine series introduced in Remark 1 on the half-interval  <math id="p6.m1" class="ltx_Math" alttext="[0,\,\pi]" display="inline"><mrow><mo stretchy="false">[</mo><mn>0</mn><mo rspace="4.2pt">,</mo><mi>π</mi><mo stretchy="false">]</mo></mrow></math>  for a function of one real variable may be generalized for e.g. functions of two real variables on a rectangle  <math id="p6.m2" class="ltx_Math" alttext="\{(x,\,y)\in\mathbb{R}^{2}\,\vdots\,\,0\leq x\leq a,\,0\leq y\leq b\}" display="inline"><mrow><mo stretchy="false">{</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo rspace="4.2pt">,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mrow><mpadded width="+1.7pt"><msup><mi>ℝ</mi><mn>2</mn></msup></mpadded><mo>⁢</mo><mi mathvariant="normal">⋮</mi><mo>⁢</mo><mn>  0</mn></mrow><mo>≤</mo><mi>x</mi><mo>≤</mo><mi>a</mi></mrow><mo>,</mo><mrow><mn> 0</mn><mo>≤</mo><mi>y</mi><mo>≤</mo><mi>b</mi></mrow></mrow><mo stretchy="false">}</mo></mrow></math>:</p>
+<table id="A0.EGx2" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="S0.E1"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.E1.m1" class="ltx_Math" alttext="\displaystyle f(x,\,y)=\sum_{m=1}^{\infty}\sum_{n=1}^{\infty}c_{mn}\sin\frac{m%
+\pi x}{a}\sin\frac{n\pi y}{b}," display="inline"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo rspace="4.2pt">,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><munderover><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover></mstyle><mrow><mstyle displaystyle="true"><munderover><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover></mstyle><mrow><msub><mi>c</mi><mrow><mi>m</mi><mo>⁢</mo><mi>n</mi></mrow></msub><mo>⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mstyle displaystyle="true"><mfrac><mrow><mi>m</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>a</mi></mfrac></mstyle></mrow><mo>⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mstyle displaystyle="true"><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>y</mi></mrow><mi>b</mi></mfrac></mstyle></mrow></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1)</span></td>
+</tr></tbody>
+</table>
+<table id="A0.EGx3" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="S0.E2"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.E2.m1" class="ltx_Math" alttext="\displaystyle f(x,\,y)=\frac{d_{00}}{4}+\frac{1}{2}\sum_{l=1}^{\infty}\left(d_%
+{l0}\cos\frac{l\pi x}{a}+d_{0l}\cos\frac{l\pi y}{b}\right)+\sum_{m=1}^{\infty}%
+\sum_{n=1}^{\infty}d_{mn}\cos\frac{m\pi x}{a}\cos\frac{n\pi y}{b}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo rspace="4.2pt">,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><msub><mi>d</mi><mn>00</mn></msub><mn>4</mn></mfrac></mstyle><mo>+</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><munderover><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>l</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover></mstyle><mrow><mo>(</mo><mrow><mrow><msub><mi>d</mi><mrow><mi>l</mi><mo>⁢</mo><mn>0</mn></mrow></msub><mo>⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mstyle displaystyle="true"><mfrac><mrow><mi>l</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>a</mi></mfrac></mstyle></mrow></mrow><mo>+</mo><mrow><msub><mi>d</mi><mrow><mn>0</mn><mo>⁢</mo><mi>l</mi></mrow></msub><mo>⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mstyle displaystyle="true"><mfrac><mrow><mi>l</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>y</mi></mrow><mi>b</mi></mfrac></mstyle></mrow></mrow></mrow><mo>)</mo></mrow></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><munderover><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover></mstyle><mrow><mstyle displaystyle="true"><munderover><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover></mstyle><mrow><msub><mi>d</mi><mrow><mi>m</mi><mo>⁢</mo><mi>n</mi></mrow></msub><mo>⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mstyle displaystyle="true"><mfrac><mrow><mi>m</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>a</mi></mfrac></mstyle></mrow><mo>⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mstyle displaystyle="true"><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>y</mi></mrow><mi>b</mi></mfrac></mstyle></mrow></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The coefficients of the <span class="ltx_text ltx_font_italic">Fourier double sine series</span> (1) are got by the double integral</p>
+<table id="S0.Ex10" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex10.m1" class="ltx_Math" alttext="c_{mn}=\frac{4}{ab}\int_{0}^{a}\int_{0}^{b}f(x,\,y)\,\sin\frac{m\pi x}{a}\sin%
+\frac{n\pi y}{b}\,dx\,dy" display="block"><mrow><msub><mi>c</mi><mrow><mi>m</mi><mo>⁢</mo><mi>n</mi></mrow></msub><mo>=</mo><mrow><mfrac><mn>4</mn><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow></mfrac><mo>⁢</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mi>a</mi></msubsup><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mi>b</mi></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo rspace="4.2pt">,</mo><mi>y</mi><mo rspace="4.2pt" stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mfrac><mrow><mi>m</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>a</mi></mfrac></mrow><mo>⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mpadded width="+1.7pt"><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>y</mi></mrow><mi>b</mi></mfrac></mpadded><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mpadded width="+1.7pt"><mi>x</mi></mpadded><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow></mrow></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">where  <math id="p6.m3" class="ltx_Math" alttext="m=1,\,2,\,3,\,\ldots" display="inline"><mrow><mi>m</mi><mo>=</mo><mrow><mn>1</mn><mo>,</mo><mn> 2</mn><mo>,</mo><mn> 3</mn><mo rspace="4.2pt">,</mo><mi mathvariant="normal">…</mi></mrow></mrow></math>  and  <math id="p6.m4" class="ltx_Math" alttext="n=1,\,2,\,3,\,\ldots" display="inline"><mrow><mi>n</mi><mo>=</mo><mrow><mn>1</mn><mo>,</mo><mn> 2</mn><mo>,</mo><mn> 3</mn><mo rspace="4.2pt">,</mo><mi mathvariant="normal">…</mi></mrow></mrow></math>  The coefficients of the <span class="ltx_text ltx_font_italic">Fourier double cosine series</span> (2) are correspondingly</p>
+<table id="S0.Ex11" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex11.m1" class="ltx_Math" alttext="d_{mn}=\frac{4}{ab}\int_{0}^{a}\int_{0}^{b}f(x,\,y)\,\cos\frac{m\pi x}{a}\cos%
+\frac{n\pi y}{b}\,dx\,dy" display="block"><mrow><msub><mi>d</mi><mrow><mi>m</mi><mo>⁢</mo><mi>n</mi></mrow></msub><mo>=</mo><mrow><mfrac><mn>4</mn><mrow><mi>a</mi><mo>⁢</mo><mi>b</mi></mrow></mfrac><mo>⁢</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mi>a</mi></msubsup><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mi>b</mi></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo rspace="4.2pt">,</mo><mi>y</mi><mo rspace="4.2pt" stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mfrac><mrow><mi>m</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>a</mi></mfrac></mrow><mo>⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mpadded width="+1.7pt"><mfrac><mrow><mi>n</mi><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>y</mi></mrow><mi>b</mi></mfrac></mpadded><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mpadded width="+1.7pt"><mi>x</mi></mpadded><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow></mrow></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">where  <math id="p6.m5" class="ltx_Math" alttext="m=0,\,1,\,2,\,\ldots" display="inline"><mrow><mi>m</mi><mo>=</mo><mrow><mn>0</mn><mo>,</mo><mn> 1</mn><mo>,</mo><mn> 2</mn><mo rspace="4.2pt">,</mo><mi mathvariant="normal">…</mi></mrow></mrow></math>  and  <math id="p6.m6" class="ltx_Math" alttext="n=0,\,1,\,2,\,\ldots" display="inline"><mrow><mi>n</mi><mo>=</mo><mrow><mn>0</mn><mo>,</mo><mn> 1</mn><mo>,</mo><mn> 2</mn><mo rspace="4.2pt">,</mo><mi mathvariant="normal">…</mi></mrow></mrow></math>
+<br class="ltx_break"></p>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Note.</span>  One can use in the double series of (1) and (2) also the <span class="ltx_text ltx_font_italic">diagonal summing</span>, e.g. for the double sine series as follows:
+<br class="ltx_break"><math id="p7.m1" class="ltx_Math" alttext="c_{11}\sin\!\frac{\pi x}{a}\sin\!\frac{\pi y}{b}\!+\!\left(c_{12}\sin\!\frac{%
+\pi x}{a}\sin\!\frac{2\pi y}{b}\!+\!c_{21}\sin\!\frac{2\pi x}{a}\sin\!\frac{%
+\pi y}{b}\right)\!+\!\left(c_{13}\sin\!\frac{\pi x}{a}\sin\!\frac{3\pi y}{b}\!%
++\!c_{22}\sin\!\frac{2\pi x}{a}\sin\!\frac{2\pi y}{b}\!+\!c_{31}\sin\!\frac{3%
+\pi x}{a}\sin\!\frac{\pi y}{b}\right)\!+\ldots" display="inline"><mrow><mrow><msub><mi>c</mi><mn>11</mn></msub><mo>⁢</mo><mrow><mpadded width="-1.7pt"><mi>sin</mi></mpadded><mo>⁡</mo><mfrac><mrow><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>a</mi></mfrac></mrow><mo>⁢</mo><mrow><mpadded width="-1.7pt"><mi>sin</mi></mpadded><mo>⁡</mo><mpadded width="-1.7pt"><mfrac><mrow><mi>π</mi><mo>⁢</mo><mi>y</mi></mrow><mi>b</mi></mfrac></mpadded></mrow></mrow><mo rspace="0.8pt">+</mo><mrow><mo>(</mo><mrow><mrow><msub><mi>c</mi><mn>12</mn></msub><mo>⁢</mo><mrow><mpadded width="-1.7pt"><mi>sin</mi></mpadded><mo>⁡</mo><mfrac><mrow><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>a</mi></mfrac></mrow><mo>⁢</mo><mrow><mpadded width="-1.7pt"><mi>sin</mi></mpadded><mo>⁡</mo><mpadded width="-1.7pt"><mfrac><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>y</mi></mrow><mi>b</mi></mfrac></mpadded></mrow></mrow><mo rspace="0.8pt">+</mo><mrow><msub><mi>c</mi><mn>21</mn></msub><mo>⁢</mo><mrow><mpadded width="-1.7pt"><mi>sin</mi></mpadded><mo>⁡</mo><mfrac><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>a</mi></mfrac></mrow><mo>⁢</mo><mrow><mpadded width="-1.7pt"><mi>sin</mi></mpadded><mo>⁡</mo><mfrac><mrow><mi>π</mi><mo>⁢</mo><mi>y</mi></mrow><mi>b</mi></mfrac></mrow></mrow></mrow><mo rspace="0.8pt">)</mo></mrow><mo rspace="0.8pt">+</mo><mrow><mo>(</mo><mrow><mrow><msub><mi>c</mi><mn>13</mn></msub><mo>⁢</mo><mrow><mpadded width="-1.7pt"><mi>sin</mi></mpadded><mo>⁡</mo><mfrac><mrow><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>a</mi></mfrac></mrow><mo>⁢</mo><mrow><mpadded width="-1.7pt"><mi>sin</mi></mpadded><mo>⁡</mo><mpadded width="-1.7pt"><mfrac><mrow><mn>3</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>y</mi></mrow><mi>b</mi></mfrac></mpadded></mrow></mrow><mo rspace="0.8pt">+</mo><mrow><msub><mi>c</mi><mn>22</mn></msub><mo>⁢</mo><mrow><mpadded width="-1.7pt"><mi>sin</mi></mpadded><mo>⁡</mo><mfrac><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>a</mi></mfrac></mrow><mo>⁢</mo><mrow><mpadded width="-1.7pt"><mi>sin</mi></mpadded><mo>⁡</mo><mpadded width="-1.7pt"><mfrac><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>y</mi></mrow><mi>b</mi></mfrac></mpadded></mrow></mrow><mo rspace="0.8pt">+</mo><mrow><msub><mi>c</mi><mn>31</mn></msub><mo>⁢</mo><mrow><mpadded width="-1.7pt"><mi>sin</mi></mpadded><mo>⁡</mo><mfrac><mrow><mn>3</mn><mo>⁢</mo><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mi>a</mi></mfrac></mrow><mo>⁢</mo><mrow><mpadded width="-1.7pt"><mi>sin</mi></mpadded><mo>⁡</mo><mfrac><mrow><mi>π</mi><mo>⁢</mo><mi>y</mi></mrow><mi>b</mi></mfrac></mrow></mrow></mrow><mo rspace="0.8pt">)</mo></mrow><mo rspace="0.8pt">+</mo><mi mathvariant="normal">…</mi></mrow></math></p>
+</div>
+<section id="bib" class="ltx_bibliography">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+
+<ul class="ltx_biblist">
+      
+<li id="bib.bib1" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">1</span>
+        
+<span class="ltx_bibblock"><span class="ltx_text ltx_font_smallcaps">K. Väisälä:</span> <span class="ltx_text ltx_font_italic">Matematiikka IV</span>.  Hand-out Nr. 141. Teknillisen korkeakoulun ylioppilaskunta, Otaniemi, Finland (1967).
+
+</span>
+      </li>
+    
+</ul>
+</section>
+<div id="p8" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_t">Title</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">Fourier sine and cosine series</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Canonical name</td>
+<td class="ltx_td ltx_align_left ltx_border_r">FourierSineAndCosineSeries</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Date of creation</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 15:42:20</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified on</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 15:42:20</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Owner</td>
+<td class="ltx_td ltx_align_left ltx_border_r">pahio (2872)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified by</td>
+<td class="ltx_td ltx_align_left ltx_border_r">pahio (2872)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Numerical id</td>
+<td class="ltx_td ltx_align_left ltx_border_r">26</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Author</td>
+<td class="ltx_td ltx_align_left ltx_border_r">pahio (2872)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Entry type</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Topic</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 42A32</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 42A20</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 42A16</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 26A06</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">SubstitutionNotation</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">IntegralsOfEvenAndOddFunctions</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">CosineAtMultiplesOfStraightAngle</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">ExampleOfFourierSeries</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">DoubleSeries</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">UniquenessOfFourierExpansion</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">DeterminationOfFourierCoefficients</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">TwoDimensionalFourierTransforms</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Fourier sine series</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Fourier cosine series</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">sine series</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">cosine series</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">half-interval</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Fourier double sine series</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">Fourier double cosine series</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Fri Feb  9 21:29:04 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>
