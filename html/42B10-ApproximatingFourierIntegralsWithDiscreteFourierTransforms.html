@@ -20,9 +20,9 @@
 <br class="ltx_break">
 </div>
 <div id="p2" class="ltx_para">
-<p class="ltx_p">Suppose we have a continuous function <math id="p2.m1" class="ltx_Math" alttext="f\colon\mathbb{R}^{\nu}\to\mathbb{C}" display="inline"><mrow><mi>f</mi><mo>:</mo><mrow><msup><mi>ℝ</mi><mi>ν</mi></msup><mo>→</mo><mi>ℂ</mi></mrow></mrow></math>
+<p class="ltx_p">Suppose we have a <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">continuous function</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/ContinuousFunction.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/continuous"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> <math id="p2.m1" class="ltx_Math" alttext="f\colon\mathbb{R}^{\nu}\to\mathbb{C}" display="inline"><mrow><mi>f</mi><mo>:</mo><mrow><msup><mi>ℝ</mi><mi>ν</mi></msup><mo>→</mo><mi>ℂ</mi></mrow></mrow></math>
 for which we want to numerically
-compute the continuous Fourier transform:</p>
+compute the <a class="nnexus_concept" href="http://mathworld.wolfram.com/Continuous.html">continuous</a> <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">Fourier transform</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/FourierTransform.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/fouriertransform"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup>:</p>
 <table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
 
 <tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -33,22 +33,22 @@ compute the continuous Fourier transform:</p>
 </tr>
 </table>
 <p class="ltx_p">Assume that either the function <math id="p2.m2" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> is supported
-inside the compact rectangle
+inside the <a class="nnexus_concept" href="http://planetmath.org/polyrectangle">compact rectangle</a>
 <math id="p2.m3" class="ltx_Math" alttext="C=[a_{1},b_{1}]\times\cdots\times[a_{\nu},b_{\nu}]" display="inline"><mrow><mi>C</mi><mo>=</mo><mrow><mrow><mo stretchy="false">[</mo><msub><mi>a</mi><mn>1</mn></msub><mo>,</mo><msub><mi>b</mi><mn>1</mn></msub><mo stretchy="false">]</mo></mrow><mo>×</mo><mi mathvariant="normal">⋯</mi><mo>×</mo><mrow><mo stretchy="false">[</mo><msub><mi>a</mi><mi>ν</mi></msub><mo>,</mo><msub><mi>b</mi><mi>ν</mi></msub><mo stretchy="false">]</mo></mrow></mrow></mrow></math>,
-or that the Fourier integral is well approximated
+or that the <a class="nnexus_concept" href="http://planetmath.org/fourierseriesincomplexformandfourierintegral">Fourier integral</a> is well approximated
 by truncating the domain to <math id="p2.m4" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math>.</p>
 </div>
 <div id="p3" class="ltx_para">
 <p class="ltx_p">We develop an approximation to <math id="p3.m1" class="ltx_Math" alttext="\hat{f}" display="inline"><mover accent="true"><mi>f</mi><mo stretchy="false">^</mo></mover></math>
-based on the discrete Fourier transform
-(which can be computed efficiently using the fast Fourier transform
-algorithm), and analyze the error in making this approximation.</p>
+based on the <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">discrete Fourier transform</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/DiscreteFourierTransform.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/discretefouriertransform"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup>
+(which can be computed efficiently using the <a class="nnexus_concept" href="http://mathworld.wolfram.com/FastFourierTransform.html">fast Fourier transform</a>
+<a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">algorithm</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Algorithm.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/algorithm"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup>), and analyze the error in making this approximation.</p>
 </div>
 <section id="S0.SSx1" class="ltx_subsection">
 <h2 class="ltx_title ltx_title_subsection">Derivation</h2>
 
 <div id="S0.SSx1.p1" class="ltx_para">
-<p class="ltx_p">Performing the linear substitution</p>
+<p class="ltx_p">Performing the linear <a class="nnexus_concept" href="http://planetmath.org/substitution">substitution</a></p>
 <table id="S0.Ex2" class="ltx_equation ltx_eqn_table">
 
 <tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -95,7 +95,7 @@ a_{\nu})\xi_{\nu}t_{\nu}\bigr{)}}\,dt_{1}\cdots dt_{\nu}" display="inline"><mrow
 <p class="ltx_p">and <math id="S0.SSx1.p1.m1" class="ltx_Math" alttext="\hat{g}" display="inline"><mover accent="true"><mi>g</mi><mo stretchy="false">^</mo></mover></math> denotes the Fourier transform of <math id="S0.SSx1.p1.m2" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> on the unit cube <math id="S0.SSx1.p1.m3" class="ltx_Math" alttext="[0,1]^{\nu}" display="inline"><msup><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><mi>ν</mi></msup></math>.</p>
 </div>
 <div id="S0.SSx1.p2" class="ltx_para">
-<p class="ltx_p">Let <math id="S0.SSx1.p2.m1" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> denote the vector with components
+<p class="ltx_p">Let <math id="S0.SSx1.p2.m1" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> denote the vector with <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">components</a><sup style="display: none;"><a class="nnexus_concept" href="http://planetmath.org/coordinatevector"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a><a class="nnexus_concept" href="http://planetmath.org/frame"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup>
 <math id="S0.SSx1.p2.m2" class="ltx_Math" alttext="u(k_{1},\ldots,k_{\nu})=g(k_{1}/N,\ldots,k_{\nu}/N)" display="inline"><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>k</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>k</mi><mi>ν</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>k</mi><mn>1</mn></msub><mo>/</mo><mi>N</mi></mrow><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><msub><mi>k</mi><mi>ν</mi></msub><mo>/</mo><mi>N</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, for <math id="S0.SSx1.p2.m3" class="ltx_Math" alttext="k_{j}=0,\ldots,N-1" display="inline"><mrow><msub><mi>k</mi><mi>j</mi></msub><mo>=</mo><mrow><mn>0</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>N</mi><mo>-</mo><mn>1</mn></mrow></mrow></mrow></math>.
 The discrete Fourier transform
 of <math id="S0.SSx1.p2.m4" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> is</p>
@@ -109,7 +109,7 @@ of <math id="S0.SSx1.p2.m4" class="ltx_Math" alttext="u" display="inline"><mi>u<
 </tr>
 </table>
 <p class="ltx_p">and approximates <math id="S0.SSx1.p2.m5" class="ltx_Math" alttext="N^{\nu}\hat{g}(l)" display="inline"><mrow><msup><mi>N</mi><mi>ν</mi></msup><mo>⁢</mo><mover accent="true"><mi>g</mi><mo stretchy="false">^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>l</mi><mo stretchy="false">)</mo></mrow></mrow></math>
-since it is a Riemann sum (step size <math id="S0.SSx1.p2.m6" class="ltx_Math" alttext="1/N" display="inline"><mrow><mn>1</mn><mo>/</mo><mi>N</mi></mrow></math>) for the Fourier integral.</p>
+since it is a <a class="nnexus_concept" href="http://planetmath.org/riemannsum">Riemann sum</a> (step size <math id="S0.SSx1.p2.m6" class="ltx_Math" alttext="1/N" display="inline"><mrow><mn>1</mn><mo>/</mo><mi>N</mi></mrow></math>) for the Fourier integral.</p>
 </div>
 <div id="S0.SSx1.p3" class="ltx_para">
 <p class="ltx_p">Therefore, for <math id="S0.SSx1.p3.m1" class="ltx_Math" alttext="l_{j}=0,\ldots,N-1" display="inline"><mrow><msub><mi>l</mi><mi>j</mi></msub><mo>=</mo><mrow><mn>0</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>N</mi><mo>-</mo><mn>1</mn></mrow></mrow></mrow></math>,
@@ -133,10 +133,10 @@ we have the approximation:</p>
 <div id="S0.SSx2.p1" class="ltx_para">
 <p class="ltx_p">Assume that <math id="S0.SSx2.p1.m1" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> can be represented by a pointwise-convergent<span class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup>
 Since the discrete Fourier transform requires sampling of points, <math id="S0.SSx2.p1.m2" class="ltx_Math" alttext="\mathbf{L}^{2}" display="inline"><msup><mi>𝐋</mi><mn>2</mn></msup></math>
-convergence of the Fourier series is not sufficient. Also, the Fourier series
-may only be conditionally convergent. If there are difficulties in assuring
-its convergence, Fejér summation can be
-used instead in this analysis.</span></span></span>
+convergence of the <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">Fourier series</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/FourierSeries.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/fouriercoefficients"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> is not sufficient. Also, the Fourier series
+may only be <a class="nnexus_concept" href="http://planetmath.org/convergentseries">conditionally convergent</a>. If there are difficulties in assuring
+its convergence, Fejér <a class="nnexus_concept" href="http://planetmath.org/summation">summation</a> can be
+used instead in this <a class="nnexus_concept" href="http://planetmath.org/topicentryonanalysis">analysis</a>.</span></span></span>
 Fourier series:</p>
 <table id="S0.Ex9" class="ltx_equation ltx_eqn_table">
 
@@ -170,7 +170,7 @@ Fourier series:</p>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 </tr>
 </table>
-<p class="ltx_p">is a positive semi-definite inner product.</p>
+<p class="ltx_p">is a <a class="nnexus_concept" href="http://planetmath.org/semiinnerproduct">positive semi-definite inner product</a>.</p>
 </div>
 <div id="S0.SSx2.p3" class="ltx_para">
 <p class="ltx_p">We have the exact formula:</p>
@@ -186,7 +186,7 @@ Fourier series:</p>
 </table>
 <p class="ltx_p">and we wish to know what error is introduced
 if we were to replace <math id="S0.SSx2.p3.m1" class="ltx_Math" alttext="\hat{g}(l)=\langle{g},{E_{l}}\rangle" display="inline"><mrow><mrow><mover accent="true"><mi>g</mi><mo stretchy="false">^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>l</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo stretchy="false">⟨</mo><mi>g</mi><mo>,</mo><msub><mi>E</mi><mi>l</mi></msub><mo stretchy="false">⟩</mo></mrow></mrow></math>
-by the discrete version of the inner product <math id="S0.SSx2.p3.m2" class="ltx_Math" alttext="\langle{g},{E_{l}}\rangle_{N}=\hat{u}(l)/N^{\nu}" display="inline"><mrow><msub><mrow><mo stretchy="false">⟨</mo><mi>g</mi><mo>,</mo><msub><mi>E</mi><mi>l</mi></msub><mo stretchy="false">⟩</mo></mrow><mi>N</mi></msub><mo>=</mo><mrow><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>l</mi><mo stretchy="false">)</mo></mrow></mrow><mo>/</mo><msup><mi>N</mi><mi>ν</mi></msup></mrow></mrow></math>.</p>
+by the discrete version of the <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">inner product</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/InnerProduct.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/innerproduct"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> <math id="S0.SSx2.p3.m2" class="ltx_Math" alttext="\langle{g},{E_{l}}\rangle_{N}=\hat{u}(l)/N^{\nu}" display="inline"><mrow><msub><mrow><mo stretchy="false">⟨</mo><mi>g</mi><mo>,</mo><msub><mi>E</mi><mi>l</mi></msub><mo stretchy="false">⟩</mo></mrow><mi>N</mi></msub><mo>=</mo><mrow><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>l</mi><mo stretchy="false">)</mo></mrow></mrow><mo>/</mo><msup><mi>N</mi><mi>ν</mi></msup></mrow></mrow></math>.</p>
 </div>
 <div id="S0.SSx2.p4" class="ltx_para">
 <p class="ltx_p">Expand <math id="S0.SSx2.p4.m1" class="ltx_Math" alttext="\langle{g},{E_{l}}\rangle_{N}" display="inline"><msub><mrow><mo stretchy="false">⟨</mo><mi>g</mi><mo>,</mo><msub><mi>E</mi><mi>l</mi></msub><mo stretchy="false">⟩</mo></mrow><mi>N</mi></msub></math> as:</p>
@@ -217,10 +217,10 @@ the discrete inner product reduces to:</p>
 <div id="S0.SSx2.p5" class="ltx_para">
 <p class="ltx_p">In other words, the approximation entails replacing
 the true Fourier coefficient <math id="S0.SSx2.p5.m1" class="ltx_Math" alttext="\hat{g}(l)" display="inline"><mrow><mover accent="true"><mi>g</mi><mo stretchy="false">^</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>l</mi><mo stretchy="false">)</mo></mrow></mrow></math>
-with the same coefficient
+with the same <a class="nnexus_concept" href="http://planetmath.org/polynomial">coefficient</a>
 plus other Fourier coefficients <math id="S0.SSx2.p5.m2" class="ltx_Math" alttext="\langle{g},{E_{l+kN}}\rangle" display="inline"><mrow><mo stretchy="false">⟨</mo><mi>g</mi><mo>,</mo><msub><mi>E</mi><mrow><mi>l</mi><mo>+</mo><mrow><mi>k</mi><mo>⁢</mo><mi>N</mi></mrow></mrow></msub><mo stretchy="false">⟩</mo></mrow></math>
 corresponding to higher
-frequencies, in multiples of <math id="S0.SSx2.p5.m3" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math>.
+frequencies, in <a class="nnexus_concepts" href="javascript:void(0)" onclick="this.nextSibling.style.display='inline'">multiples</a><sup style="display: none;"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Multiple.html"><img src="http://mathworld.wolfram.com/favicon_mathworld.png" alt="Mathworld"></img></a><a class="nnexus_concept" href="http://planetmath.org/divisibility"><img src="http://planetmath.org/sites/default/files/fab-favicon.ico" alt="Planetmath"></img></a></sup> of <math id="S0.SSx2.p5.m3" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math>.
 The magnitude of the approximation error
 for <math id="S0.SSx2.p5.m4" class="ltx_Math" alttext="\hat{f}" display="inline"><mover accent="true"><mi>f</mi><mo stretchy="false">^</mo></mover></math>
 thus depends on how fast the partial sums
@@ -231,7 +231,7 @@ of the Fourier coefficients <math id="S0.SSx2.p5.m5" class="ltx_Math" alttext="\
 <tbody class="ltx_tbody">
 <tr class="ltx_tr">
 <th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
-<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">approximating Fourier integrals with discrete Fourier transforms</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t"><a class="nnexus_concept" href="http://planetmath.org/approximatingfourierintegralswithdiscretefouriertransforms">approximating Fourier integrals with discrete Fourier transforms</a></td>
 </tr>
 <tr class="ltx_tr">
 <th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
@@ -263,7 +263,7 @@ of the Fourier coefficients <math id="S0.SSx2.p5.m5" class="ltx_Math" alttext="\
 </tr>
 <tr class="ltx_tr">
 <th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
-<td class="ltx_td ltx_align_left ltx_border_r">Derivation</td>
+<td class="ltx_td ltx_align_left ltx_border_r"><a class="nnexus_concept" href="http://mathworld.wolfram.com/Derivation.html">Derivation</a></td>
 </tr>
 <tr class="ltx_tr">
 <th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
